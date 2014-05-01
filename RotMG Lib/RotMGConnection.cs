@@ -32,7 +32,7 @@ namespace RotMG_Lib
 
         internal RotMGConnection(Server host)
         {
-            RotMGClient.start = RotMGClient.CurrentTimeMillis();
+            RotMGClient.start = RotMGClient.GetTickCount();
             this.connection = new TcpClient();
             this.host = host;
             this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
@@ -41,6 +41,7 @@ namespace RotMG_Lib
             this.send.UserToken = new SendToken();
             this.send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
             this.sendState = SendState.Awaiting;
+
         }
 
         internal RC4 SendKey { get { return sendCrypto; } }

@@ -6,12 +6,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
-using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml;
 
 namespace RotMG_Lib
 {
@@ -19,7 +15,10 @@ namespace RotMG_Lib
 
     public class RotMGClient : RotMGConnection
     {
-        internal static long start;
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        internal static extern int GetTickCount();
+
+        public static int start;
         public event OnPacketReceiveHandler OnPacketReceive;
         public string BuildVersion { get; private set; }
         public int CharId { get; private set; }
@@ -58,7 +57,7 @@ namespace RotMG_Lib
                 GameId = -2,
                 GUID = email,
                 Password = password,
-                Secret = "",
+                Secret = "FLOFLORIANS FACE IS FUCKING BULLSHIT",
                 randomint1 = rand.Next(100000, 10000000),
                 Key = new byte[0],
                 KeyTime = 0,
@@ -104,13 +103,13 @@ namespace RotMG_Lib
                         break;
                     case PacketID.Ping:
                         Console.WriteLine("Ping");
-                        //SendPacket(new PongPacket
-                        //{
-                        //    Serial = (pkt as PingPacket).Serial,
-                        //    Time = RotMGClient.CurrentTime()
-                        //});
-                        //Console.WriteLine("Ping: {0}\n\rSerial: {1}", RotMGClient.CurrentTime(), (pkt as PingPacket).Serial);
-                        Console.WriteLine("Pong");
+                        SendPacket(new PongPacket
+                        {
+                            Serial = (pkt as PingPacket).Serial,
+                            Time = RotMGClient.CurrentTime()
+                        });
+                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", RotMGClient.CurrentTime(), (pkt as PingPacket).Serial);
+                        //Console.WriteLine("Pong");
                         break;
                     case PacketID.New_Tick:
                         New_TickPacket ntp = pkt as New_TickPacket;
@@ -143,7 +142,7 @@ namespace RotMG_Lib
 
         private static int CurrentTime()
         {
-            return (int)(CurrentTimeMillis() - start);
+            return GetTickCount() - start;
         }
 
         public void DisablePacketAutoHandling()

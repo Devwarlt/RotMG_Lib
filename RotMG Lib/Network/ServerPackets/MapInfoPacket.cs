@@ -14,7 +14,7 @@ namespace RotMG_Lib.Network.ServerPackets
         public string Name { get; set; }
         public string obf0 { get; set; }
         public int obf1 { get; set; }
-        public int Fp { get; set; }
+        public uint Fp { get; set; }
         public int Background { get; set; }
         public bool AllowTeleport { get; set; }
         public bool ShowDisplays { get; set; }
@@ -38,7 +38,7 @@ namespace RotMG_Lib.Network.ServerPackets
             Name = rdr.ReadUTF();
             obf0 = rdr.ReadUTF();
             obf1 = rdr.ReadInt32();
-            Fp = rdr.ReadInt32();
+            Fp = rdr.ReadUInt32();
             Background = rdr.ReadInt32();
             AllowTeleport = rdr.ReadBoolean();
             ShowDisplays = rdr.ReadBoolean();

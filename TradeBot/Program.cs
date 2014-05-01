@@ -16,7 +16,6 @@ namespace TradeBot
         public static RotMGClient client;
         public static Main main;
 
-        [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
@@ -30,7 +29,7 @@ namespace TradeBot
             switch (pkt.ID)
             {
                 default:
-                    Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
+                    //Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
                     break;
             }
         }

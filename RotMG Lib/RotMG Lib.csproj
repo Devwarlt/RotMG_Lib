@@ -71,15 +71,22 @@
     <Compile Include="Network\ClientPackets\GotoAckPacket.cs" />
     <Compile Include="Network\ClientPackets\GroundDamage.cs" />
     <Compile Include="Network\ClientPackets\GuildInvitePacket.cs" />
+    <Compile Include="Network\ClientPackets\GuildRemovePacket.cs" />
     <Compile Include="Network\ClientPackets\HelloPacket.cs" />
+    <Compile Include="Network\ClientPackets\InvDropPacket.cs" />
+    <Compile Include="Network\ClientPackets\InvSwapPacket.cs" />
+    <Compile Include="Network\ClientPackets\JoinGuildPacket.cs" />
     <Compile Include="Network\ClientPackets\LoadPacket.cs" />
     <Compile Include="Network\ClientPackets\MovePacket.cs" />
+    <Compile Include="Network\ClientPackets\OtherHitPacket.cs" />
+    <Compile Include="Network\ClientPackets\PlayerHitPacket.cs" />
     <Compile Include="Network\ClientPackets\PlayerTextPacket.cs" />
     <Compile Include="Network\ClientPackets\PongPacket.cs" />
     <Compile Include="Network\ClientPackets\RequestTradePacket.cs" />
     <Compile Include="Network\Data\BitmapData.cs" />
     <Compile Include="Network\Data\DReader.cs" />
     <Compile Include="Network\Data\DWriter.cs" />
+    <Compile Include="Network\Data\SlotObject.cs" />
     <Compile Include="Network\Data\StatData.cs" />
     <Compile Include="Network\Data\Stats.cs" />
     <Compile Include="Network\Data\Status.cs" />
@@ -139,6 +146,18 @@
     <Content Include="key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Network\ClientPackets\PlayerShootPacket.java" />
+    <Content Include="Network\ClientPackets\PlayerTextPacket.java" />
+    <Content Include="Network\ClientPackets\PongPacket.java" />
+    <Content Include="Network\ClientPackets\RequestTradePacket.java" />
+    <Content Include="Network\ClientPackets\ReskinPacket.java" />
+    <Content Include="Network\ClientPackets\SetConditionPacket.java" />
+    <Content Include="Network\ClientPackets\ShootAckPacket.java" />
+    <Content Include="Network\ClientPackets\SquareHitPacket.java" />
+    <Content Include="Network\ClientPackets\TeleportPacket.java" />
+    <Content Include="Network\ClientPackets\UpdateAckPacket.java" />
+    <Content Include="Network\ClientPackets\UseItemPacket.java" />
+    <Content Include="Network\ClientPackets\UsePortalPacket.java" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
