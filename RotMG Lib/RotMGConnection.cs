@@ -41,7 +41,6 @@ namespace RotMG_Lib
             this.send.UserToken = new SendToken();
             this.send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
             this.sendState = SendState.Awaiting;
-            Connect();
         }
 
         internal RC4 SendKey { get { return sendCrypto; } }

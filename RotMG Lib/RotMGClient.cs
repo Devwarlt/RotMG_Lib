@@ -24,6 +24,7 @@ namespace RotMG_Lib
         public string BuildVersion { get; private set; }
         public int CharId { get; private set; }
         public bool IsFromArena { get; private set; }
+        public bool IsLoggedIn { get; set; }
 
         private int currentTick;
         private int prevTickTime;
@@ -37,17 +38,19 @@ namespace RotMG_Lib
         public RotMGClient(Server host, string email, string password)
             : base(host)
         {
-            handlePacket = true;
-            rand = new Random();
             this.email = email;
             this.password = password;
+            rand = new Random();
+            CharId = parseCharIdFromEmail();
+            handlePacket = true;
             OnPacketReceived += RotMGClient_OnPacketReceived;
         }
 
         public void Init(string buildVersion, int? charId, bool isFromArena)
         {
+            Connect();
             BuildVersion = buildVersion;
-            CharId = charId.HasValue ? charId.Value : parseCharIdFromEmail();
+            CharId = charId.HasValue ? charId.Value : CharId == 0 ? 1 : CharId;
             IsFromArena = isFromArena;
             SendPacket(new HelloPacket
             {
@@ -74,10 +77,15 @@ namespace RotMG_Lib
             WebResponse response = request.GetResponse();
             StreamReader rdr = new StreamReader(response.GetResponseStream());
             string tokens = rdr.ReadToEnd();
-            if (tokens == "<Error>Account credentials not valid</Error>" || !tokens.Contains("\"><ObjectType>")) return 1;
+            if (tokens == "<Error>Account credentials not valid</Error>" || !tokens.Contains("\"><ObjectType>"))
+            {
+                Console.WriteLine("Account credentials not valid");
+                return 0;
+            }
             string tmp = tokens.Remove(0, tokens.LastIndexOf("<Char id=\"") + 10);
             int charId = Convert.ToInt32(tmp.Remove(tmp.IndexOf("\"><ObjectType>")));
-            return Convert.ToInt32(charId);
+            IsLoggedIn = true;
+            return charId;
         }
 
         private void RotMGClient_OnPacketReceived(Packet pkt)

@@ -7,23 +7,25 @@ using RotMG_Lib;
 using RotMG_Lib.Network;
 using System.Threading;
 using RotMG_Lib.Network.ServerPackets;
+using System.Windows.Forms;
 
 namespace TradeBot
 {
     class Program
     {
+        public static RotMGClient client;
+        public static Main main;
+
+        [STAThread]
         static void Main(string[] args)
         {
-            string email = "";
-            string password = "";
-
-            RotMGClient client = new RotMGClient(Servers.EUSouth, email, password);
-            client.OnPacketReceive += new OnPacketReceiveHandler(client_OnPacketReceive);
-            client.Init("21.0.1", null, false);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(true);
+            Application.Run(main = new Main());
             Thread.CurrentThread.Join();
         }
 
-        private static void client_OnPacketReceive(RotMGClient client, ServerPacket pkt)
+        public static void client_OnPacketReceive(RotMGClient client, ServerPacket pkt)
         {
             switch (pkt.ID)
             {
@@ -31,6 +33,12 @@ namespace TradeBot
                     Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
                     break;
             }
+        }
+
+        private static void startForm()
+        {
+            main = new Main();
+            main.Show();
         }
     }
 }
