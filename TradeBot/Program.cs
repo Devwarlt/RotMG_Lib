@@ -19,7 +19,7 @@ namespace TradeBot
 
             RotMGClient client = new RotMGClient(Servers.EUSouth, email, password);
             client.OnPacketReceive += new OnPacketReceiveHandler(client_OnPacketReceive);
-            client.Init("21.0.1", 414, false);
+            client.Init("21.0.1", null, false);
             Thread.CurrentThread.Join();
         }
 

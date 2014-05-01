@@ -3,12 +3,15 @@ using RotMG_Lib.Network.ClientPackets;
 using RotMG_Lib.Network.ServerPackets;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace RotMG_Lib
 {
@@ -41,10 +44,10 @@ namespace RotMG_Lib
             OnPacketReceived += RotMGClient_OnPacketReceived;
         }
 
-        public void Init(string buildVersion, int charId, bool isFromArena)
+        public void Init(string buildVersion, int? charId, bool isFromArena)
         {
             BuildVersion = buildVersion;
-            CharId = charId;
+            CharId = charId.HasValue ? charId.Value : parseCharIdFromEmail();
             IsFromArena = isFromArena;
             SendPacket(new HelloPacket
             {
@@ -57,12 +60,24 @@ namespace RotMG_Lib
                 Key = new byte[0],
                 KeyTime = 0,
                 obf0 = new byte[0],
-                obf1 = "",
+                obf1 = "Kabam, SUCK MY BOT <3",
                 obf2 = "rotmg",
-                obf3 = "",
+                obf3 = "Kabam, SUCK MY BOT EVEN MORE <3",
                 obf4 = "rotmg",
-                obf5 = "",
+                obf5 = "NO, JK, WE LOVE U, UHM SRY I MEAN WE HATE U :*",
             });
+        }
+
+        private int parseCharIdFromEmail()
+        {
+            WebRequest request = WebRequest.Create(String.Format("http://realmofthemadgod.appspot.com/char/list?guid={0}&password={1}", email, password));
+            WebResponse response = request.GetResponse();
+            StreamReader rdr = new StreamReader(response.GetResponseStream());
+            string tokens = rdr.ReadToEnd();
+            if (tokens == "<Error>Account credentials not valid</Error>" || !tokens.Contains("\"><ObjectType>")) return 1;
+            string tmp = tokens.Remove(0, tokens.LastIndexOf("<Char id=\"") + 10);
+            int charId = Convert.ToInt32(tmp.Remove(tmp.IndexOf("\"><ObjectType>")));
+            return Convert.ToInt32(charId);
         }
 
         private void RotMGClient_OnPacketReceived(Packet pkt)
