@@ -1,0 +1,37 @@
+﻿using RotMG_Lib.Network.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RotMG_Lib.Network.ServerPackets
+{
+    public class TradeDonePacket : ServerPacket
+    {
+        public int Result { get; set; }
+        public string Message { get; set; }
+
+        public override PacketID ID
+        {
+            get { return PacketID.TradeDone; }
+        }
+
+        public override Packet CreateInstance()
+        {
+            return new TradeDonePacket();
+        }
+
+        protected override void Read(DReader rdr)
+        {
+            Result = rdr.ReadInt32();
+            Message = rdr.ReadUTF();
+        }
+
+        protected override void Write(DWriter wtr)
+        {
+            wtr.Write(Result);
+            wtr.WriteUTF(Message);
+        }
+    }
+}

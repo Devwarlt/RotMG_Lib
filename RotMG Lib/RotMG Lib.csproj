@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA953B48-C940-4291-BBC8-32F4E863B8C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RotMG_Lib</RootNamespace>
+    <AssemblyName>RotMG Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>C:\Users\Fabian\Desktop\Stuff\Craft.Net-master\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Descriptor.cs" />
+    <Compile Include="Network\ClientPacket.cs" />
+    <Compile Include="Network\ClientPackets\AcceptTradePacket.cs" />
+    <Compile Include="Network\ClientPackets\AOEAckPacket.cs" />
+    <Compile Include="Network\ClientPackets\BuyPacket.cs" />
+    <Compile Include="Network\ClientPackets\CancelTradePacket.cs" />
+    <Compile Include="Network\ClientPackets\ChangeGuildRankPacket.cs" />
+    <Compile Include="Network\ClientPackets\ChangeTradePacket.cs" />
+    <Compile Include="Network\ClientPackets\CheckCreditsPacket.cs" />
+    <Compile Include="Network\ClientPackets\ChooseNamePacket.cs" />
+    <Compile Include="Network\ClientPackets\CreateGuildPacket.cs" />
+    <Compile Include="Network\ClientPackets\CreatePacket.cs" />
+    <Compile Include="Network\ClientPackets\EditAccountListPacket.cs" />
+    <Compile Include="Network\ClientPackets\EnemyHitPacket.cs" />
+    <Compile Include="Network\ClientPackets\EscapePacket.cs" />
+    <Compile Include="Network\ClientPackets\FailurePacket.cs" />
+    <Compile Include="Network\ClientPackets\GotoAckPacket.cs" />
+    <Compile Include="Network\ClientPackets\GroundDamage.cs" />
+    <Compile Include="Network\ClientPackets\GuildInvitePacket.cs" />
+    <Compile Include="Network\ClientPackets\HelloPacket.cs" />
+    <Compile Include="Network\ClientPackets\LoadPacket.cs" />
+    <Compile Include="Network\ClientPackets\MovePacket.cs" />
+    <Compile Include="Network\ClientPackets\PlayerTextPacket.cs" />
+    <Compile Include="Network\ClientPackets\PongPacket.cs" />
+    <Compile Include="Network\ClientPackets\RequestTradePacket.cs" />
+    <Compile Include="Network\Data\BitmapData.cs" />
+    <Compile Include="Network\Data\DReader.cs" />
+    <Compile Include="Network\Data\DWriter.cs" />
+    <Compile Include="Network\Data\StatData.cs" />
+    <Compile Include="Network\Data\Stats.cs" />
+    <Compile Include="Network\Data\Status.cs" />
+    <Compile Include="Network\Data\Structures.cs" />
+    <Compile Include="Network\NetworkHandler.cs" />
+    <Compile Include="Network\PacketIDs.cs" />
+    <Compile Include="Network\Packet.cs" />
+    <Compile Include="Network\ServerPacket.cs" />
+    <Compile Include="Network\ServerPackets\AccountListPacket.cs" />
+    <Compile Include="Network\ServerPackets\AllyShootPacket.cs" />
+    <Compile Include="Network\ServerPackets\AOEPacket.cs" />
+    <Compile Include="Network\ServerPackets\BuyResultPacket.cs" />
+    <Compile Include="Network\ServerPackets\ClientStatPacket.cs" />
+    <Compile Include="Network\ServerPackets\CreateGuildResultPacket.cs" />
+    <Compile Include="Network\ServerPackets\Create_SuccessPacket.cs" />
+    <Compile Include="Network\ServerPackets\DamagePacket.cs" />
+    <Compile Include="Network\ServerPackets\DeathPacket.cs" />
+    <Compile Include="Network\ServerPackets\FailurePacket.cs" />
+    <Compile Include="Network\ServerPackets\FilePacket.cs" />
+    <Compile Include="Network\ServerPackets\Global_NotificationPacket.cs" />
+    <Compile Include="Network\ServerPackets\GotoPacket.cs" />
+    <Compile Include="Network\ServerPackets\InvitedToGuildPacket.cs" />
+    <Compile Include="Network\ServerPackets\InvResultPacket.cs" />
+    <Compile Include="Network\ServerPackets\MapInfoPacket.cs" />
+    <Compile Include="Network\ServerPackets\MultiShootPacket.cs" />
+    <Compile Include="Network\ServerPackets\NameResultPacket.cs" />
+    <Compile Include="Network\ServerPackets\New_TickPacket.cs" />
+    <Compile Include="Network\ServerPackets\NotificationPacket.cs" />
+    <Compile Include="Network\ServerPackets\PicPacket.cs" />
+    <Compile Include="Network\ServerPackets\PingPacket.cs" />
+    <Compile Include="Network\ServerPackets\PlaySoundPacket.cs" />
+    <Compile Include="Network\ServerPackets\QuestObjIdPacket.cs" />
+    <Compile Include="Network\ServerPackets\ReconnectPacket.cs" />
+    <Compile Include="Network\ServerPackets\Shoot2Packet.cs" />
+    <Compile Include="Network\ServerPackets\ShootPacket.cs" />
+    <Compile Include="Network\ServerPackets\Show_EffectPacket.cs" />
+    <Compile Include="Network\ServerPackets\TextPacket.cs" />
+    <Compile Include="Network\ServerPackets\TradeAcceptedPacket.cs" />
+    <Compile Include="Network\ServerPackets\TradeChangedPacket.cs" />
+    <Compile Include="Network\ServerPackets\TradeDonePacket.cs" />
+    <Compile Include="Network\ServerPackets\TradeRequestedPacket.cs" />
+    <Compile Include="Network\ServerPackets\TradeStartPacket.cs" />
+    <Compile Include="Network\ServerPackets\UpdatePacket.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RC4.cs" />
+    <Compile Include="RotMGClient.cs" />
+    <Compile Include="RotMGConnection.cs" />
+    <Compile Include="RSA.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Servers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="key.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
