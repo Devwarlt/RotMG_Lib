@@ -17,8 +17,9 @@ namespace RotMG_Lib
     {
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         internal static extern int GetTickCount();
+        DateTime t = DateTime.UtcNow;
 
-        public static int start;
+        public static readonly int start = GetTickCount();
         public event OnPacketReceiveHandler OnPacketReceive;
         public string BuildVersion { get; private set; }
         public int CharId { get; private set; }
@@ -106,9 +107,9 @@ namespace RotMG_Lib
                         SendPacket(new PongPacket
                         {
                             Serial = (pkt as PingPacket).Serial,
-                            Time = RotMGClient.CurrentTime()
+                            Time = (int)(DateTime.UtcNow - t).TotalMilliseconds
                         });
-                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", RotMGClient.CurrentTime(), (pkt as PingPacket).Serial);
+                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", (DateTime.UtcNow - t).TotalMilliseconds, (pkt as PingPacket).Serial);
                         //Console.WriteLine("Pong");
                         break;
                     case PacketID.New_Tick:

@@ -80,9 +80,18 @@
     <Compile Include="Network\ClientPackets\MovePacket.cs" />
     <Compile Include="Network\ClientPackets\OtherHitPacket.cs" />
     <Compile Include="Network\ClientPackets\PlayerHitPacket.cs" />
+    <Compile Include="Network\ClientPackets\PlayerShootPacket.cs" />
     <Compile Include="Network\ClientPackets\PlayerTextPacket.cs" />
     <Compile Include="Network\ClientPackets\PongPacket.cs" />
     <Compile Include="Network\ClientPackets\RequestTradePacket.cs" />
+    <Compile Include="Network\ClientPackets\ReskinPacket.cs" />
+    <Compile Include="Network\ClientPackets\SetConditionEffect.cs" />
+    <Compile Include="Network\ClientPackets\ShootAckPacket.cs" />
+    <Compile Include="Network\ClientPackets\SquareHitPacket.cs" />
+    <Compile Include="Network\ClientPackets\TeleportPacket.cs" />
+    <Compile Include="Network\ClientPackets\UpdateAckPacket.cs" />
+    <Compile Include="Network\ClientPackets\UseItemPacket.cs" />
+    <Compile Include="Network\ClientPackets\UsePortalPacket.cs" />
     <Compile Include="Network\Data\BitmapData.cs" />
     <Compile Include="Network\Data\DReader.cs" />
     <Compile Include="Network\Data\DWriter.cs" />
@@ -147,9 +156,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Network\ClientPackets\PlayerShootPacket.java" />
-    <Content Include="Network\ClientPackets\PlayerTextPacket.java" />
-    <Content Include="Network\ClientPackets\PongPacket.java" />
-    <Content Include="Network\ClientPackets\RequestTradePacket.java" />
     <Content Include="Network\ClientPackets\ReskinPacket.java" />
     <Content Include="Network\ClientPackets\SetConditionPacket.java" />
     <Content Include="Network\ClientPackets\ShootAckPacket.java" />

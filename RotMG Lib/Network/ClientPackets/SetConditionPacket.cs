@@ -7,28 +7,31 @@ using System.Threading.Tasks;
 
 namespace RotMG_Lib.Network.ClientPackets
 {
-    public class ReskinPacket : ClientPacket
+    public class SetConditionPacket : ClientPacket
     {
-        public int SkinId { get; set; }
+        public int ConditionEffect { get; set; }
+        public float ConditionDuration { get; set; }
 
         public override PacketID ID
         {
-            get { return PacketID.Reskin; }
+            get { return PacketID.SetCondition; }
         }
 
         public override Packet CreateInstance()
         {
-            return new ReskinPacket();
+            return new SetConditionPacket();
         }
 
         protected override void Read(DReader rdr)
         {
-            SkinId = rdr.ReadInt32();
+            ConditionEffect = rdr.ReadInt32();
+            ConditionDuration = rdr.ReadSingle();
         }
 
         protected override void Write(DWriter wtr)
         {
-            wtr.Write(SkinId);
+            wtr.Write(ConditionEffect);
+            wtr.Write(ConditionDuration);
         }
     }
 }
