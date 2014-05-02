@@ -3,6 +3,7 @@ using RotMG_Lib.Network.ClientPackets;
 using RotMG_Lib.Network.ServerPackets;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,6 +19,7 @@ namespace RotMG_Lib
         [DllImport("kernel32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         internal static extern int GetTickCount();
         DateTime t = DateTime.UtcNow;
+        public static Stopwatch stopWatch = new Stopwatch();
 
         public static readonly int start = GetTickCount();
         public event OnPacketReceiveHandler OnPacketReceive;
@@ -44,6 +46,7 @@ namespace RotMG_Lib
             CharId = parseCharIdFromEmail();
             handlePacket = true;
             OnPacketReceived += RotMGClient_OnPacketReceived;
+            //stopWatch.Start();
         }
 
         public void Init(string buildVersion, int? charId, bool isFromArena)
@@ -102,16 +105,16 @@ namespace RotMG_Lib
                         });
                         OnPacketReceive(this, pkt as ServerPacket);
                         break;
-                    case PacketID.Ping:
-                        Console.WriteLine("Ping");
-                        SendPacket(new PongPacket
-                        {
-                            Serial = (pkt as PingPacket).Serial,
-                            Time = (int)(DateTime.UtcNow - t).TotalMilliseconds
-                        });
-                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", (DateTime.UtcNow - t).TotalMilliseconds, (pkt as PingPacket).Serial);
-                        //Console.WriteLine("Pong");
-                        break;
+                    //case PacketID.Ping:
+                    //    Console.WriteLine("Ping");
+                    //    SendPacket(new PongPacket
+                    //    {
+                    //        Serial = (pkt as PingPacket).Serial,
+                    //        Time = (int)stopWatch.ElapsedMilliseconds
+                    //    });
+                    //    Console.WriteLine("Ping: {0}\n\rSerial: {1}", stopWatch.ElapsedMilliseconds/*(DateTime.UtcNow - t).TotalMilliseconds*/, (pkt as PingPacket).Serial);
+                    //    //Console.WriteLine("Pong");
+                    //    break;
                     case PacketID.New_Tick:
                         New_TickPacket ntp = pkt as New_TickPacket;
                         currentTick = ntp.TickId;
@@ -121,10 +124,16 @@ namespace RotMG_Lib
                         RotMG_Lib.Network.ServerPackets.FailurePacket failurePkt = pkt as RotMG_Lib.Network.ServerPackets.FailurePacket;
                         Console.WriteLine(failurePkt.ErrorId + " - " + failurePkt.ErrorDescription);
                         break;
+                    case PacketID.Update:
+                        //UpdatePacket upd = pkt as UpdatePacket;
+                        //SendPacket(new UpdateAckPacket());
+                        break;
                     default:
                         if (OnPacketReceive != null)
                             if (!(pkt is ClientPacket)) //If you let this client connect via RR and u send urself a ClientPacket :3
                                 OnPacketReceive(this, pkt as ServerPacket);
+                            else
+                                Console.WriteLine("Received a client packet, pls dont do dat :3");
                         break;
                 }
             }

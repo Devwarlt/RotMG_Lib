@@ -19,6 +19,7 @@ namespace TradeBot
         static void Main(string[] args)
         {
             //Application.EnableVisualStyles();
+            RotMGClient.stopWatch.Start();
             Application.SetCompatibleTextRenderingDefault(true);
             new Thread(() => Application.Run(main = new Main())).Start();
             Thread.CurrentThread.Join();

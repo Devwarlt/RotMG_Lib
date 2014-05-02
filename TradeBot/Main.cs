@@ -22,15 +22,27 @@ namespace TradeBot
                 using (StreamReader rdr = File.OpenText("lastlogin"))
                 {
                     string[] tokens = rdr.ReadLine().Split(':');
-                    email.Text = tokens[0];
-                    password.Text = tokens[1];
-                    rememberAcc.Checked = true;
+                    try
+                    {
+                        email.Text = ASCIIEncoding.ASCII.GetString(Convert.FromBase64String(tokens[0]));
+                        password.Text = ASCIIEncoding.ASCII.GetString(Convert.FromBase64String(tokens[1]));
+                        rememberAcc.Checked = true;
+                        rdr.Close();
+                    }
+                    catch
+                    {
+                        rdr.Close();
+                        MessageBox.Show("Warning: Your Password file is not encoded, please login to generate it again.");
+                        if(File.Exists("lastlogin"))
+                            File.Delete("lastlogin");
+                    }
                 }
             }
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
+            Console.Clear();
             Program.client = new RotMGClient(Servers.EUSouth, email.Text, password.Text);
             if (!Program.client.IsLoggedIn)
             {
@@ -41,7 +53,8 @@ namespace TradeBot
             {
                 using (StreamWriter wtr = new StreamWriter("lastlogin"))
                 {
-                    wtr.Write(email.Text + ":" + password.Text);
+                    wtr.Write(Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(email.Text)) + ":" + Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(password.Text)));
+                    wtr.Close();
                 }
             }
             Program.client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);

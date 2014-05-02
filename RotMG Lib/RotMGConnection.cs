@@ -27,6 +27,8 @@ namespace RotMG_Lib
         private RC4 recvCrypto;
         private static ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
         private object sendLock = new object();
+        private int updatePacketsReceived;
+        private int updateAckPacketsSend;
 
         internal event PacketReceivedHandler OnPacketReceived;
 
@@ -40,8 +42,10 @@ namespace RotMG_Lib
             this.send = new SocketAsyncEventArgs();
             this.send.UserToken = new SendToken();
             this.send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
-            this.sendState = SendState.Awaiting;
-
+            this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
+            this.sendState = SendState.Ready;
+            this.updatePacketsReceived = 0;
+            this.updateAckPacketsSend = 0;
         }
 
         internal RC4 SendKey { get { return sendCrypto; } }
@@ -119,13 +123,30 @@ namespace RotMG_Lib
 
                             Packet pkt = Packet.ServerPackets[(PacketID)header];
                             pkt.Read(this, crypt_buffer, length);
+                            if (pkt.ID == PacketID.Ping)
+                            {
+                                SendPacket(new PongPacket
+                                {
+                                    Serial = (pkt as PingPacket).Serial,
+                                    Time = (int)RotMGClient.stopWatch.ElapsedMilliseconds
+                                });
+                                Console.WriteLine("Ping: {0}\n\rSerial: {1}", RotMGClient.stopWatch.ElapsedMilliseconds/*(DateTime.UtcNow - t).TotalMilliseconds*/, (pkt as PingPacket).Serial);
+                            }
+                            if (pkt.ID == PacketID.Update)
+                                updatePacketsReceived++;//SendPacket(new UpdateAckPacket());
                             if (OnPacketReceived != null)
                                 OnPacketReceived(pkt);
+
+                            while(updatePacketsReceived != updateAckPacketsSend)
+                            {
+                                SendPacket(new UpdateAckPacket());
+                                updateAckPacketsSend++;
+                            }
 
                             length = 5;
                             header = 0xFF;
                             offset = 0;
-                            GC.Collect();
+                            //GC.Collect();
                         }
                     }
                 }
@@ -142,9 +163,6 @@ namespace RotMG_Lib
         {
             try
             {
-                if (sendState == SendState.Awaiting)
-                    sendState = SendState.Ready;
-
                 if (sendState == SendState.Ready)
                 {
                     sendState = SendState.Sending;
@@ -152,74 +170,39 @@ namespace RotMG_Lib
                     {
                         Packet packet;
                         pendingPackets.TryDequeue(out packet);
-                        Console.WriteLine("Sending {0}", packet.GetType().Name);
+                        //Console.WriteLine("Sending {0}", packet.GetType().Name);
                         byte[] data = packet.Write(this);
 
                         send.SetBuffer(data, 0, data.Length);
                         if (connection.Client.SendAsync(send))
                         {
-                            sendState = SendState.Ready;
-                            Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            //Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Sending {0}", pkt.GetType().Name);
+                        //Console.WriteLine("Sending {0}", pkt.GetType().Name);
                         byte[] data = pkt.Write(this);
 
                         send.SetBuffer(data, 0, data.Length);
                         if (connection.Client.SendAsync(send))
                         {
-                            sendState = SendState.Ready;
-                            Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            //Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
                         }
                     }
                 }
                 else
                     pendingPackets.Enqueue(pkt);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                try
-                {
-                    send = new SocketAsyncEventArgs();
-                    send.UserToken = new SendToken();
-                    send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
-                    sendState = SendState.Awaiting;
-
-                    byte[] data = pkt.Write(this);
-
-                    send.SetBuffer(data, 0, data.Length);
-                    if (connection.Client.SendAsync(send))
-                    {
-                        sendState = SendState.Ready;
-                        Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
-                    }
-                }
-                catch (Exception)
-                {
-                    try
-                    {
-                        send = new SocketAsyncEventArgs();
-                        send.UserToken = new SendToken();
-                        send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
-                        sendState = SendState.Awaiting;
-
-                        byte[] data = pkt.Write(this);
-
-                        send.SetBuffer(data, 0, data.Length);
-                        if (connection.Client.SendAsync(send))
-                        {
-                            sendState = SendState.Ready;
-                            Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Could not send packet");
-                    }
-                }
+                Console.WriteLine("Could not send Packet:\n" + e);
             }
+        }
+
+        private void IOCompleted(object sender, SocketAsyncEventArgs e)
+        {
+            sendState = SendState.Ready;
         }
 
         private bool CanSendPacket(SocketAsyncEventArgs e, bool ignoreSending)
