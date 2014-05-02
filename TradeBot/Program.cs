@@ -18,9 +18,9 @@ namespace TradeBot
 
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            Application.Run(main = new Main());
+            new Thread(() => Application.Run(main = new Main())).Start();
             Thread.CurrentThread.Join();
         }
 
@@ -32,12 +32,6 @@ namespace TradeBot
                     //Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
                     break;
             }
-        }
-
-        private static void startForm()
-        {
-            main = new Main();
-            main.Show();
         }
     }
 }

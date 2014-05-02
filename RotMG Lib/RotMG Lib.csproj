@@ -85,7 +85,7 @@
     <Compile Include="Network\ClientPackets\PongPacket.cs" />
     <Compile Include="Network\ClientPackets\RequestTradePacket.cs" />
     <Compile Include="Network\ClientPackets\ReskinPacket.cs" />
-    <Compile Include="Network\ClientPackets\SetConditionEffect.cs" />
+    <Compile Include="Network\ClientPackets\SetConditionPacket.cs" />
     <Compile Include="Network\ClientPackets\ShootAckPacket.cs" />
     <Compile Include="Network\ClientPackets\SquareHitPacket.cs" />
     <Compile Include="Network\ClientPackets\TeleportPacket.cs" />
@@ -155,15 +155,6 @@
     <Content Include="key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Network\ClientPackets\PlayerShootPacket.java" />
-    <Content Include="Network\ClientPackets\ReskinPacket.java" />
-    <Content Include="Network\ClientPackets\SetConditionPacket.java" />
-    <Content Include="Network\ClientPackets\ShootAckPacket.java" />
-    <Content Include="Network\ClientPackets\SquareHitPacket.java" />
-    <Content Include="Network\ClientPackets\TeleportPacket.java" />
-    <Content Include="Network\ClientPackets\UpdateAckPacket.java" />
-    <Content Include="Network\ClientPackets\UseItemPacket.java" />
-    <Content Include="Network\ClientPackets\UsePortalPacket.java" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
