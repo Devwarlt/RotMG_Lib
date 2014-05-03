@@ -28,7 +28,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         protected override void Read(DReader rdr)
         {
-            BulletId = rdr.ReadInt32();
+            BulletId = rdr.ReadByte();
             OwnerId = rdr.ReadInt32();
             ContainerType = rdr.ReadInt32();
             StartingPos = Position.Read(rdr);
