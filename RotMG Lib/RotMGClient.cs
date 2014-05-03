@@ -147,15 +147,15 @@ namespace RotMG_Lib
                             Time = (int)tick.ElapsedMilliseconds
                         });
                         break;
-                    case PacketID.GOTO:
-                        SendPacket(new GotoAckPacket { Time = (int)tick.ElapsedMilliseconds });
-                        break;
-                    case PacketID.SHOOT2:
-                        SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
-                        break;
-                    case PacketID.SHOOT:
-                        SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
-                        break;
+                    //case PacketID.GOTO:
+                    //    SendPacket(new GotoAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                    //    break;
+                    //case PacketID.SHOOT2:
+                    //    SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                    //    break;
+                    //case PacketID.SHOOT:
+                    //    SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                    //    break;
                     case PacketID.NEW_TICK:
                         handleNewTick(pkt as New_TickPacket);
                         break;
