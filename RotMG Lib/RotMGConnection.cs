@@ -177,58 +177,68 @@ namespace RotMG_Lib
                     {
                         Packet packet;
                         pendingPackets.TryDequeue(out packet);
-                        Console.WriteLine("Sending {0}", packet.GetType().Name);
-                        byte[] data = packet.Write(this);
 
-                        send.SetBuffer(data, 0, data.Length);
-                        if (connection.Client.SendAsync(send))
+                        try
                         {
-                            IOCompleted(connection.Client, send);
-                            if(packet.ID == PacketID.MOVE)
-                                Console.WriteLine("{0} sucessfully send.", packet.GetType().Name);
-                            if (packet.ID == PacketID.PONG)
-                                Console.WriteLine("{0} sucessfully send.", packet.GetType().Name);
+                            Console.WriteLine("Sending {0}", packet.GetType().Name);
+                            byte[] data = packet.Write(this);
+
+                            send.SetBuffer(data, 0, data.Length);
+                            if (connection.Client.SendAsync(send))
+                                IOCompleted(connection.Client, send);
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                var send = new SocketAsyncEventArgs();
+                                Console.WriteLine("Sending {0}", packet.GetType().Name);
+                                byte[] data = packet.Write(this);
+
+                                send.SetBuffer(data, 0, data.Length);
+                                if (connection.Client.SendAsync(send))
+                                    IOCompleted(connection.Client, send);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Could not send packet #2\n\n" + ex);
+                            }
                         }
                     }
                     else
                     {
-                        Console.WriteLine("Sending {0}", pkt.GetType().Name);
-                        byte[] data = pkt.Write(this);
-
-                        send.SetBuffer(data, 0, data.Length);
-                        if (connection.Client.SendAsync(send))
+                        try
                         {
-                            IOCompleted(connection.Client, send);
-                            if (pkt.ID == PacketID.MOVE)
-                                Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
-                            if(pkt.ID == PacketID.PONG)
-                                Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            Console.WriteLine("Sending {0}", pkt.GetType().Name);
+                            byte[] data = pkt.Write(this);
+
+                            send.SetBuffer(data, 0, data.Length);
+                            if (connection.Client.SendAsync(send))
+                                IOCompleted(connection.Client, send);
+                        }
+                        catch
+                        {
+                            try
+                            {
+                                var send = new SocketAsyncEventArgs();
+                                Console.WriteLine("Sending {0}", pkt.GetType().Name);
+                                byte[] data = pkt.Write(this);
+
+                                send.SetBuffer(data, 0, data.Length);
+                                if (connection.Client.SendAsync(send))
+                                    IOCompleted(connection.Client, send);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine("Could not send packet #2\n\n" + ex);
+                            }
                         }
                     }
                 }
             }
             catch (Exception)
             {
-                try
-                {
-                    var send = new SocketAsyncEventArgs();
-                    UpdateAckPacket upd = new UpdateAckPacket();
-                    Console.WriteLine("Sending {0}", upd.GetType().Name);
-                    byte[] data = upd.Write(this);
-
-                    send.SetBuffer(data, 0, data.Length);
-                    if (connection.Client.SendAsync(send))
-                    {
-                        if (upd.ID == PacketID.MOVE)
-                            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
-                        if (upd.ID == PacketID.PONG)
-                            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
-                    }
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine("Could not send packet #2\n\n" + ex);
-                }
+                
             }
         }
 
