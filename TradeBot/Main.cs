@@ -1,4 +1,5 @@
 ﻿using RotMG_Lib;
+using RotMG_Lib.Network.ClientPackets;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,13 +59,22 @@ namespace TradeBot
                 }
             }
             client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);
-            if (client.IsLoggedIn)
+            if (client.Player.IsLoggedIn)
                 client.Connect();
         }
 
         private void client_OnLoginError(string message)
         {
             MessageBox.Show(message);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
+
+            client.Player.Move(1, 1);
         }
     }
 }

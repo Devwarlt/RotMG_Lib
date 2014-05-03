@@ -8,7 +8,7 @@ namespace RotMG_Lib.Network.Data
 {
     public class StatData
     {
-        public int obf0;
+        public StatsType obf0;
         public int obf1;
         public String obf2;
         
@@ -16,11 +16,11 @@ namespace RotMG_Lib.Network.Data
         {
             switch (this.obf0)
             {
-                case 31: 
-                case 38: 
-                case 54: 
-                case 62: 
-                case 82: 
+                case StatsType.NAME: 
+                case StatsType.ACCOUNT_ID: 
+                case StatsType.OWNER_ACCOUNT_ID: 
+                case StatsType.GUILD: 
+                case StatsType.UNKNOWN_TEXT_2: 
                 return true;
             }
             return false;
@@ -28,7 +28,7 @@ namespace RotMG_Lib.Network.Data
         
         public void Read(DReader rdr)
         {
-            this.obf0 = rdr.ReadByte();
+            this.obf0 = (StatsType)rdr.ReadByte();
             if (IsUTFData())
                 this.obf2 = rdr.ReadUTF();
             else

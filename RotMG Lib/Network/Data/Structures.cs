@@ -138,6 +138,14 @@ namespace RotMG_Lib.Network.Data
             return ret;
         }
 
+        public static Position operator -(Position pos, float num)
+        {
+            Position ret = new Position();
+            ret.X = pos.X - num;
+            ret.Y = pos.Y - num;
+            return ret;
+        }
+
         public override string ToString()
         {
             return string.Format("{{X: {0}, Y: {1}}}", X, Y);
@@ -179,7 +187,7 @@ namespace RotMG_Lib.Network.Data
             for (var i = 0; i < ret.Stats.Length; i++)
             {
                 var type = (StatsType)rdr.ReadByte();
-                if (type == StatsType.Guild || type == StatsType.Name)
+                if (type == StatsType.GUILD || type == StatsType.NAME)
                     ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadUTF());
                 else
                     ret.Stats[i] = new KeyValuePair<StatsType, object>(type, rdr.ReadInt16());

@@ -21,8 +21,8 @@ namespace RotMG_Lib
     public class RotMGConnection
     {
         private const int BUFFER_SIZE = 0x10000;
-        private SocketAsyncEventArgs send;
-        private SendState sendState;
+        //private SocketAsyncEventArgs send;
+        //private SendState sendState;
 
         protected TcpClient connection;
         private Server host;
@@ -31,8 +31,8 @@ namespace RotMG_Lib
         private RC4 recvCrypto;
         private static ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
         private object sendLock = new object();
-        private int readOffset = 0;
-        private int readLeft = 0;
+        //private int readOffset = 0;
+        //private int readLeft = 0;
         //private int updatePacketsReceived;
         //private int updateOldPacketsReceived;
 
@@ -45,10 +45,10 @@ namespace RotMG_Lib
             this.host = host;
             this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
             this.sendCrypto = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
-            this.send = new SocketAsyncEventArgs();
-            this.send.UserToken = new SendToken();
-            this.send.SetBuffer(new byte[20000000], 0, 20000000);
-            this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
+            //this.send = new SocketAsyncEventArgs();
+            //this.send.UserToken = new SendToken();
+            //this.send.SetBuffer(new byte[20000000], 0, 20000000);
+            //this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
             //this.updatePacketsReceived = 0;
             //this.updateOldPacketsReceived = 0;
         }
@@ -63,10 +63,10 @@ namespace RotMG_Lib
                 this.connection = new TcpClient();
                 this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
                 this.sendCrypto = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
-                this.send = new SocketAsyncEventArgs();
-                this.send.UserToken = new SendToken();
-                this.send.SetBuffer(new byte[20000000], 0, 20000000);
-                this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
+                //this.send = new SocketAsyncEventArgs();
+                //this.send.UserToken = new SendToken();
+                //this.send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
+                //this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
 
                 Console.WriteLine(new string('-', Console.WindowWidth) +
                     "{3}Connecting to {0}: \n\r{4}IPAddress: {1}\n\r{5}Port: {2}\n\r" +
@@ -77,7 +77,7 @@ namespace RotMG_Lib
                 RotMGClient.tick.Restart();
                 this.connection.Connect(host.IPAddress, host.Port);
                 Console.WriteLine("Connected to {0}", host.ServerName);
-                this.sendState = SendState.Ready;
+                //this.sendState = SendState.Ready;
 
                 this.receiveThread = new Thread(new ThreadStart(ReceiveLoop));
                 this.receiveThread.Start();
@@ -90,7 +90,7 @@ namespace RotMG_Lib
 
         public virtual void ReceiveLoop()
         {
-            byte[] buffer = new byte[250000000]; // maybe change this to 2MB, cuz 2MB should be more than sufficient
+            byte[] buffer = new byte[BUFFER_SIZE * 8]; // maybe change this to 2MB, cuz 2MB should be more than sufficient
             int length = 5;
             int offset = 0;
             byte header = 0xFF;
@@ -247,10 +247,10 @@ namespace RotMG_Lib
             }
         }
 
-        private void IOCompleted(object sender, SocketAsyncEventArgs e)
-        {
-            sendState = SendState.Ready;
-        }
+        //private void IOCompleted(object sender, SocketAsyncEventArgs e)
+        //{
+        //    sendState = SendState.Ready;
+        //}
 
         private enum SendState
         {

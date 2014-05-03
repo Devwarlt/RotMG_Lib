@@ -25,9 +25,9 @@ namespace RotMG_Lib
         public event OnPacketReceiveHandler OnPacketReceive;
         public event OnLoginErrorHandler OnLoginError;
         public string BuildVersion { get; private set; }
-        public int CharId { get; private set; }
         public bool IsFromArena { get; private set; }
-        public bool IsLoggedIn { get; set; }
+
+        public Player Player { get; private set; }
 
         private bool ok;
 
@@ -37,8 +37,11 @@ namespace RotMG_Lib
         private ObjectDef playerObject = new ObjectDef();
         private Position playerPosition = new Position();
 
-        private int currentTick;
-        private int prevTickTime;
+        public int currentTickId;
+        public int currentTickTime;
+
+        public int prevTickId;
+        public int prevTickTime;
 
         private string email;
         private string password;
@@ -49,8 +52,10 @@ namespace RotMG_Lib
         public RotMGClient(Server host, string email, string password)
             : base(host)
         {
+            this.host = host;
             this.email = email;
             this.password = password;
+            Player = new Player(this);
             rand = new Random();
             handlePacket = true;
             OnPacketReceived += RotMGClient_OnPacketReceived;
@@ -61,7 +66,7 @@ namespace RotMG_Lib
         {
             if (handlePacket)
             {
-                IsLoggedIn = false;
+                Player.IsLoggedIn = false;
                 Connect();//Init(BuildVersion, CharId, false);
             }
         }
@@ -95,7 +100,7 @@ namespace RotMG_Lib
         {
             ok = true;
             BuildVersion = buildVersion;
-            CharId = charId.HasValue ? charId.Value : CharId == 0 ? parseCharIdFromEmail() : CharId;
+            Player.CharId = charId.HasValue ? charId.Value : Player.CharId == 0 ? parseCharIdFromEmail() : Player.CharId;
             IsFromArena = isFromArena;
         }
 
@@ -114,7 +119,7 @@ namespace RotMG_Lib
             }
             string tmp = tokens.Remove(0, tokens.LastIndexOf("<Char id=\"") + 10);
             int charId = Convert.ToInt32(tmp.Remove(tmp.IndexOf("\"><ObjectType>")));
-            IsLoggedIn = true;
+            Player.IsLoggedIn = true;
             return charId;
         }
 
@@ -132,9 +137,8 @@ namespace RotMG_Lib
                         SendPacket(new LoadPacket
                         {
                             IsFromArena = false,
-                            CharacterId = CharId
+                            CharacterId = Player.CharId
                         });
-                        OnPacketReceive(this, pkt as ServerPacket);
                         break;
                     case PacketID.PING:
                         SendPacket(new PongPacket
@@ -144,13 +148,13 @@ namespace RotMG_Lib
                         });
                         break;
                     case PacketID.GOTO:
-                        //SendPacket(new GotoAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                        SendPacket(new GotoAckPacket { Time = (int)tick.ElapsedMilliseconds });
                         break;
                     case PacketID.SHOOT2:
-                        //SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                        SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
                         break;
                     case PacketID.SHOOT:
-                        //SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                        SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
                         break;
                     case PacketID.NEW_TICK:
                         handleNewTick(pkt as New_TickPacket);
@@ -198,28 +202,15 @@ namespace RotMG_Lib
                 }
             }
             SendPacket(new UpdateAckPacket());
-            //new Thread(() =>
-            //{
-            //    var send = new SocketAsyncEventArgs();
-            //    UpdateAckPacket upd = new UpdateAckPacket();
-            //    Console.WriteLine("Sending {0}", upd.GetType().Name);
-            //    byte[] data = upd.Write(this);
-            //
-            //    send.SetBuffer(data, 0, data.Length);
-            //    if (connection.Client.SendAsync(send))
-            //    {
-            //        if (upd.ID == PacketID.MOVE)
-            //            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
-            //        if (upd.ID == PacketID.PONG)
-            //            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
-            //    }
-            //}).Start();
         }
 
         private void handleNewTick(New_TickPacket pkt)
         {
-            currentTick = pkt.TickId;
-            prevTickTime = pkt.TickTime;
+            prevTickId = currentTickId;
+            prevTickTime = currentTickTime;
+
+            currentTickId = pkt.TickId;
+            currentTickTime = pkt.TickTime;
 
             foreach (Status i in pkt.UpdateStatuses)
             {
@@ -250,16 +241,6 @@ namespace RotMG_Lib
                 Position = position,
                 Records = records
             });
-            //var send = new SocketAsyncEventArgs();
-            //MovePacket pkt = new MovePacket { TickId = tickID, Time = tickTime, Position = position, Records = records };
-            //Console.WriteLine("Sending {0}", pkt.GetType().Name);
-            //byte[] data = pkt.Write(this);
-
-            //send.SetBuffer(data, 0, data.Length);
-            //if (!connection.Client.SendAsync(send))
-            //{
-            //    Console.WriteLine("MovePacket sending failed :(");
-            //}
         }
 
         public void DisablePacketAutoHandling()
