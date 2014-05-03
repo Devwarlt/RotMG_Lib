@@ -16,16 +16,20 @@ using System.Threading;
 namespace RotMG_Lib
 {
     public delegate void OnPacketReceiveHandler(RotMGClient client, ServerPacket pkt);
+    public delegate void OnLoginErrorHandler(string message);
 
     public class RotMGClient : RotMGConnection
     {
-        public static Stopwatch stopWatch = new Stopwatch();
+        public static Stopwatch tick = new Stopwatch();
 
         public event OnPacketReceiveHandler OnPacketReceive;
+        public event OnLoginErrorHandler OnLoginError;
         public string BuildVersion { get; private set; }
         public int CharId { get; private set; }
         public bool IsFromArena { get; private set; }
         public bool IsLoggedIn { get; set; }
+
+        private bool ok;
 
         public Dictionary<int, ObjectDef> CurrentObjects = new Dictionary<int, ObjectDef>();
 
@@ -48,35 +52,51 @@ namespace RotMG_Lib
             this.email = email;
             this.password = password;
             rand = new Random();
-            CharId = parseCharIdFromEmail();
             handlePacket = true;
             OnPacketReceived += RotMGClient_OnPacketReceived;
-            //stopWatch.Start();
+            OnDisconnect += OnClientDisconnect;
+        }
+
+        public virtual void OnClientDisconnect()
+        {
+            if (handlePacket)
+            {
+                IsLoggedIn = false;
+                Connect();//Init(BuildVersion, CharId, false);
+            }
+        }
+
+        public void Connect()
+        {
+            if (ok)
+            {
+                base.Connect();
+                SendPacket(new HelloPacket
+                {
+                    BuildVersion = BuildVersion,
+                    GameId = -2,
+                    GUID = email,
+                    Password = password,
+                    Secret = "FLOFLORIANS FACE IS FUCKING BULLSHIT",
+                    randomint1 = rand.Next(100000, 10000000),
+                    Key = new byte[0],
+                    KeyTime = 0,
+                    obf0 = new byte[0],
+                    obf1 = "Kabam, SUCK MY BOT <3",
+                    obf2 = "rotmg",
+                    obf3 = "Kabam, SUCK MY BOT EVEN MORE <3",
+                    obf4 = "rotmg",
+                    obf5 = "NO, JK, WE LOVE U, UHM SRY I MEAN WE HATE U :*",
+                });
+            }
         }
 
         public void Init(string buildVersion, int? charId, bool isFromArena)
         {
-            Connect();
+            ok = true;
             BuildVersion = buildVersion;
-            CharId = charId.HasValue ? charId.Value : CharId == 0 ? 1 : CharId;
+            CharId = charId.HasValue ? charId.Value : CharId == 0 ? parseCharIdFromEmail() : CharId;
             IsFromArena = isFromArena;
-            SendPacket(new HelloPacket
-            {
-                BuildVersion = buildVersion,
-                GameId = -2,
-                GUID = email,
-                Password = password,
-                Secret = "FLOFLORIANS FACE IS FUCKING BULLSHIT",
-                randomint1 = rand.Next(100000, 10000000),
-                Key = new byte[0],
-                KeyTime = 0,
-                obf0 = new byte[0],
-                obf1 = "Kabam, SUCK MY BOT <3",
-                obf2 = "rotmg",
-                obf3 = "Kabam, SUCK MY BOT EVEN MORE <3",
-                obf4 = "rotmg",
-                obf5 = "NO, JK, WE LOVE U, UHM SRY I MEAN WE HATE U :*",
-            });
         }
 
         private int parseCharIdFromEmail()
@@ -87,7 +107,9 @@ namespace RotMG_Lib
             string tokens = rdr.ReadToEnd();
             if (tokens == "<Error>Account credentials not valid</Error>" || !tokens.Contains("\"><ObjectType>"))
             {
-                Console.WriteLine("Account credentials not valid");
+                if(OnLoginError != null)
+                    OnLoginError(tokens.Replace("<Error>", String.Empty).Replace("</Error>", String.Empty));
+                ok = false;
                 return 0;
             }
             string tmp = tokens.Remove(0, tokens.LastIndexOf("<Char id=\"") + 10);
@@ -115,54 +137,37 @@ namespace RotMG_Lib
                         OnPacketReceive(this, pkt as ServerPacket);
                         break;
                     case PacketID.PING:
-                        Console.WriteLine("Ping");
                         SendPacket(new PongPacket
                         {
                             Serial = (pkt as PingPacket).Serial,
-                            Time = (int)stopWatch.ElapsedMilliseconds
+                            Time = (int)tick.ElapsedMilliseconds
                         });
-                        //sendMove(currentTick, (int)stopWatch.ElapsedMilliseconds, playerPosition, null);
-                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", stopWatch.ElapsedMilliseconds, (pkt as PingPacket).Serial);
                         break;
                     case PacketID.GOTO:
-                        SendPacket(new GotoAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
+                        //SendPacket(new GotoAckPacket { Time = (int)tick.ElapsedMilliseconds });
                         break;
                     case PacketID.SHOOT2:
-                        SendPacket(new ShootAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
+                        //SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
                         break;
                     case PacketID.SHOOT:
-                        SendPacket(new ShootAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
-                            break;
+                        //SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
+                        break;
                     case PacketID.NEW_TICK:
                         handleNewTick(pkt as New_TickPacket);
                         break;
                     case PacketID.UPDATE:
                         handleUpdatePacket(pkt as UpdatePacket);
                         break;
-                    case PacketID.TRADEREQUESTED:
-                        TradeRequestedPacket tp = pkt as TradeRequestedPacket;
-                        SendPacket(new PlayerTextPacket { Text = "/tell " + tp.Name + " Hai " + tp.Name + ", have a nice cheesy day c:" });
-                        SendPacket(new RequestTradePacket { Name = tp.Name });
-                        break;
                     case PacketID.FAILURE:
                         RotMG_Lib.Network.ServerPackets.FailurePacket failurePkt = pkt as RotMG_Lib.Network.ServerPackets.FailurePacket;
                         Console.WriteLine(failurePkt.ErrorId + " - " + failurePkt.ErrorDescription);
                         break;
-                    default:
-                        if (OnPacketReceive != null)
-                            if (!(pkt is ClientPacket)) //If you let this client connect via RR and u send urself a ClientPacket :3
-                                OnPacketReceive(this, pkt as ServerPacket);
-                            else
-                                Console.WriteLine("Received a client packet, pls dont do dat :3");
-                        break;
                 }
             }
-            else
-            {
-                if (OnPacketReceive != null)
-                    if (!(pkt is ClientPacket)) //If you let this client connect via RR and u send urself a ClientPacket :3
-                        OnPacketReceive(this, pkt as ServerPacket);
-            }
+
+            if (OnPacketReceive != null)
+                if (!(pkt is ClientPacket)) //If you let this client connect via RR and u send urself a ClientPacket :3
+                    OnPacketReceive(this, pkt as ServerPacket);
         }
 
         private void handleUpdatePacket(UpdatePacket pkt)
@@ -199,7 +204,7 @@ namespace RotMG_Lib
             //    UpdateAckPacket upd = new UpdateAckPacket();
             //    Console.WriteLine("Sending {0}", upd.GetType().Name);
             //    byte[] data = upd.Write(this);
-
+            //
             //    send.SetBuffer(data, 0, data.Length);
             //    if (connection.Client.SendAsync(send))
             //    {
@@ -233,7 +238,7 @@ namespace RotMG_Lib
                     }
                 }
             }
-            sendMove(pkt.TickId, (int)stopWatch.ElapsedMilliseconds, playerPosition, null);
+            sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, playerPosition, null);
         }
 
         private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)

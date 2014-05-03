@@ -130,6 +130,14 @@ namespace RotMG_Lib.Network.Data
             wtr.Write(Y);
         }
 
+        public static Position operator +(Position pos, float num)
+        {
+            Position ret = new Position();
+            ret.X = pos.X + num;
+            ret.Y = pos.Y + num;
+            return ret;
+        }
+
         public override string ToString()
         {
             return string.Format("{{X: {0}, Y: {1}}}", X, Y);

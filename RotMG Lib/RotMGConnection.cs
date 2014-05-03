@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 namespace RotMG_Lib
 {
     internal delegate void PacketReceivedHandler(Packet pkt);
+    public delegate void DisconnectHandler();
 
     public class RotMGConnection
     {
@@ -30,10 +31,13 @@ namespace RotMG_Lib
         private RC4 recvCrypto;
         private static ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
         private object sendLock = new object();
+        private int readOffset = 0;
+        private int readLeft = 0;
         //private int updatePacketsReceived;
         //private int updateOldPacketsReceived;
 
         internal event PacketReceivedHandler OnPacketReceived;
+        internal event DisconnectHandler OnDisconnect;
 
         internal RotMGConnection(Server host)
         {
@@ -70,7 +74,7 @@ namespace RotMG_Lib
                     new string(' ', (Console.WindowWidth / 2) - (("Connecting to ".Length + host.ServerName.Length + 1) / 2)),
                     new string(' ', (Console.WindowWidth / 2) - (("IPAddress: ".Length + host.IPAddress.ToString().Length) / 2)),
                     new string(' ', (Console.WindowWidth / 2) - (("Port: ".Length + host.Port.ToString().Length) / 2)));
-                RotMGClient.stopWatch.Restart();
+                RotMGClient.tick.Restart();
                 this.connection.Connect(host.IPAddress, host.Port);
                 Console.WriteLine("Connected to {0}", host.ServerName);
                 this.sendState = SendState.Ready;
@@ -93,7 +97,7 @@ namespace RotMG_Lib
 
             while (true)
             {
-                try
+                //try
                 {
                     try
                     {
@@ -103,6 +107,8 @@ namespace RotMG_Lib
                         {                                         // 0 size packets and I don't care enough to check for them so it happens
                             Console.WriteLine("The Server closed the connection D:");
                             connection.Close();
+                            if (OnDisconnect != null)
+                                OnDisconnect();
                             return;
                         }
 
@@ -136,17 +142,8 @@ namespace RotMG_Lib
                             Packet pkt = Packet.ServerPackets[(PacketID)header];
                             pkt.Read(this, crypt_buffer, length);
 
-                            //if (pkt.ID == PacketID.Update)
-                            //    updatePacketsReceived++;
                             if (OnPacketReceived != null)
                                 OnPacketReceived(pkt);
-
-                            //while (updatePacketsReceived - 50 == updateOldPacketsReceived)
-                            //{
-                            //    for (int i = 0; i < 51; i++)
-                            //        SendPacket(new UpdateAckPacket());
-                            //    updateOldPacketsReceived = updatePacketsReceived;
-                            //}
 
                             length = 5;
                             header = 0xFF;
@@ -155,12 +152,14 @@ namespace RotMG_Lib
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("The server closed the connection\n{0}", ex);
-                    connection.Close();
-                    return;
-                }
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("The server closed the connection\n{0}", ex);
+                //    connection.Close();
+                //    if (OnDisconnect != null)
+                //        OnDisconnect();
+                //    return;
+                //}
             }
         }
 
@@ -170,71 +169,77 @@ namespace RotMG_Lib
             {
                 pendingPackets.Enqueue(pkt);
 
-                if (sendState == SendState.Ready)
+                while (pendingPackets.Count > 0)
                 {
-                    sendState = SendState.Sending;
-                    if (pendingPackets.Count > 0)
-                    {
-                        Packet packet;
-                        pendingPackets.TryDequeue(out packet);
+                    Packet packet;
+                    pendingPackets.TryDequeue(out packet);
+                    byte[] data = packet.Write(this);
 
-                        try
-                        {
-                            Console.WriteLine("Sending {0}", packet.GetType().Name);
-                            byte[] data = packet.Write(this);
-
-                            send.SetBuffer(data, 0, data.Length);
-                            if (connection.Client.SendAsync(send))
-                                IOCompleted(connection.Client, send);
-                        }
-                        catch
-                        {
-                            try
-                            {
-                                var send = new SocketAsyncEventArgs();
-                                Console.WriteLine("Sending {0}", packet.GetType().Name);
-                                byte[] data = packet.Write(this);
-
-                                send.SetBuffer(data, 0, data.Length);
-                                if (connection.Client.SendAsync(send))
-                                    IOCompleted(connection.Client, send);
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine("Could not send packet #2\n\n" + ex);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        try
-                        {
-                            Console.WriteLine("Sending {0}", pkt.GetType().Name);
-                            byte[] data = pkt.Write(this);
-
-                            send.SetBuffer(data, 0, data.Length);
-                            if (connection.Client.SendAsync(send))
-                                IOCompleted(connection.Client, send);
-                        }
-                        catch
-                        {
-                            try
-                            {
-                                var send = new SocketAsyncEventArgs();
-                                Console.WriteLine("Sending {0}", pkt.GetType().Name);
-                                byte[] data = pkt.Write(this);
-
-                                send.SetBuffer(data, 0, data.Length);
-                                if (connection.Client.SendAsync(send))
-                                    IOCompleted(connection.Client, send);
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine("Could not send packet #2\n\n" + ex);
-                            }
-                        }
-                    }
+                    connection.Client.Send(data);
                 }
+                    //IOCompleted(connection.Client, send);
+
+                //if (sendState == SendState.Ready)
+                //{
+                //    sendState = SendState.Sending;
+                //    if (pendingPackets.Count > 0)
+                //    {
+                //        Packet packet;
+                //        pendingPackets.TryDequeue(out packet);
+
+                //        try
+                //        {
+                //            byte[] data = packet.Write(this);
+
+                //            send.SetBuffer(data, 0, data.Length);
+                //            if (connection.Client.SendAsync(send))
+                //                IOCompleted(connection.Client, send);
+                //        }
+                //        catch
+                //        {
+                //            try
+                //            {
+                //                var send = new SocketAsyncEventArgs();
+                //                byte[] data = packet.Write(this);
+
+                //                send.SetBuffer(data, 0, data.Length);
+                //                if (connection.Client.SendAsync(send))
+                //                    IOCompleted(connection.Client, send);
+                //            }
+                //            catch (Exception ex)
+                //            {
+                //                Console.WriteLine("Could not send packet #2\n\n" + ex);
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        try
+                //        {
+                //            byte[] data = pkt.Write(this);
+
+                //            send.SetBuffer(data, 0, data.Length);
+                //            if (connection.Client.SendAsync(send))
+                //                IOCompleted(connection.Client, send);
+                //        }
+                //        catch
+                //        {
+                //            try
+                //            {
+                //                var send = new SocketAsyncEventArgs();
+                //                byte[] data = pkt.Write(this);
+
+                //                send.SetBuffer(data, 0, data.Length);
+                //                if (connection.Client.SendAsync(send))
+                //                    IOCompleted(connection.Client, send);
+                //            }
+                //            catch (Exception ex)
+                //            {
+                //                Console.WriteLine("Could not send packet #2\n\n" + ex);
+                //            }
+                //        }
+                //    }
+                //}
             }
             catch (Exception)
             {

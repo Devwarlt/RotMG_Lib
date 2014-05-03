@@ -8,27 +8,42 @@ using RotMG_Lib.Network;
 using System.Threading;
 using RotMG_Lib.Network.ServerPackets;
 using System.Windows.Forms;
+using RotMG_Lib.Network.ClientPackets;
 
 namespace TradeBot
 {
     class Program
     {
-        public static RotMGClient client;
-        public static Main main;
-
         static void Main(string[] args)
         {
             //Application.EnableVisualStyles();
-            
             Application.SetCompatibleTextRenderingDefault(true);
-            new Thread(() => Application.Run(main = new Main())).Start();
+            new Thread(() => Application.Run(new Main())).Start();
             Thread.CurrentThread.Join();
         }
+        static string name = string.Empty;
 
         public static void client_OnPacketReceive(RotMGClient client, ServerPacket pkt)
         {
             switch (pkt.ID)
             {
+                case PacketID.TRADEREQUESTED:
+                    TradeRequestedPacket tp = pkt as TradeRequestedPacket;
+                    name = tp.Name;
+                    client.SendPacket(new PlayerTextPacket { Text = "/tell " + tp.Name + " Hai " + tp.Name + ", have a nice cheesy day c:" });
+                    client.SendPacket(new RequestTradePacket { Name = tp.Name });
+                    break;
+                case PacketID.TRADEACCEPTED:
+                    client.SendPacket(new AcceptTradePacket
+                    {
+                        MyOffers = new bool[12],
+                        YourOffers = new bool[12]
+                    });
+                    client.SendPacket(new PlayerTextPacket
+                    {
+                        Text = ("/tell " + name + " Thank u m8 c:")
+                    });
+                    break;
                 default:
                     //Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
                     break;

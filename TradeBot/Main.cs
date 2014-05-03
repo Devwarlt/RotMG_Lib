@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +15,8 @@ namespace TradeBot
 {
     public partial class Main : Form
     {
+        private RotMGClient client;
+
         public Main()
         {
             InitializeComponent();
@@ -43,12 +46,9 @@ namespace TradeBot
         private void Login_Click(object sender, EventArgs e)
         {
             Console.Clear();
-            Program.client = new RotMGClient(Servers.EUNorth, email.Text, password.Text);
-            if (!Program.client.IsLoggedIn)
-            {
-                MessageBox.Show("Account credentials not valid.");
-                return;
-            }
+            client = new RotMGClient(Servers.EUNorth, email.Text, password.Text);
+            client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
+            client.Init("21.0.2", null, false);
             if (rememberAcc.Checked)
             {
                 using (StreamWriter wtr = new StreamWriter("lastlogin"))
@@ -57,8 +57,14 @@ namespace TradeBot
                     wtr.Close();
                 }
             }
-            Program.client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);
-            Program.client.Init("21.0.2", null, false);
+            client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);
+            if (client.IsLoggedIn)
+                client.Connect();
+        }
+
+        private void client_OnLoginError(string message)
+        {
+            MessageBox.Show(message);
         }
     }
 }

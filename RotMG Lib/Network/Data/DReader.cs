@@ -19,7 +19,14 @@ namespace RotMG_Lib.Network.Data
 
         public override short ReadInt16()
         {
-            return IPAddress.NetworkToHostOrder(base.ReadInt16());
+            try
+            {
+                return IPAddress.NetworkToHostOrder(base.ReadInt16());
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         public override int ReadInt32()
@@ -51,6 +58,8 @@ namespace RotMG_Lib.Network.Data
         {
             byte[] arr = base.ReadBytes(4);
             Array.Reverse(arr);
+            if (arr.Length != 4)
+                return BitConverter.ToSingle(new byte[4] { arr[0], arr[1], arr[2], 0}, 0);
             return BitConverter.ToSingle(arr, 0);
         }
 
