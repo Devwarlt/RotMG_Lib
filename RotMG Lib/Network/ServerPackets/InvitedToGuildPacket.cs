@@ -14,7 +14,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         public override PacketID ID
         {
-            get { return PacketID.GuildInvite; }
+            get { return PacketID.INVITEDTOGUILD; }
         }
 
         public override Packet CreateInstance()

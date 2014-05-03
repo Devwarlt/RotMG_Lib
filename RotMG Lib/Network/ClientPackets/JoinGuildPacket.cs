@@ -13,7 +13,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.JoinGuild; }
+            get { return PacketID.JOINGUILD; }
         }
 
         public override Packet CreateInstance()

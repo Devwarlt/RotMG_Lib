@@ -1,10 +1,13 @@
 ﻿using RotMG_Lib.Network;
 using RotMG_Lib.Network.ClientPackets;
+using RotMG_Lib.Network.Data;
 using RotMG_Lib.Network.ServerPackets;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -27,25 +30,23 @@ namespace RotMG_Lib
         private RC4 recvCrypto;
         private static ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
         private object sendLock = new object();
-        private int updatePacketsReceived;
-        private int updateAckPacketsSend;
+        //private int updatePacketsReceived;
+        //private int updateOldPacketsReceived;
 
         internal event PacketReceivedHandler OnPacketReceived;
 
         internal RotMGConnection(Server host)
         {
-            //RotMGClient.start = RotMGClient.GetTickCount();
             this.connection = new TcpClient();
             this.host = host;
             this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
             this.sendCrypto = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
             this.send = new SocketAsyncEventArgs();
             this.send.UserToken = new SendToken();
-            this.send.SetBuffer(new byte[BUFFER_SIZE], 0, BUFFER_SIZE);
+            this.send.SetBuffer(new byte[20000000], 0, 20000000);
             this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
-            this.sendState = SendState.Ready;
-            this.updatePacketsReceived = 0;
-            this.updateAckPacketsSend = 0;
+            //this.updatePacketsReceived = 0;
+            //this.updateOldPacketsReceived = 0;
         }
 
         internal RC4 SendKey { get { return sendCrypto; } }
@@ -55,14 +56,24 @@ namespace RotMG_Lib
         {
             try
             {
+                this.connection = new TcpClient();
+                this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
+                this.sendCrypto = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
+                this.send = new SocketAsyncEventArgs();
+                this.send.UserToken = new SendToken();
+                this.send.SetBuffer(new byte[20000000], 0, 20000000);
+                this.send.Completed += new EventHandler<SocketAsyncEventArgs>(IOCompleted);
+
                 Console.WriteLine(new string('-', Console.WindowWidth) +
                     "{3}Connecting to {0}: \n\r{4}IPAddress: {1}\n\r{5}Port: {2}\n\r" +
                     new string('-', Console.WindowWidth), host.ServerName, host.IPAddress, host.Port,
                     new string(' ', (Console.WindowWidth / 2) - (("Connecting to ".Length + host.ServerName.Length + 1) / 2)),
                     new string(' ', (Console.WindowWidth / 2) - (("IPAddress: ".Length + host.IPAddress.ToString().Length) / 2)),
                     new string(' ', (Console.WindowWidth / 2) - (("Port: ".Length + host.Port.ToString().Length) / 2)));
+                RotMGClient.stopWatch.Restart();
                 this.connection.Connect(host.IPAddress, host.Port);
                 Console.WriteLine("Connected to {0}", host.ServerName);
+                this.sendState = SendState.Ready;
 
                 this.receiveThread = new Thread(new ThreadStart(ReceiveLoop));
                 this.receiveThread.Start();
@@ -75,7 +86,7 @@ namespace RotMG_Lib
 
         public virtual void ReceiveLoop()
         {
-            byte[] buffer = new byte[BUFFER_SIZE]; // maybe change this to 2MB, cuz 2MB should be more than sufficient
+            byte[] buffer = new byte[250000000]; // maybe change this to 2MB, cuz 2MB should be more than sufficient
             int length = 5;
             int offset = 0;
             byte header = 0xFF;
@@ -101,6 +112,7 @@ namespace RotMG_Lib
                     {
                         this.connection.Close();
                         Console.WriteLine(e);
+                        return;
                     }
 
                     if (offset == length) // continue receiving
@@ -123,36 +135,29 @@ namespace RotMG_Lib
 
                             Packet pkt = Packet.ServerPackets[(PacketID)header];
                             pkt.Read(this, crypt_buffer, length);
-                            if (pkt.ID == PacketID.Ping)
-                            {
-                                SendPacket(new PongPacket
-                                {
-                                    Serial = (pkt as PingPacket).Serial,
-                                    Time = (int)RotMGClient.stopWatch.ElapsedMilliseconds
-                                });
-                                Console.WriteLine("Ping: {0}\n\rSerial: {1}", RotMGClient.stopWatch.ElapsedMilliseconds/*(DateTime.UtcNow - t).TotalMilliseconds*/, (pkt as PingPacket).Serial);
-                            }
-                            if (pkt.ID == PacketID.Update)
-                                updatePacketsReceived++;//SendPacket(new UpdateAckPacket());
+
+                            //if (pkt.ID == PacketID.Update)
+                            //    updatePacketsReceived++;
                             if (OnPacketReceived != null)
                                 OnPacketReceived(pkt);
 
-                            while(updatePacketsReceived != updateAckPacketsSend)
-                            {
-                                SendPacket(new UpdateAckPacket());
-                                updateAckPacketsSend++;
-                            }
+                            //while (updatePacketsReceived - 50 == updateOldPacketsReceived)
+                            //{
+                            //    for (int i = 0; i < 51; i++)
+                            //        SendPacket(new UpdateAckPacket());
+                            //    updateOldPacketsReceived = updatePacketsReceived;
+                            //}
 
                             length = 5;
                             header = 0xFF;
                             offset = 0;
-                            //GC.Collect();
+                            GC.Collect();
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    Console.WriteLine("The server closed the connection");
+                    Console.WriteLine("The server closed the connection\n{0}", ex);
                     connection.Close();
                     return;
                 }
@@ -163,6 +168,8 @@ namespace RotMG_Lib
         {
             try
             {
+                pendingPackets.Enqueue(pkt);
+
                 if (sendState == SendState.Ready)
                 {
                     sendState = SendState.Sending;
@@ -170,58 +177,64 @@ namespace RotMG_Lib
                     {
                         Packet packet;
                         pendingPackets.TryDequeue(out packet);
-                        //Console.WriteLine("Sending {0}", packet.GetType().Name);
+                        Console.WriteLine("Sending {0}", packet.GetType().Name);
                         byte[] data = packet.Write(this);
 
                         send.SetBuffer(data, 0, data.Length);
                         if (connection.Client.SendAsync(send))
                         {
-                            //Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            IOCompleted(connection.Client, send);
+                            if(packet.ID == PacketID.MOVE)
+                                Console.WriteLine("{0} sucessfully send.", packet.GetType().Name);
+                            if (packet.ID == PacketID.PONG)
+                                Console.WriteLine("{0} sucessfully send.", packet.GetType().Name);
                         }
                     }
                     else
                     {
-                        //Console.WriteLine("Sending {0}", pkt.GetType().Name);
+                        Console.WriteLine("Sending {0}", pkt.GetType().Name);
                         byte[] data = pkt.Write(this);
 
                         send.SetBuffer(data, 0, data.Length);
                         if (connection.Client.SendAsync(send))
                         {
-                            //Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            IOCompleted(connection.Client, send);
+                            if (pkt.ID == PacketID.MOVE)
+                                Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
+                            if(pkt.ID == PacketID.PONG)
+                                Console.WriteLine("{0} sucessfully send.", pkt.GetType().Name);
                         }
                     }
                 }
-                else
-                    pendingPackets.Enqueue(pkt);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                Console.WriteLine("Could not send Packet:\n" + e);
+                try
+                {
+                    var send = new SocketAsyncEventArgs();
+                    UpdateAckPacket upd = new UpdateAckPacket();
+                    Console.WriteLine("Sending {0}", upd.GetType().Name);
+                    byte[] data = upd.Write(this);
+
+                    send.SetBuffer(data, 0, data.Length);
+                    if (connection.Client.SendAsync(send))
+                    {
+                        if (upd.ID == PacketID.MOVE)
+                            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
+                        if (upd.ID == PacketID.PONG)
+                            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Could not send packet #2\n\n" + ex);
+                }
             }
         }
 
         private void IOCompleted(object sender, SocketAsyncEventArgs e)
         {
             sendState = SendState.Ready;
-        }
-
-        private bool CanSendPacket(SocketAsyncEventArgs e, bool ignoreSending)
-        {
-            lock (sendLock)
-            {
-                if (sendState == SendState.Ready ||
-                    (!ignoreSending && sendState == SendState.Sending))
-                    return false;
-                Packet packet;
-                if (pendingPackets.TryDequeue(out packet))
-                {
-                    (e.UserToken as SendToken).Packet = packet;
-                    sendState = SendState.Ready;
-                    return true;
-                }
-                sendState = SendState.Awaiting;
-                return false;
-            }
         }
 
         private enum SendState
@@ -236,4 +249,281 @@ namespace RotMG_Lib
             public Packet Packet;
         }
     }
+
+    //    private Socket ConnectionSocket;
+    //    private int readOffset;
+    //    private int readLeft;
+    //    internal RC4 SendKey = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
+    //    internal RC4 ReceiveKey = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
+
+    //    public event EventHandler<PacketReceivedEventArgs> OnPacketReceived;
+    //    public event EventHandler<ConnectionErrorEventArgs> ConnectionError;
+    //    public event EventHandler<ConnectedEventArgs> Connected;
+    //    public event EventHandler<SendCompletedEventArgs> SendCompleted;
+
+    //    private Server host;
+
+    //    public RotMGConnection(Server host)
+    //    {
+    //        this.host = host;
+    //        this.ConnectionSocket = new Socket(
+    //            AddressFamily.InterNetwork,
+    //            SocketType.Stream,
+    //            ProtocolType.Tcp
+    //        );
+    //        this.readOffset = 0;
+    //        this.readLeft = 0;
+    //    }
+
+    //    public void Disconnect()
+    //    {
+    //        ConnectionSocket.Disconnect(true);
+    //    }
+
+    //    public bool IsConnected()
+    //    {
+    //        return this.ConnectionSocket.Connected;
+    //    }
+
+    //    public void SendPacket(ClientPacket pkt)
+    //    {
+    //        MemoryStream mem = new MemoryStream();
+    //        pkt.Write(this);
+    //        byte[] payload = pkt.Crypt(this, mem.ToArray(), (int)mem.ToArray().Length);
+
+    //        mem = new MemoryStream();
+    //        DWriter dw = new DWriter(mem);
+
+    //        dw.Write((Int32)payload.Length + 5);
+    //        dw.Write((byte)pkt.ID);
+    //        dw.Write(payload);
+
+    //        payload = mem.ToArray();
+    //        SocketAsyncEventArgs e = new SocketAsyncEventArgs();
+    //        e.SetBuffer(payload, 0, payload.Length);
+    //        e.Completed += handleSendCompleted;
+
+    //        if (ConnectionSocket.SendAsync(e) == false)
+    //        {
+    //            handleSendCompleted(ConnectionSocket, e);
+    //        }
+    //    }
+
+    //    private void beginReceive()
+    //    {
+    //        SocketAsyncEventArgs e = new SocketAsyncEventArgs();
+    //        byte[] buffer = new byte[10240];
+    //        e.SetBuffer(buffer, 0, buffer.Length);
+    //        e.Completed += handleReceiveCompleted;
+    //        if (ConnectionSocket.ReceiveAsync(e) == false)
+    //        {
+    //            handleReceiveCompleted(ConnectionSocket, e);
+    //        }
+    //    }
+
+    //    private void handleReceiveCompleted(object sender, SocketAsyncEventArgs e)
+    //    {
+    //        if (e.SocketError == SocketError.Success)
+    //        {
+    //            //int available = readLeft + e.BytesTransferred;
+    //            int left = readLeft + e.BytesTransferred;
+    //            int offset = readOffset;
+
+    //            MemoryStream mem = new MemoryStream(
+    //                e.Buffer,
+    //                offset,
+    //                left
+    //            );
+    //            DReader dr = new DReader(mem);
+
+    //            while (left >= 5)
+    //            {
+    //                Int32 len = dr.ReadInt32();
+    //                byte type = dr.ReadByte();
+
+    //                if (left < len)
+    //                {
+    //                    if (offset + left == e.Buffer.Length)
+    //                    {
+    //                        if (offset > left)
+    //                        {
+    //                            // Dont resize the buffer, instead make place and read again
+    //                            Buffer.BlockCopy(
+    //                                e.Buffer,
+    //                                offset,
+    //                                e.Buffer,
+    //                                0,
+    //                                left
+    //                            );
+    //                            e.SetBuffer(left, e.Buffer.Length - left);
+
+    //                            readOffset = 0;
+    //                            readLeft = left;
+    //                        }
+    //                        else
+    //                        {
+    //                            byte[] newbuf = new byte[e.Buffer.Length * 2];
+    //                            Buffer.BlockCopy(
+    //                                e.Buffer,
+    //                                offset,
+    //                                newbuf,
+    //                                0,
+    //                                left
+    //                            );
+    //                            e.SetBuffer(newbuf, left, newbuf.Length - left);
+
+    //                            readOffset = 0;
+    //                            readLeft = left;
+    //                        }
+    //                    }
+    //                    else
+    //                    {
+    //                        e.SetBuffer(
+    //                            offset + left,
+    //                            e.Buffer.Length - offset - left
+    //                        );
+
+    //                        readOffset = offset;
+    //                        readLeft = left;
+    //                    }
+
+    //                    if (ConnectionSocket.ReceiveAsync(e) == false)
+    //                    {
+    //                        handleReceiveCompleted(ConnectionSocket, e);
+    //                    }
+    //                    return;
+    //                }
+
+    //                Packet pkt = Packet.ServerPackets[(PacketID)type];
+    //                pkt.Read(this, dr.ReadBytes(len - 5), len);
+    //                PacketReceivedEventArgs ef = new PacketReceivedEventArgs();
+    //                ef.Packet = pkt;
+    //                OnPacketReceived(this, ef);
+
+    //                left -= len;
+    //                offset += len;
+    //            }
+
+    //            Buffer.BlockCopy(e.Buffer, offset, e.Buffer, 0, left);
+    //            e.SetBuffer(left, e.Buffer.Length - left);
+
+    //            readOffset = 0;
+    //            readLeft = left;
+
+    //            if (ConnectionSocket.ReceiveAsync(e) == false)
+    //            {
+    //                handleReceiveCompleted(ConnectionSocket, e);
+    //            }
+    //        }
+    //        else
+    //        {
+    //            Disconnect();
+    //            ConnectionErrorEventArgs ee = new ConnectionErrorEventArgs();
+    //            ee.Error = e.SocketError;
+    //            if(ConnectionError != null)
+    //                ConnectionError(this, ee);
+    //        }
+    //    }
+
+    //    private void handleSendCompleted(object sender, SocketAsyncEventArgs e)
+    //    {
+    //        if (e.SocketError == SocketError.Success)
+    //        {
+    //            if ((e.Offset + e.BytesTransferred) < e.Buffer.Length)
+    //            {
+    //                e.SetBuffer(
+    //                    e.Offset + e.BytesTransferred,
+    //                    e.Buffer.Length - e.BytesTransferred - e.Offset
+    //                );
+    //                if (ConnectionSocket.SendAsync(e) == false)
+    //                {
+    //                    handleSendCompleted(ConnectionSocket, e);
+    //                }
+    //                return;
+    //            }
+
+    //            SendCompletedEventArgs ee = new SendCompletedEventArgs();
+    //            if(SendCompleted != null)
+    //                SendCompleted(this, ee);
+    //        }
+    //        else
+    //        {
+    //            Disconnect();
+    //            ConnectionErrorEventArgs ee = new ConnectionErrorEventArgs();
+    //            ee.Error = e.SocketError;
+    //            ConnectionError(this, ee);
+    //        }
+    //    }
+
+    //    public void Connect()
+    //    {
+    //        Console.WriteLine(new string('-', Console.WindowWidth) +
+    //                "{3}Connecting to {0}: \n\r{4}IPAddress: {1}\n\r{5}Port: {2}\n\r" +
+    //                new string('-', Console.WindowWidth), host.ServerName, host.IPAddress, host.Port,
+    //                new string(' ', (Console.WindowWidth / 2) - (("Connecting to ".Length + host.ServerName.Length + 1) / 2)),
+    //                new string(' ', (Console.WindowWidth / 2) - (("IPAddress: ".Length + host.IPAddress.ToString().Length) / 2)),
+    //                new string(' ', (Console.WindowWidth / 2) - (("Port: ".Length + host.Port.ToString().Length) / 2)));
+    //        RotMGClient.stopWatch.Start();
+
+    //        SocketAsyncEventArgs e = new SocketAsyncEventArgs();
+    //        e.Completed += handleConnected;
+    //        e.RemoteEndPoint = new IPEndPoint(host.IPAddress, host.Port);
+    //        if (ConnectionSocket.ConnectAsync(e) == false)
+    //        {
+    //            if (e.SocketError == SocketError.Success)
+    //            {
+    //                handleConnected(ConnectionSocket, e);
+    //            }
+    //            else
+    //            {
+    //                handleConnectionError(ConnectionSocket, e);
+    //            }
+    //        }
+    //    }
+
+    //    private void handleConnectionError(object ConnectionSocket, SocketAsyncEventArgs e)
+    //    {
+    //        ConnectionErrorEventArgs ee = new ConnectionErrorEventArgs();
+    //        ee.Error = e.SocketError;
+    //        ConnectionError(this, ee);
+    //    }
+
+    //    private void handleConnected(object sender, SocketAsyncEventArgs e)
+    //    {
+    //        if (e.SocketError == SocketError.Success)
+    //        {
+    //            ConnectedEventArgs ee = new ConnectedEventArgs();
+    //            if(Connected != null)
+    //                Connected(this, ee);
+    //            beginReceive();
+    //        }
+    //        else
+    //        {
+    //            ConnectionErrorEventArgs ee = new ConnectionErrorEventArgs();
+    //            ee.Error = e.SocketError;
+    //            ConnectionError(this, ee);
+    //        }
+    //    }
+
+
+    //}
+
+    //public class PacketReceivedEventArgs : EventArgs
+    //{
+    //    public Packet Packet { get; set; }
+    //}
+
+    //public class ConnectionErrorEventArgs : EventArgs
+    //{
+    //    public SocketError Error { get; set; }
+    //}
+
+    //public class ConnectedEventArgs : EventArgs
+    //{
+    //}
+
+    //public class SendCompletedEventArgs : EventArgs
+    //{
+
+    //}
 }

@@ -11,7 +11,7 @@ namespace RotMG_Lib.Network.ClientPackets
     {
         public override PacketID ID
         {
-            get { return PacketID.UpdateAck; }
+            get { return PacketID.UPDATEACK; }
         }
 
         public override Packet CreateInstance()

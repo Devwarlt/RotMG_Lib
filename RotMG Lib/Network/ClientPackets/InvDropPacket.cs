@@ -13,7 +13,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.InvDrop; }
+            get { return PacketID.INVDROP; }
         }
 
         public override Packet CreateInstance()

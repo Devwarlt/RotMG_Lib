@@ -11,11 +11,11 @@ namespace RotMG_Lib.Network.ServerPackets
     {
         public TileData[] Tiles { get; set; }
         public ObjectDef[] NewObjects { get; set; }
-        public int[] drops { get; set; }
+        public int[] Drops { get; set; }
 
         public override PacketID ID
         {
-            get { return PacketID.Update; }
+            get { return PacketID.UPDATE; }
         }
 
         public override Packet CreateInstance()
@@ -40,9 +40,9 @@ namespace RotMG_Lib.Network.ServerPackets
             for (var i = 0; i < NewObjects.Length; i++)
                 NewObjects[i] = ObjectDef.Read(rdr);
 
-            drops = new int[rdr.ReadInt16()];
-            for (int i = 0; i < drops.Length; i++)
-                drops[i] = rdr.ReadInt32();
+            Drops = new int[rdr.ReadInt16()];
+            for (int i = 0; i < Drops.Length; i++)
+                Drops[i] = rdr.ReadInt32();
         }
 
         protected override void Write(DWriter wtr)
@@ -60,8 +60,8 @@ namespace RotMG_Lib.Network.ServerPackets
                 i.Write(wtr);
             }
 
-            wtr.Write(drops.Length);
-            foreach(int i in drops)
+            wtr.Write(Drops.Length);
+            foreach(int i in Drops)
             {
                 wtr.Write(i);
             }

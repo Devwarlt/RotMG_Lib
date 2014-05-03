@@ -13,7 +13,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.UsePortal; }
+            get { return PacketID.USEPORTAL; }
         }
 
         public override Packet CreateInstance()

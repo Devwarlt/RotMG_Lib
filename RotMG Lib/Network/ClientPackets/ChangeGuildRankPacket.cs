@@ -14,7 +14,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.ChangeGuildRank; }
+            get { return PacketID.CHANGEGUILDRANK; }
         }
 
         public override Packet CreateInstance()

@@ -15,7 +15,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.SquareHit; }
+            get { return PacketID.SQUAREHIT; }
         }
 
         public override Packet CreateInstance()

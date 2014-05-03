@@ -14,7 +14,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         public override PacketID ID
         {
-            get { return PacketID.PlaySound; }
+            get { return PacketID.PLAYSOUND; }
         }
 
         public override Packet CreateInstance()

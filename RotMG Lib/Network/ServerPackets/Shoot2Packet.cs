@@ -18,7 +18,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         public override PacketID ID
         {
-            get { return PacketID.Shoot2; }
+            get { return PacketID.SHOOT2; }
         }
 
         public override Packet CreateInstance()

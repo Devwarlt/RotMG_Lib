@@ -43,7 +43,7 @@ namespace TradeBot
         private void Login_Click(object sender, EventArgs e)
         {
             Console.Clear();
-            Program.client = new RotMGClient(Servers.EUSouth, email.Text, password.Text);
+            Program.client = new RotMGClient(Servers.EUNorth, email.Text, password.Text);
             if (!Program.client.IsLoggedIn)
             {
                 MessageBox.Show("Account credentials not valid.");
@@ -58,7 +58,7 @@ namespace TradeBot
                 }
             }
             Program.client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);
-            Program.client.Init("21.0.1", null, false);
+            Program.client.Init("21.0.2", null, false);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RotMG_Lib.Network;
 using RotMG_Lib.Network.ClientPackets;
+using RotMG_Lib.Network.Data;
 using RotMG_Lib.Network.ServerPackets;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 namespace RotMG_Lib
 {
@@ -16,17 +19,19 @@ namespace RotMG_Lib
 
     public class RotMGClient : RotMGConnection
     {
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
-        internal static extern int GetTickCount();
-        DateTime t = DateTime.UtcNow;
         public static Stopwatch stopWatch = new Stopwatch();
 
-        public static readonly int start = GetTickCount();
         public event OnPacketReceiveHandler OnPacketReceive;
         public string BuildVersion { get; private set; }
         public int CharId { get; private set; }
         public bool IsFromArena { get; private set; }
         public bool IsLoggedIn { get; set; }
+
+        public Dictionary<int, ObjectDef> CurrentObjects = new Dictionary<int, ObjectDef>();
+
+        private int playerObjectID;
+        private ObjectDef playerObject = new ObjectDef();
+        private Position playerPosition = new Position();
 
         private int currentTick;
         private int prevTickTime;
@@ -97,7 +102,11 @@ namespace RotMG_Lib
             {
                 switch (pkt.ID)
                 {
-                    case PacketID.MapInfo:
+                    case PacketID.CREATE_SUCCESS:
+                        Create_SuccessPacket csuc = pkt as Create_SuccessPacket;
+                        playerObjectID = csuc.ObjectID;
+                        break;
+                    case PacketID.MAPINFO:
                         SendPacket(new LoadPacket
                         {
                             IsFromArena = false,
@@ -105,28 +114,39 @@ namespace RotMG_Lib
                         });
                         OnPacketReceive(this, pkt as ServerPacket);
                         break;
-                    //case PacketID.Ping:
-                    //    Console.WriteLine("Ping");
-                    //    SendPacket(new PongPacket
-                    //    {
-                    //        Serial = (pkt as PingPacket).Serial,
-                    //        Time = (int)stopWatch.ElapsedMilliseconds
-                    //    });
-                    //    Console.WriteLine("Ping: {0}\n\rSerial: {1}", stopWatch.ElapsedMilliseconds/*(DateTime.UtcNow - t).TotalMilliseconds*/, (pkt as PingPacket).Serial);
-                    //    //Console.WriteLine("Pong");
-                    //    break;
-                    case PacketID.New_Tick:
-                        New_TickPacket ntp = pkt as New_TickPacket;
-                        currentTick = ntp.TickId;
-                        prevTickTime = ntp.TickTime;
+                    case PacketID.PING:
+                        Console.WriteLine("Ping");
+                        SendPacket(new PongPacket
+                        {
+                            Serial = (pkt as PingPacket).Serial,
+                            Time = (int)stopWatch.ElapsedMilliseconds
+                        });
+                        //sendMove(currentTick, (int)stopWatch.ElapsedMilliseconds, playerPosition, null);
+                        Console.WriteLine("Ping: {0}\n\rSerial: {1}", stopWatch.ElapsedMilliseconds, (pkt as PingPacket).Serial);
                         break;
-                    case PacketID.Failure:
+                    case PacketID.GOTO:
+                        SendPacket(new GotoAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
+                        break;
+                    case PacketID.SHOOT2:
+                        SendPacket(new ShootAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
+                        break;
+                    case PacketID.SHOOT:
+                        SendPacket(new ShootAckPacket { Time = (int)stopWatch.ElapsedMilliseconds });
+                            break;
+                    case PacketID.NEW_TICK:
+                        handleNewTick(pkt as New_TickPacket);
+                        break;
+                    case PacketID.UPDATE:
+                        handleUpdatePacket(pkt as UpdatePacket);
+                        break;
+                    case PacketID.TRADEREQUESTED:
+                        TradeRequestedPacket tp = pkt as TradeRequestedPacket;
+                        SendPacket(new PlayerTextPacket { Text = "/tell " + tp.Name + " Hai " + tp.Name + ", have a nice cheesy day c:" });
+                        SendPacket(new RequestTradePacket { Name = tp.Name });
+                        break;
+                    case PacketID.FAILURE:
                         RotMG_Lib.Network.ServerPackets.FailurePacket failurePkt = pkt as RotMG_Lib.Network.ServerPackets.FailurePacket;
                         Console.WriteLine(failurePkt.ErrorId + " - " + failurePkt.ErrorDescription);
-                        break;
-                    case PacketID.Update:
-                        //UpdatePacket upd = pkt as UpdatePacket;
-                        //SendPacket(new UpdateAckPacket());
                         break;
                     default:
                         if (OnPacketReceive != null)
@@ -145,14 +165,96 @@ namespace RotMG_Lib
             }
         }
 
-        public static long CurrentTimeMillis()
+        private void handleUpdatePacket(UpdatePacket pkt)
         {
-            return (long)(DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+            foreach (int i in pkt.Drops)
+            {
+                ObjectDef obj;
+                if (this.CurrentObjects.TryGetValue(i, out obj))
+                {
+                    this.CurrentObjects.Remove(i);
+                }
+            }
+            foreach (ObjectDef obj in pkt.NewObjects)
+            {
+                if (this.CurrentObjects.ContainsKey(obj.ObjectType))
+                {
+                    this.CurrentObjects[obj.ObjectType] = obj;
+                }
+                else
+                {
+                    this.CurrentObjects.Add(obj.ObjectType, obj);
+                }
+
+                if (obj.Stats.ObjectId == this.playerObjectID)
+                {
+                    this.playerObject = obj;
+                    this.playerPosition = obj.Stats.Position;
+                }
+            }
+            SendPacket(new UpdateAckPacket());
+            //new Thread(() =>
+            //{
+            //    var send = new SocketAsyncEventArgs();
+            //    UpdateAckPacket upd = new UpdateAckPacket();
+            //    Console.WriteLine("Sending {0}", upd.GetType().Name);
+            //    byte[] data = upd.Write(this);
+
+            //    send.SetBuffer(data, 0, data.Length);
+            //    if (connection.Client.SendAsync(send))
+            //    {
+            //        if (upd.ID == PacketID.MOVE)
+            //            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
+            //        if (upd.ID == PacketID.PONG)
+            //            Console.WriteLine("{0} sucessfully send.", upd.GetType().Name);
+            //    }
+            //}).Start();
         }
 
-        private static int CurrentTime()
+        private void handleNewTick(New_TickPacket pkt)
         {
-            return GetTickCount() - start;
+            currentTick = pkt.TickId;
+            prevTickTime = pkt.TickTime;
+
+            foreach (Status i in pkt.UpdateStatuses)
+            {
+                ObjectDef obj;
+                if (this.CurrentObjects.TryGetValue(i.ObjectId, out obj))
+                {
+                    this.CurrentObjects[i.ObjectId].Stats.Position = i.Position;
+
+
+                    for (int y = 0; y < i.StatData.Length; y++)
+                        this.CurrentObjects[i.ObjectId].Stats.StatData[y] = i.StatData[y];
+
+                    if (obj.ObjectType == this.playerObjectID)
+                    {
+                        this.playerPosition = obj.Stats.Position;
+                    }
+                }
+            }
+            sendMove(pkt.TickId, (int)stopWatch.ElapsedMilliseconds, playerPosition, null);
+        }
+
+        private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)
+        {
+            SendPacket(new MovePacket
+            {
+                TickId = tickID,
+                Time = tickTime,
+                Position = position,
+                Records = records
+            });
+            //var send = new SocketAsyncEventArgs();
+            //MovePacket pkt = new MovePacket { TickId = tickID, Time = tickTime, Position = position, Records = records };
+            //Console.WriteLine("Sending {0}", pkt.GetType().Name);
+            //byte[] data = pkt.Write(this);
+
+            //send.SetBuffer(data, 0, data.Length);
+            //if (!connection.Client.SendAsync(send))
+            //{
+            //    Console.WriteLine("MovePacket sending failed :(");
+            //}
         }
 
         public void DisablePacketAutoHandling()

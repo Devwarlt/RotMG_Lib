@@ -11,7 +11,7 @@ namespace RotMG_Lib.Network.ClientPackets
     {
         public override PacketID ID
         {
-            get { return PacketID.CheckCredits; }
+            get { return PacketID.CHECKCREDITS; }
         }
 
         public override Packet CreateInstance()

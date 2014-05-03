@@ -23,7 +23,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         public override PacketID ID
         {
-            get { return PacketID.MapInfo; }
+            get { return PacketID.MAPINFO; }
         }
 
         public override Packet CreateInstance()

@@ -16,7 +16,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.Move; }
+            get { return PacketID.MOVE; }
         }
 
         public override Packet CreateInstance()
@@ -39,6 +39,11 @@ namespace RotMG_Lib.Network.ClientPackets
             wtr.Write(TickId);
             wtr.Write(Time);
             Position.Write(wtr);
+            if(Records == null)
+            {
+                wtr.Write((short)0);
+                return;
+            }
             wtr.Write((short)Records.Length);
             foreach (var i in Records)
                 i.Write(wtr);

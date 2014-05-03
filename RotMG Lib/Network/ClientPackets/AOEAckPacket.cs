@@ -14,7 +14,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.AOEAck; }
+            get { return PacketID.AOEACK; }
         }
 
         public override Packet CreateInstance()

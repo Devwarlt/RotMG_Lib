@@ -83,7 +83,7 @@ namespace RotMG_Lib
     {
         public override PacketID ID
         {
-            get { return PacketID.UpdateAck; }
+            get { return PacketID.UPDATEACK; }
         }
 
         public override Packet CreateInstance()

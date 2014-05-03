@@ -13,7 +13,7 @@ namespace RotMG_Lib.Network.ServerPackets
 
         public override PacketID ID
         {
-            get { return PacketID.TradeChanged; }
+            get { return PacketID.TRADECHANGED; }
         }
 
         public override Packet CreateInstance()

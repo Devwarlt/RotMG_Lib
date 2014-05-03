@@ -15,7 +15,7 @@ namespace RotMG_Lib.Network.ClientPackets
 
         public override PacketID ID
         {
-            get { return PacketID.EditAccountList; }
+            get { return PacketID.EDITACCOUNTLIST; }
         }
 
         public override Packet CreateInstance()
