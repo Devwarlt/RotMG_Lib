@@ -63,6 +63,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap item_2593 {
+            get {
+                object obj = ResourceManager.GetObject("item_2593", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap item_2606 {
             get {
                 object obj = ResourceManager.GetObject("item_2606", resourceCulture);
@@ -76,6 +86,46 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap item_2711 {
             get {
                 object obj = ResourceManager.GetObject("item_2711", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap item_2821 {
+            get {
+                object obj = ResourceManager.GetObject("item_2821", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap item_2824 {
+            get {
+                object obj = ResourceManager.GetObject("item_2824", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap item_2852 {
+            get {
+                object obj = ResourceManager.GetObject("item_2852", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap item_2978 {
+            get {
+                object obj = ResourceManager.GetObject("item_2978", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

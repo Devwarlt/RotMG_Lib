@@ -3,6 +3,7 @@ using RotMG_Lib.Network.ClientPackets;
 using RotMG_Lib.Network.Data;
 using RotMG_Lib.Network.ServerPackets;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -202,6 +203,24 @@ namespace RotMG_Lib
                             Player.Name = data.obf2;
                             Player.IsConnected = true;
                         }
+
+                        if (Player.StatData == null)
+                            Player.StatData = new Dictionary<StatsType, object>();
+
+                        if (Player.StatData.ContainsKey(data.StatsType))
+                        {
+                            if (data.IsUTFData())
+                                Player.StatData[data.StatsType] = data.obf2;
+                            else
+                                Player.StatData[data.StatsType] = data.obf1;
+                        }
+                        else
+                        {
+                            if (data.IsUTFData())
+                                Player.StatData.Add(data.StatsType, data.obf2);
+                            else
+                                Player.StatData.Add(data.StatsType, data.obf1);
+                        }
                     }
                 }
             }
@@ -218,27 +237,13 @@ namespace RotMG_Lib
 
             foreach (Status i in pkt.UpdateStatuses)
             {
-                ObjectDef obj;
-                if (this.CurrentObjects.TryGetValue(i.ObjectId, out obj))
+                if (i.ObjectId == Player.ObjectID)
                 {
-                    this.CurrentObjects[i.ObjectId].Stats.StatData = i.StatData;
-                    this.CurrentObjects[i.ObjectId].Stats.Position = i.Position;
-                    this.CurrentObjects[i.ObjectId].Stats.ObjectId = i.ObjectId;
-
-                    if (obj.ObjectType == Player.ObjectID)
-                    {
-                        Player.ObjectDefinition = obj;
-                    }
-                }
-            }
-            foreach (ObjectDef def in CurrentObjects.Values)
-            {
-                foreach (StatData data in def.Stats.StatData)
-                {
-                    if(def.Stats.ObjectId == Player.ObjectID)
+                    foreach (StatData data in i.StatData)
                     {
                         if (Player.StatData == null)
                             Player.StatData = new Dictionary<StatsType, object>();
+
                         if (Player.StatData.ContainsKey(data.StatsType))
                         {
                             if (data.IsUTFData())
@@ -254,6 +259,68 @@ namespace RotMG_Lib
                                 Player.StatData.Add(data.StatsType, data.obf1);
                         }
                     }
+                }
+                //ObjectDef obj;
+                //if (this.CurrentObjects.TryGetValue(i.ObjectId, out obj))
+                //{
+                //    this.CurrentObjects[i.ObjectId].Stats.StatData = i.StatData;
+                //    this.CurrentObjects[i.ObjectId].Stats.Position = i.Position;
+                //    this.CurrentObjects[i.ObjectId].Stats.ObjectId = i.ObjectId;
+
+                //    if (obj.Stats.ObjectId == Player.ObjectID && i.ObjectId == Player.ObjectID)
+                //    {
+                //        Player.ObjectDefinition = obj;
+                //    }
+                //}
+            }
+            //foreach (Status stat in pkt.UpdateStatuses)
+            //{
+            //    if (stat.ObjectId == Player.ObjectID)
+            //    {
+            //        foreach (StatData data in stat.StatData)
+            //        {
+            //            if (Player.StatData == null)
+            //                Player.StatData = new Dictionary<StatsType, object>();
+            //            if (Player.StatData.ContainsKey(data.StatsType))
+            //            {
+            //                if (data.IsUTFData())
+            //                    Player.StatData[data.StatsType] = data.obf2;
+            //                else
+            //                    Player.StatData[data.StatsType] = data.obf1;
+            //            }
+            //            else
+            //            {
+            //                if (data.IsUTFData())
+            //                    Player.StatData.Add(data.StatsType, data.obf2);
+            //                else
+            //                    Player.StatData.Add(data.StatsType, data.obf1);
+            //            }
+            //        }
+            //    }
+            //}
+            //foreach (ObjectDef def in CurrentObjects.Values)
+            //{
+                //foreach (StatData data in Player.ObjectDefinition.Stats.StatData)
+                //{
+                //    //if(def.Stats.ObjectId == Player.ObjectID)
+                //    //{
+                //        if (Player.StatData == null)
+                //            Player.StatData = new ConcurrentDictionary<StatsType, object>();
+                //        if (Player.StatData.ContainsKey(data.StatsType))
+                //        {
+                //            if (data.IsUTFData())
+                //                Player.StatData[data.StatsType] = data.obf2;
+                //            else
+                //                Player.StatData[data.StatsType] = data.obf1;
+                //        }
+                //        else
+                //        {
+                //            if (data.IsUTFData())
+                //                Player.StatData.TryAdd(data.StatsType, data.obf2);
+                //            else
+                //                Player.StatData.TryAdd(data.StatsType, data.obf1);
+                //        }
+                    //}
                     //if (data.StatsType == StatsType.NAME)
                     //{
                     //    if (data.obf2.Contains(Player.OwnerName))
@@ -279,8 +346,8 @@ namespace RotMG_Lib
                     //        //Player.ObjectDefinition.Stats.Position = def.Stats.Position;
                     //    }
                     //}
-                }
-            }
+                //}
+            //}
             sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, Player.Position, null);
         }
 

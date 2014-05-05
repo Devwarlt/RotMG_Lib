@@ -35,23 +35,23 @@ namespace TradeBot
                     client.SendPacket(new PlayerTextPacket { Text = "/tell " + tp.Name + " Hai " + tp.Name + ", have a nice cheesy day c:" });
                     client.SendPacket(new RequestTradePacket { Name = tp.Name });
                     break;
-                case PacketID.TRADEACCEPTED:
-                    client.SendPacket(new AcceptTradePacket
-                    {
-                        MyOffers = new bool[12],
-                        YourOffers = new bool[12]
-                    });
-                    client.SendPacket(new PlayerTextPacket
-                    {
-                        Text = ("/tell " + name + " Thank u m8 c:")
-                    });
-                    break;
-                case PacketID.SHOOT2:
-                    client.SendPacket(new PlayerTextPacket
-                    {
-                        Text = pkt.ToString()//"Shoot ur spell again to receive some more random numbers like this: " + new Random().Next(100000, 100000000) + "  c:"
-                    });
-                    break;
+                //case PacketID.TRADEACCEPTED:
+                //    client.SendPacket(new AcceptTradePacket
+                //    {
+                //        MyOffers = new bool[12],
+                //        YourOffers = new bool[12]
+                //    });
+                //    client.SendPacket(new PlayerTextPacket
+                //    {
+                //        Text = ("/tell " + name + " Thank u m8 c:")
+                //    });
+                //    break;
+                //case PacketID.SHOOT2:
+                //    client.SendPacket(new PlayerTextPacket
+                //    {
+                //        Text = pkt.ToString()//"Shoot ur spell again to receive some more random numbers like this: " + new Random().Next(100000, 100000000) + "  c:"
+                //    });
+                //    break;
                 default:
                     //Console.WriteLine("Unhandled packet {0}", pkt.GetType().Name);
                     break;

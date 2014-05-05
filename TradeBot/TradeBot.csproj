@@ -92,6 +92,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\T6 Elemental Detonation Spell.png" />
+    <None Include="Resources\T12 Robe of the Grand Sorcerer.png" />
+    <None Include="Resources\Ring of the Pyramid.png" />
+    <None Include="Resources\T12 Staff of the Cosmic Whole.png" />
+    <None Include="Resources\Potion of Speed.png" />
     <None Include="Resources\T0 Fire Spray Spell.png" />
     <None Include="Resources\T0 Energy Staff.png" />
     <Content Include="T0 Energy Staff.png" />

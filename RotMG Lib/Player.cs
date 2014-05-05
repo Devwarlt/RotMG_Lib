@@ -1,6 +1,7 @@
 ﻿using RotMG_Lib.Network.ClientPackets;
 using RotMG_Lib.Network.Data;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,6 @@ namespace RotMG_Lib
         private List<int> _inv = new List<int>(12);
         public Position Position { get { return ObjectDefinition.Stats.Position; } }
         public Position TargetPosition { get; set; }
-        public int[] Inventory { get { return _inv.ToArray(); } }
         public int CharId { get; set; }
         public bool IsLoggedIn { get; set; }
         public ObjectDef ObjectDefinition { get; set; }

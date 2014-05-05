@@ -25,13 +25,13 @@ namespace RotMG_Lib.Network.ServerPackets
         protected override void Read(DReader rdr)
         {
             OwnerId = rdr.ReadInt32();
-            SoundId = rdr.ReadInt32();
+            SoundId = rdr.ReadByte();
         }
 
         protected override void Write(DWriter wtr)
         {
             wtr.Write(OwnerId);
-            wtr.Write(SoundId);
+            wtr.Write((byte)SoundId);
         }
     }
 }

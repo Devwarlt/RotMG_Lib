@@ -59,7 +59,7 @@ namespace TradeBot
                     wtr.Close();
                 }
             }
-            client.OnPacketReceive += new OnPacketReceiveHandler(Program.client_OnPacketReceive);
+            //client.OnPacketReceive += new OnPacketReceiveHandler(TradeMenu.OnPacketReceived);
             if (client.Player.IsLoggedIn)
                 client.Connect();
         }
