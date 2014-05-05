@@ -33,10 +33,6 @@ namespace RotMG_Lib
 
         public Dictionary<int, ObjectDef> CurrentObjects = new Dictionary<int, ObjectDef>();
 
-        private int playerObjectID;
-        private ObjectDef playerObject = new ObjectDef();
-        private Position playerPosition = new Position();
-
         public int currentTickId;
         public int currentTickTime;
 
@@ -67,11 +63,12 @@ namespace RotMG_Lib
             if (handlePacket)
             {
                 Player.IsLoggedIn = false;
-                Connect();//Init(BuildVersion, CharId, false);
+
+                Connect();
             }
         }
 
-        public void Connect()
+        public new void Connect()
         {
             if (ok)
             {
@@ -131,7 +128,7 @@ namespace RotMG_Lib
                 {
                     case PacketID.CREATE_SUCCESS:
                         Create_SuccessPacket csuc = pkt as Create_SuccessPacket;
-                        playerObjectID = csuc.ObjectID;
+                        Player.ObjectID = csuc.ObjectID;
                         break;
                     case PacketID.MAPINFO:
                         SendPacket(new LoadPacket
@@ -195,10 +192,17 @@ namespace RotMG_Lib
                     this.CurrentObjects.Add(obj.ObjectType, obj);
                 }
 
-                if (obj.Stats.ObjectId == this.playerObjectID)
+                if (obj.Stats.ObjectId == Player.ObjectID)
                 {
-                    this.playerObject = obj;
-                    this.playerPosition = obj.Stats.Position;
+                    Player.ObjectDefinition = obj;
+                    foreach (StatData data in obj.Stats.StatData)
+                    {
+                        if (data.StatsType == StatsType.NAME)
+                        {
+                            Player.Name = data.obf2;
+                            Player.IsConnected = true;
+                        }
+                    }
                 }
             }
             SendPacket(new UpdateAckPacket());
@@ -217,19 +221,67 @@ namespace RotMG_Lib
                 ObjectDef obj;
                 if (this.CurrentObjects.TryGetValue(i.ObjectId, out obj))
                 {
+                    this.CurrentObjects[i.ObjectId].Stats.StatData = i.StatData;
                     this.CurrentObjects[i.ObjectId].Stats.Position = i.Position;
+                    this.CurrentObjects[i.ObjectId].Stats.ObjectId = i.ObjectId;
 
-
-                    for (int y = 0; y < i.StatData.Length; y++)
-                        this.CurrentObjects[i.ObjectId].Stats.StatData[y] = i.StatData[y];
-
-                    if (obj.ObjectType == this.playerObjectID)
+                    if (obj.ObjectType == Player.ObjectID)
                     {
-                        this.playerPosition = obj.Stats.Position;
+                        Player.ObjectDefinition = obj;
                     }
                 }
             }
-            sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, playerPosition, null);
+            foreach (ObjectDef def in CurrentObjects.Values)
+            {
+                foreach (StatData data in def.Stats.StatData)
+                {
+                    if(def.Stats.ObjectId == Player.ObjectID)
+                    {
+                        if (Player.StatData == null)
+                            Player.StatData = new Dictionary<StatsType, object>();
+                        if (Player.StatData.ContainsKey(data.StatsType))
+                        {
+                            if (data.IsUTFData())
+                                Player.StatData[data.StatsType] = data.obf2;
+                            else
+                                Player.StatData[data.StatsType] = data.obf1;
+                        }
+                        else
+                        {
+                            if (data.IsUTFData())
+                                Player.StatData.Add(data.StatsType, data.obf2);
+                            else
+                                Player.StatData.Add(data.StatsType, data.obf1);
+                        }
+                    }
+                    //if (data.StatsType == StatsType.NAME)
+                    //{
+                    //    if (data.obf2.Contains(Player.OwnerName))
+                    //    {
+                    //        //if (Player.StatData == null)
+                    //        //    Player.StatData = new Dictionary<StatsType, object>();
+                    //        //if (Player.StatData.ContainsKey(data.StatsType))
+                    //        //{
+                    //        //    if (data.IsUTFData())
+                    //        //        Player.StatData[data.StatsType] = data.obf2;
+                    //        //    else
+                    //        //        Player.StatData[data.StatsType] = data.obf1;
+                    //        //}
+                    //        //else
+                    //        //{
+                    //        //    if (data.IsUTFData())
+                    //        //        Player.StatData.Add(data.StatsType, data.obf2);
+                    //        //    else
+                    //        //        Player.StatData.Add(data.StatsType, data.obf1);
+                    //        //}
+
+                    //        //Player.Move(def.Stats.Position);
+                    //        //Player.ObjectDefinition.Stats.Position = def.Stats.Position;
+                    //    }
+                    //}
+                }
+            }
+            sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, Player.Position, null);
         }
 
         private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)
@@ -241,6 +293,7 @@ namespace RotMG_Lib
                 Position = position,
                 Records = records
             });
+            Player.ObjectDefinition.Stats.Position = position;
         }
 
         public void DisablePacketAutoHandling()

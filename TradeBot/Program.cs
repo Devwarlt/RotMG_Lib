@@ -16,7 +16,7 @@ namespace TradeBot
     {
         static void Main(string[] args)
         {
-            //Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
             new Thread(() => Application.Run(new Main())).Start();
             Thread.CurrentThread.Join();
@@ -27,6 +27,8 @@ namespace TradeBot
         {
             switch (pkt.ID)
             {
+                case PacketID.TEXT:
+                    break;
                 case PacketID.TRADEREQUESTED:
                     TradeRequestedPacket tp = pkt as TradeRequestedPacket;
                     name = tp.Name;
@@ -42,6 +44,12 @@ namespace TradeBot
                     client.SendPacket(new PlayerTextPacket
                     {
                         Text = ("/tell " + name + " Thank u m8 c:")
+                    });
+                    break;
+                case PacketID.SHOOT2:
+                    client.SendPacket(new PlayerTextPacket
+                    {
+                        Text = pkt.ToString()//"Shoot ur spell again to receive some more random numbers like this: " + new Random().Next(100000, 100000000) + "  c:"
                     });
                     break;
                 default:

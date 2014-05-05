@@ -42,6 +42,7 @@ namespace TradeBot
                     }
                 }
             }
+            timer1.Start();
         }
 
         private void Login_Click(object sender, EventArgs e)
@@ -75,6 +76,22 @@ namespace TradeBot
             var result = new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
 
             client.Player.Move(1, 1);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (client != null)
+            {
+                if (client.Player != null)
+                {
+                    if (client.Player.IsConnected)
+                    {
+                        new Thread(() => Application.Run(new TradeMenu(client))).Start();
+                        this.Close();
+                        timer1.Stop();
+                    }
+                }
+            }
         }
     }
 }

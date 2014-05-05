@@ -138,6 +138,16 @@ namespace RotMG_Lib.Network.Data
             return ret;
         }
 
+        public static bool operator !=(Position pos1, Position pos2)
+        {
+            return (pos1.X != pos2.X && pos1.Y != pos2.Y);
+        }
+
+        public static bool operator ==(Position pos1, Position pos2)
+        {
+            return (pos1.X == pos2.X && pos1.Y == pos2.Y);
+        }
+
         public static Position operator -(Position pos, float num)
         {
             Position ret = new Position();

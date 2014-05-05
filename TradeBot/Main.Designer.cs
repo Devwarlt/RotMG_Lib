@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Login = new System.Windows.Forms.Button();
             this.email = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
@@ -35,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rememberAcc = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // Login
@@ -100,6 +102,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,5 +134,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox rememberAcc;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
