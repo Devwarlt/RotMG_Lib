@@ -49,6 +49,7 @@ namespace RotMG_Lib
         public RotMGClient(Server host, string email, string password)
             : base(host)
         {
+            new RotMGData();
             this.host = host;
             this.email = email;
             this.password = password;

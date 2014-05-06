@@ -86,7 +86,9 @@ namespace TradeBot
                 {
                     if (client.Player.IsConnected)
                     {
-                        new Thread(() => Application.Run(new TradeMenu(client))).Start();
+                        Thread t = new Thread(() => Application.Run(new TradeMenu(client)));
+                        t.SetApartmentState(ApartmentState.STA);
+                        t.Start();
                         this.Close();
                         timer1.Stop();
                     }

@@ -59,11 +59,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TradeMenu.cs">
+    <Compile Include="StatusBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TradeMenu.Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TradeMenu.Designer.cs">
-      <DependentUpon>TradeMenu.cs</DependentUpon>
+    <Compile Include="TradeMenu.Form.Designer.cs">
+      <DependentUpon>TradeMenu.Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TradeMenu.Bot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TradeMenu.Owner.cs">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -87,8 +96,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="TradeMenu.resx">
-      <DependentUpon>TradeMenu.cs</DependentUpon>
+    <EmbeddedResource Include="TradeMenu.Form.resx">
+      <DependentUpon>TradeMenu.Form.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +108,1173 @@
     <None Include="Resources\Potion of Speed.png" />
     <None Include="Resources\T0 Fire Spray Spell.png" />
     <None Include="Resources\T0 Energy Staff.png" />
-    <Content Include="T0 Energy Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T0 Energy Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T12 Staff of the Cosmic Whole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\KoalaPOW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\Staff of Extreme Prejudice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\Staff of the Crystal Serpent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T0 Anatis Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T1 Firebrand Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T2 Comet Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T3 Serpentine Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T4 Meteor Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T5 Slayer Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T6 Avenger Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T7 Staff of Destruction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T8 Staff of Horror.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T9 Staff of Adoration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T9 Staff of Necrotic Arcana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T10 Staff of Diabolic Secrets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Staffs\T11 Staff of Astral Knowledge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\Cloak of the Planewalker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T0 Cloak of Shadows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T1 Cloak of Darkness.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T2 Cloak of Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T3 Cloak of the Night Thief.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T4 Cloak of the Red Agent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T5 Cloak of Endless Twilight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Cloaks\T6 Cloak of Ghostly Concealment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\Helm of the Juggernaut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T0 Combat Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T1 Bronze Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T2 Black Iron Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T3 Red Iron Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T4 Steel Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T5 Golden Helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Helms\T6 Helm of the Great General.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\Orb of Conflict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T0 Stasis Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T1 Suspension Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T2 Imprisonment Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T3 Neutralization Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T4 Timelock Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T5 Banishment Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Orbs\T6 Planefetter Orb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T1 Spider Venom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T2 Pit Viper Poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T3 Stingray Poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T4 Felwasp Toxin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T5 Nightwing Venom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T6 Baneserpent Poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\Plague Poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Poisons\T0 Centipede Poison.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\Ghostly Prism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T0 Decoy Prism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T1 Deception Prism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T2 Illusion Prism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T3 Hallucination Prism.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T4 Prism of Figments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T5 Prism of Phantoms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Prisms\T6 Prism of Apparitions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\Quiver of Thunder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T0 Magic Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T1 Reinforced Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T2 Iron Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T3 Elvencraft Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T4 Magesteel Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T5 Golden Quiver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Quivers\T6 Quiver of Elvish Mastery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T5 Scepter of Skybolts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T6 Scepter of Storms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\Scepter of Fulmination.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T0 Lightning Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T1 Discharge Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T2 Thunderclap Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T3 Arcblast Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Scepters\T4 Cloudflash Scepter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T5 Seal of the Holy Warrior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T6 Seal of the Blessed Champion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\Seal of Blasphemous Prayer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T0 Seal of the Initiate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T1 Seal of the Pilgrim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T2 Seal of the Seeker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T3 Seal of the Aspirant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Seals\T4 Seal of the Divine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T4 Golden Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T5 Mithril Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T6 Colossus Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\Shield of Ogmur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\Snake Skin Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T0 Wooden Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T1 Iron Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T2 Steel Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shields\T3 Reinforced Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Wind Circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Basic Star_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Doom Circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Four-Point Star_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Ice Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Silver Star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Shurikens\Spiral Shuriken_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T4 Essence Tap Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T5 Lifedrinker Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T6 Bloodsucker Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\Cracked Crystal Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\Skull of Endless Torment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T0 Necrotic Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T1 Breathtaker Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T2 Heartstealer Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Skulls\T3 Soul Siphon Skull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T6 Elemental Detonation Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\Tablet of the King%27s Avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T0 Fire Spray Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T1 Flame Burst Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T2 Fire Nova Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T3 Scorching Blast Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T4 Destruction Sphere Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Spells\T5 Magic Nova Spell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T6 Tome of Holy Guidance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\Tome of Holy Protection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\Tome of Purification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T0 Healing Tome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T1 Remedy Tome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T2 Spirit Salve Tome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T3 Tome of Rejuvenation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T4 Tome of Renewing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Tomes\T5 Tome of Divine Favor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T5 Dragonstalker Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T6 Giantcatcher Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\Coral Venom Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T0 Hunting Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T1 Wilderlands Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T2 Deepforest Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T3 Savage Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Abilities\Traps\T4 Demonhunter Trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T10 Vengeance Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T11 Abyssal Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T12 Acropolis Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\Candy-Coated Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\Cheater Heavy Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\Resurrected Warrior%27s Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T0 Iron Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T1 Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T2 Blue Steel Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T3 Silver Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T4 Golden Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T5 Plate Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T6 Mithril Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T7 Mithril Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T8 Dragonscale Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T9 Desolation Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T9 Roc Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T10 Hippogriff Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T11 Griffon Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T12 Hydra Skin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\Cheater Light Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\Coral Silk Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\Snake Skin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\Spectral Cloth Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T0 Wolfskin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T1 Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T2 Basilisk Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T3 Minotaur Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T4 Bearskin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T5 Chimera Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T6 Wyvern Skin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T7 Studded Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T8 Drake Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T8 Robe of the Master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T9 Robe of the Shadow Magus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T10 Robe of the Moon Wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T11 Robe of the Elder Warlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T12 Robe of the Grand Sorcerer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\Chasuble of Holy Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\Cheater Robe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\Robe of the Mad Scientist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\RobeOfTheTlatoani.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T0 Robe of the Neophyte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T1 Robe of the Apprentice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T2 Robe of the Acolyte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T3 Robe of the Student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T4 Robe of the Conjurer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T5 Robe of the Adept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T6 Robe of the Invoker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T7 Robe of the Illusionist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T3 Ring of Superior Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount  Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T4 Ring of Paramount Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T5 Ring of Exalted Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T6 Ring of Unbound Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\The Forgotten Crown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\The Twilight Gemstone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\America Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Amulet of Resurrection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Bracer of the Guardian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Bronze Medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Captain%27s Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Coral Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Crystal Bone Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Experimental Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Gold Medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Ring of Divine Faith.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Ring of the Nile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Ring of the Pyramid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Ring of the Sphinx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Ring Pop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Silver Medal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Snake Eye Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\Spider%27s Eye Ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T0 Ring of Minor Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T1 Ring of Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Rings\T2 Ring of Greater Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T9 Cupid%27s Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T9 Verdant Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T10 Bow of Fey Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T11 Bow of Eternal Frost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T11 Bow of Innocent Blood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T12 Bow of Covert Havens.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\Coral Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\Doom Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\Leaf Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\Robobow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T0 Shortbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T1 Reinforced Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T2 Crossbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T3 Greywood Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T4 Ironwood Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T5 Fire Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T6 Double Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T7 Heavy Crossbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Bows\T8 Golden Bow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T4 Silver Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T5 Golden Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T6 Obsidian Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T7 Mithril Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T8 Fire Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T9 Heartfind Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T9 Ragetalon Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T10 Emeraldshard Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T11 Agateclaw Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T12 Dagger of Foul Malevolence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Bone Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Chicken Leg of Doom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Dirk of Cronus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Poison Fang Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Spirit Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\Sunshine Shiv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T0 Steel Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T1 Dirk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T2 Blue Steel Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Daggers\T3 Dusky Rose Dagger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T9 Jewel Eye Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T10 Ichimonji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T11 Muramasa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T12 Masamune.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\Useless Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\Arbiters Wrath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\Doku No Ken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\Ray Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T0 Rusty Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T1 Kendo Stick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T2 Plain Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T3 Thunder Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T4 Line Kutter Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T5 Night Edge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T6 Sky Edge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T7 Buster Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T8 Demon Edge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Katanas\T9 Diamond Bladed Katana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T12 Sword of Acclaim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Ancient Stone Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Crystal Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Demon Blade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Doctor Swordsworth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Pirate King%27s Cutlass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\Skull-splitter Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T0 Short Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T1 Broad Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T2 Saber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T3 Long Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T4 Falchion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T5 Fire Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T6 Glass Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T7 Golden Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T8 Ravenheart Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T9 Dragonsoul Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T9 Vinesword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T10 Archon Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T11 Frostbite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Swords\T11 Skysplitter Sword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T11 Wand of Ancient Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T12 Wand of Recompense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Wand of Egg-Cellence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Wand of the Bulwark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Conducting Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Crystal Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Spicy Wand of Spice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\Sprite Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\St. Abraham%27s Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T0 Fire Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T1 Force Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T2 Power Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T3 Missile Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T4 Eldritch Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T5 Hell%27s Fire Wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T6 Wand of Dark Magic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T7 Wand of Arcane Flame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T8 Wand of Death.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T9 Wand of Budding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T9 Wand of Deep Sorcery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Weapons\Wands\T10 Wand of Shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T10 Robe of the Shadow Magus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T11 Robe of the Moon Wizard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T12 Robe of the Elder Warlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T13 Robe of the Grand Sorcerer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\Robe Of The Tlatoani.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T2 Robe of the Neophyte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T3 Robe of the Acolyte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T4 Robe of the Student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T5 Robe of the Conjurer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T6 Robe of the Adept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T7 Robe of the Invoker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T8 Robe of the Illusionist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Robes\T9 Robe of the Master.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T10 Roc Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T11 Hippogriff Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T12 Griffon Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T13 Hydra Skin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T1 Wolfskin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T2 Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T3 Basilisk Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T4 Minotaur Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T5 Bearskin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T6 Chimera Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T7 Wyvern Skin Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T8 Studded Leather Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Leather Armor\T9 Drake Hide Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T13 Acropolis Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T1 Iron Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T2 Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T3 Blue Steel Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T4 Silver Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T5 Golden Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T6 Plate Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T7 Mithril Chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T8 Mithril Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T9 Dragonscale Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T10 Desolation Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T11 Vengeance Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T12 Abyssal Armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Armor\Heavy Armor\T13 Acropolis Armor%27Kopie.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

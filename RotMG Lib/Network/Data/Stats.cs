@@ -29,7 +29,7 @@ namespace RotMG_Lib.Network.Data
         INVENTORY_10 = 18,
         INVENTORY_11 = 19,
         ATTACK = 20,
-        DEFENCE = 21,
+        DEFENSE = 21,
         SPEED = 22,
         VITALITY = 26,
         WISDOM = 27,

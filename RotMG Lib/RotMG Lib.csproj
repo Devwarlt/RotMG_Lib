@@ -145,6 +145,7 @@
     <Compile Include="RC4.cs" />
     <Compile Include="RotMGClient.cs" />
     <Compile Include="RotMGConnection.cs" />
+    <Compile Include="RotMGData.cs" />
     <Compile Include="RSA.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="Servers.cs" />
@@ -154,6 +155,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="data\items.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="key.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

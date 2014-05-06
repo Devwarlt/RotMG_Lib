@@ -118,25 +118,1105 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="item_2593" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Potion of Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="America_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\America Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2606" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\T0 Fire Spray Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Amulet_of_Resurrection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Amulet of Resurrection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2711" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\T0 Energy Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Ancient_Stone_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Ancient Stone Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2821" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\T12 Robe of the Grand Sorcerer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Arbiters_Wrath" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\Arbiters Wrath.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2824" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\T12 Staff of the Cosmic Whole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bone_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Bone Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2852" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\T6 Elemental Detonation Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bracer_of_the_Guardian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Bracer of the Guardian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="item_2978" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ring of the Pyramid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bronze_Medal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Bronze Medal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Candy_Coated_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\Candy-Coated Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Captain_s_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Captain's Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chasuble_of_Holy_Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\Chasuble of Holy Light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cheater_Heavy_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\Cheater Heavy Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cheater_Light_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\Cheater Light Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cheater_Robe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\Cheater Robe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chicken_Leg_of_Doom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Chicken Leg of Doom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cloak_of_the_Planewalker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\Cloak of the Planewalker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Conducting_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Conducting Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coral_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\Coral Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coral_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Coral Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coral_Silk_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\Coral Silk Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Coral_Venom_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\Coral Venom Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cracked_Crystal_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\Cracked Crystal Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crystal_Bone_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Crystal Bone Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crystal_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Crystal Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crystal_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Crystal Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Demon_Blade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Demon Blade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Dirk_of_Cronus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Dirk of Cronus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Doctor_Swordsworth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Doctor Swordsworth.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Doku_No_Ken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\Doku No Ken.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Doom_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\Doom Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Experimental_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Experimental Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ghostly_Prism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\Ghostly Prism.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gold_Medal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Gold Medal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Helm_of_the_Juggernaut" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\Helm of the Juggernaut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KoalaPOW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\KoalaPOW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="KoalaPOW1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\KoalaPOW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Leaf_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\Leaf Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Orb_of_Conflict" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\Orb of Conflict.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pirate_King_s_Cutlass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Pirate King's Cutlass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Plague_Poison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\Plague Poison.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Poison_Fang_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Poison Fang Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Quiver_of_Thunder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\Quiver of Thunder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ray_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\Ray Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Resurrected_Warrior_s_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\Resurrected Warrior's Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ring_of_Divine_Faith" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Ring of Divine Faith.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ring_of_the_Nile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Ring of the Nile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ring_of_the_Pyramid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Ring of the Pyramid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ring_of_the_Sphinx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Ring of the Sphinx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ring_Pop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Ring Pop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Robe_of_the_Mad_Scientist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\Robe of the Mad Scientist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Robe_Of_The_Tlatoani" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\Robe Of The Tlatoani.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Robobow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\Robobow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Scepter_of_Fulmination" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\Scepter of Fulmination.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Seal_of_Blasphemous_Prayer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\Seal of Blasphemous Prayer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shield_of_Ogmur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\Shield of Ogmur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Silver_Medal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Silver Medal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skull_of_Endless_Torment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\Skull of Endless Torment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Skull_splitter_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\Skull-splitter Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Snake_Eye_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Snake Eye Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Snake_Skin_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\Snake Skin Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Snake_Skin_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\Snake Skin Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spectral_Cloth_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\Spectral Cloth Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spicy_Wand_of_Spice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Spicy Wand of Spice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spider_s_Eye_Ring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\Spider's Eye Ring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spirit_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Spirit Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sprite_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Sprite Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Staff_of_Extreme_Prejudice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\Staff of Extreme Prejudice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Staff_of_Extreme_Prejudice1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\Staff of Extreme Prejudice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Staff_of_the_Crystal_Serpent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\Staff of the Crystal Serpent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Staff_of_the_Crystal_Serpent1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\Staff of the Crystal Serpent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="St__Abraham_s_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\St. Abraham's Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sunshine_Shiv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\Sunshine Shiv.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Anatis_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T0 Anatis Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Anatis_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T0 Anatis Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Basic_Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Basic Star_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Centipede_Poison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T0 Centipede Poison.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Cloak_of_Shadows" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T0 Cloak of Shadows.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Combat_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T0 Combat Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Decoy_Prism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T0 Decoy Prism.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Energy_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T0 Energy Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Energy_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T0 Energy Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Fire_Spray_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T0 Fire Spray Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Fire_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T0 Fire Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Healing_Tome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T0 Healing Tome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Hunting_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T0 Hunting Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Lightning_Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T0 Lightning Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Magic_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T0 Magic Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Necrotic_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T0 Necrotic Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Ring_of_Minor_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T0 Ring of Minor Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Rusty_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T0 Rusty Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Seal_of_the_Initiate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T0 Seal of the Initiate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Shortbow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T0 Shortbow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Short_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T0 Short Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Stasis_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T0 Stasis Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Steel_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T0 Steel Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T0_Wooden_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T0 Wooden Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Archon_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T10 Archon Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Bow_of_Fey_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T10 Bow of Fey Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Desolation_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T10 Desolation Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Emeraldshard_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T10 Emeraldshard Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Ichimonji" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T10 Ichimonji.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Robe_of_the_Shadow_Magus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T10 Robe of the Shadow Magus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Roc_Leather_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T10 Roc Leather Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Staff_of_Diabolic_Secrets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T10 Staff of Diabolic Secrets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Staff_of_Diabolic_Secrets1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T10 Staff of Diabolic Secrets.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T10_Wand_of_Shadow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T10 Wand of Shadow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Agateclaw_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T11 Agateclaw Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Bow_of_Eternal_Frost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T11 Bow of Eternal Frost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Bow_of_Innocent_Blood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T11 Bow of Innocent Blood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Frostbite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T11 Frostbite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Hippogriff_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T11 Hippogriff Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Muramasa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T11 Muramasa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Robe_of_the_Moon_Wizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T11 Robe of the Moon Wizard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Skysplitter_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T11 Skysplitter Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Staff_of_Astral_Knowledge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T11 Staff of Astral Knowledge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Staff_of_Astral_Knowledge1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T11 Staff of Astral Knowledge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Vengeance_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T11 Vengeance Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T11_Wand_of_Ancient_Warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T11 Wand of Ancient Warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Abyssal_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T12 Abyssal Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Bow_of_Covert_Havens" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T12 Bow of Covert Havens.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Dagger_of_Foul_Malevolence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T12 Dagger of Foul Malevolence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Griffon_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T12 Griffon Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Masamune" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T12 Masamune.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Robe_of_the_Elder_Warlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T12 Robe of the Elder Warlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Staff_of_the_Cosmic_Whole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T12 Staff of the Cosmic Whole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Staff_of_the_Cosmic_Whole1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T12 Staff of the Cosmic Whole.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Sword_of_Acclaim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T12 Sword of Acclaim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T12_Wand_of_Recompense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T12 Wand of Recompense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T13_Acropolis_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T13 Acropolis Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T13_Hydra_Skin_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T13 Hydra Skin Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T13_Robe_of_the_Grand_Sorcerer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T13 Robe of the Grand Sorcerer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Breathtaker_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T1 Breathtaker Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Broad_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T1 Broad Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Bronze_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T1 Bronze Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Cloak_of_Darkness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T1 Cloak of Darkness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Deception_Prism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T1 Deception Prism.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Dirk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T1 Dirk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Discharge_Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T1 Discharge Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Firebrand_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T1 Firebrand Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Firebrand_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T1 Firebrand Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Flame_Burst_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T1 Flame Burst Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Force_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T1 Force Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Four_Point_Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Four-Point Star_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Iron_Mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T1 Iron Mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Iron_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T1 Iron Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Kendo_Stick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T1 Kendo Stick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Reinforced_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T1 Reinforced Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Reinforced_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T1 Reinforced Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Remedy_Tome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T1 Remedy Tome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Ring_of_Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T1 Ring of Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Robe_of_the_Apprentice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T1 Robe of the Apprentice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Seal_of_the_Pilgrim" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T1 Seal of the Pilgrim.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Spider_Venom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T1 Spider Venom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Suspension_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T1 Suspension Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Wilderlands_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T1 Wilderlands Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T1_Wolfskin_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T1 Wolfskin Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Black_Iron_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T2 Black Iron Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Blue_Steel_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T2 Blue Steel Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Chainmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T2 Chainmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Cloak_of_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T2 Cloak of Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Comet_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T2 Comet Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Comet_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T2 Comet Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Crossbow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T2 Crossbow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Deepforest_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T2 Deepforest Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Fire_Nova_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T2 Fire Nova Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Heartstealer_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T2 Heartstealer Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Illusion_Prism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T2 Illusion Prism.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Imprisonment_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T2 Imprisonment Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Iron_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T2 Iron Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Leather_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T2 Leather Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Pit_Viper_Poison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T2 Pit Viper Poison.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Plain_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T2 Plain Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Power_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T2 Power Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Ring_of_Greater_Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T2 Ring of Greater Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Robe_of_the_Neophyte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T2 Robe of the Neophyte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Saber" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T2 Saber.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Seal_of_the_Seeker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T2 Seal of the Seeker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Spiral_Shuriken" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Spiral Shuriken_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Spirit_Salve_Tome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T2 Spirit Salve Tome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Steel_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T2 Steel Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T2_Thunderclap_Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T2 Thunderclap Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Arcblast_Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T3 Arcblast Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Basilisk_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T3 Basilisk Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Blue_Steel_Mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T3 Blue Steel Mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Cloak_of_the_Night_Thief" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T3 Cloak of the Night Thief.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Dusky_Rose_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T3 Dusky Rose Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Elvencraft_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T3 Elvencraft Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Greywood_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T3 Greywood Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Hallucination_Prism" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T3 Hallucination Prism.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Long_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T3 Long Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Missile_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T3 Missile Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Neutralization_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T3 Neutralization Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Red_Iron_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T3 Red Iron Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Reinforced_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T3 Reinforced Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Ring_of_Superior_Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T3 Ring of Superior Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Robe_of_the_Acolyte" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T3 Robe of the Acolyte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Savage_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T3 Savage Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Scorching_Blast_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T3 Scorching Blast Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Seal_of_the_Aspirant" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T3 Seal of the Aspirant.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Serpentine_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T3 Serpentine Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Serpentine_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T3 Serpentine Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Silver_Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Silver Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Soul_Siphon_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T3 Soul Siphon Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Stingray_Poison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T3 Stingray Poison.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Thunder_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T3 Thunder Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T3_Tome_of_Rejuvenation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T3 Tome of Rejuvenation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Cloak_of_the_Red_Agent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T4 Cloak of the Red Agent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Cloudflash_Scepter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T4 Cloudflash Scepter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Demonhunter_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T4 Demonhunter Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Destruction_Sphere_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T4 Destruction Sphere Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Eldritch_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T4 Eldritch Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Essence_Tap_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T4 Essence Tap Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Falchion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T4 Falchion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Felwasp_Toxin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T4 Felwasp Toxin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Golden_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T4 Golden Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ironwood_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T4 Ironwood Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Line_Kutter_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T4 Line Kutter Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Magesteel_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T4 Magesteel Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Meteor_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T4 Meteor Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Meteor_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T4 Meteor Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Minotaur_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T4 Minotaur Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Prism_of_Figments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T4 Prism of Figments.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Ring_of_Paramount__Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T4 Ring of Paramount  Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Robe_of_the_Student" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T4 Robe of the Student.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Seal_of_the_Divine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T4 Seal of the Divine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Silver_Chainmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T4 Silver Chainmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Silver_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T4 Silver Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Steel_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T4 Steel Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Timelock_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T4 Timelock Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Tome_of_Renewing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T4 Tome of Renewing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T4_Wind_Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Wind Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Banishment_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T5 Banishment Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Bearskin_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T5 Bearskin Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Cloak_of_Endless_Twilight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T5 Cloak of Endless Twilight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Dragonstalker_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T5 Dragonstalker Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Fire_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T5 Fire Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Fire_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T5 Fire Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Golden_Chainmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T5 Golden Chainmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Golden_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T5 Golden Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Golden_Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T5 Golden Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Golden_Quiver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T5 Golden Quiver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Hell_s_Fire_Wand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T5 Hell's Fire Wand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ice_Star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Ice Star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Lifedrinker_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T5 Lifedrinker Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Magic_Nova_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T5 Magic Nova Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Mithril_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T5 Mithril Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Nightwing_Venom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T5 Nightwing Venom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Night_Edge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T5 Night Edge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Prism_of_Phantoms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T5 Prism of Phantoms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Ring_of_Exalted_Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T5 Ring of Exalted Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Robe_of_the_Conjurer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T5 Robe of the Conjurer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Scepter_of_Skybolts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T5 Scepter of Skybolts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Seal_of_the_Holy_Warrior" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T5 Seal of the Holy Warrior.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Slayer_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T5 Slayer Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Slayer_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T5 Slayer Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T5_Tome_of_Divine_Favor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T5 Tome of Divine Favor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Avenger_Staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T6 Avenger Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Avenger_Staff1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T6 Avenger Staff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Baneserpent_Poison" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Poisons\T6 Baneserpent Poison.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Bloodsucker_Skull" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Skulls\T6 Bloodsucker Skull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Chimera_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T6 Chimera Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Cloak_of_Ghostly_Concealment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Cloaks\T6 Cloak of Ghostly Concealment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Colossus_Shield" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shields\T6 Colossus Shield.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Doom_Circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Shurikens\Doom Circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Double_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T6 Double Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Elemental_Detonation_Spell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\T6 Elemental Detonation Spell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Giantcatcher_Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Traps\T6 Giantcatcher Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Glass_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T6 Glass Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Helm_of_the_Great_General" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Helms\T6 Helm of the Great General.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Obsidian_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T6 Obsidian Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Planefetter_Orb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Orbs\T6 Planefetter Orb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Plate_Mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T6 Plate Mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Prism_of_Apparitions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Prisms\T6 Prism of Apparitions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Quiver_of_Elvish_Mastery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Quivers\T6 Quiver of Elvish Mastery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Defense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Defense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Dexterity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Dexterity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Health" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Health.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Speed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Speed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Vitality.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Ring_of_Unbound_Wisdom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\T6 Ring of Unbound Wisdom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Robe_of_the_Adept" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T6 Robe of the Adept.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Scepter_of_Storms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Scepters\T6 Scepter of Storms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Seal_of_the_Blessed_Champion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Seals\T6 Seal of the Blessed Champion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Sky_Edge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T6 Sky Edge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Tome_of_Holy_Guidance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\T6 Tome of Holy Guidance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T6_Wand_of_Dark_Magic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T6 Wand of Dark Magic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Buster_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T7 Buster Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Golden_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T7 Golden Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Heavy_Crossbow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T7 Heavy Crossbow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Mithril_Chainmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T7 Mithril Chainmail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Mithril_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T7 Mithril Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Robe_of_the_Invoker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T7 Robe of the Invoker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Staff_of_Destruction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T7 Staff of Destruction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Staff_of_Destruction1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T7 Staff of Destruction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Wand_of_Arcane_Flame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T7 Wand of Arcane Flame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T7_Wyvern_Skin_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T7 Wyvern Skin Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Demon_Edge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T8 Demon Edge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Fire_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T8 Fire Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Golden_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T8 Golden Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Mithril_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T8 Mithril Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Ravenheart_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T8 Ravenheart Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Robe_of_the_Illusionist" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T8 Robe of the Illusionist.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Staff_of_Horror" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T8 Staff of Horror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Staff_of_Horror1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T8 Staff of Horror.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Studded_Leather_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T8 Studded Leather Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T8_Wand_of_Death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T8 Wand of Death.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Cupid_s_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T9 Cupid's Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Diamond_Bladed_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T9 Diamond Bladed Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Dragonscale_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Heavy Armor\T9 Dragonscale Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Dragonsoul_Sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T9 Dragonsoul Sword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Drake_Hide_Armor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Leather Armor\T9 Drake Hide Armor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Heartfind_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T9 Heartfind Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Jewel_Eye_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\T9 Jewel Eye Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Ragetalon_Dagger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Daggers\T9 Ragetalon Dagger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Robe_of_the_Master" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Armor\Robes\T9 Robe of the Master.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Staff_of_Adoration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T9 Staff of Adoration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Staff_of_Adoration1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T9 Staff of Adoration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Staff_of_Necrotic_Arcana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T9 Staff of Necrotic Arcana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Staff_of_Necrotic_Arcana1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Staffs\T9 Staff of Necrotic Arcana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Verdant_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Bows\T9 Verdant Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Vinesword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Swords\T9 Vinesword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Wand_of_Budding" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T9 Wand of Budding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="T9_Wand_of_Deep_Sorcery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\T9 Wand of Deep Sorcery.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tablet_of_the_King_s_Avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Spells\Tablet of the King's Avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="The_Forgotten_Crown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\The Forgotten Crown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="The_Twilight_Gemstone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Rings\The Twilight Gemstone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tome_of_Holy_Protection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\Tome of Holy Protection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tome_of_Purification" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Abilities\Tomes\Tome of Purification.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Useless_Katana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Katanas\Useless Katana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wand_of_Egg_Cellence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Wand of Egg-Cellence.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wand_of_the_Bulwark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\Weapons\Wands\Wand of the Bulwark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

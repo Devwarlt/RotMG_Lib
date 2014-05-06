@@ -14,12 +14,21 @@ namespace TradeBot
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
-            new Thread(() => Application.Run(new Main())).Start();
+            Thread t = new Thread(createForm);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
             Thread.CurrentThread.Join();
+        }
+
+        [STAThread]
+        private static void createForm()
+        {
+            Application.Run(new Main());
         }
         static string name = string.Empty;
 
