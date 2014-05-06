@@ -27,7 +27,7 @@ namespace RotMG_Lib
                     tier = "T" + elem.Element("Tier").Value;
                 short itemId = (short)Utils.FromString(elem.Attribute("type").Value);
                 if(!Items.ContainsKey(itemId))
-                    Items.Add(itemId, tier +  " " + name);
+                    Items.Add(itemId, tier == String.Empty ? name : tier + " " + name);
             }
         }
     }
