@@ -11,11 +11,14 @@ namespace RotMG_Lib
     public sealed class RotMGData
     {
         public static Dictionary<short, string> Items { get; set; }
+        public static Dictionary<short, bool> Soulbound { get; set; }
 
         public RotMGData()
         {
             if (Items == null)
                 Items = new Dictionary<short, string>();
+            if (Soulbound == null)
+                Soulbound = new Dictionary<short, bool>();
 
             XElement root = XElement.Load("data/items.xml");
 
@@ -26,6 +29,8 @@ namespace RotMG_Lib
                 if(elem.Element("Tier") != null)
                     tier = "T" + elem.Element("Tier").Value;
                 short itemId = (short)Utils.FromString(elem.Attribute("type").Value);
+                if (!Soulbound.ContainsKey(itemId))
+                    Soulbound.Add(itemId, elem.Element("Soulbound") != null);
                 if(!Items.ContainsKey(itemId))
                     Items.Add(itemId, tier == String.Empty ? name : tier + " " + name);
             }

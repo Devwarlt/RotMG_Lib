@@ -25,6 +25,15 @@ namespace RotMG_Lib
 
         public event OnPacketReceiveHandler OnPacketReceive;
         public event OnLoginErrorHandler OnLoginError;
+
+
+        public static int UpdatePacketsReceived { get; private set; }
+        public static int UpdateAckPacketsSend { get; private set; }
+        public static int NewTickPacketsReceived { get; private set; }
+        public static int NewTickResponseMovePacketsSend { get; private set; }
+
+
+
         public string BuildVersion { get; private set; }
         public bool IsFromArena { get; private set; }
 
@@ -156,14 +165,17 @@ namespace RotMG_Lib
                     //    SendPacket(new ShootAckPacket { Time = (int)tick.ElapsedMilliseconds });
                     //    break;
                     case PacketID.NEW_TICK:
+                        NewTickPacketsReceived++;
                         handleNewTick(pkt as New_TickPacket);
                         break;
                     case PacketID.UPDATE:
+                        UpdatePacketsReceived++;
                         handleUpdatePacket(pkt as UpdatePacket);
                         break;
                     case PacketID.FAILURE:
                         RotMG_Lib.Network.ServerPackets.FailurePacket failurePkt = pkt as RotMG_Lib.Network.ServerPackets.FailurePacket;
                         Console.WriteLine(failurePkt.ErrorId + " - " + failurePkt.ErrorDescription);
+                        Console.WriteLine("NewTicks Received: {0}\nNewTicks send: {1}\nUpdates Received: {2}\nUpdates send: {3}", NewTickPacketsReceived, NewTickResponseMovePacketsSend, UpdatePacketsReceived, UpdateAckPacketsSend);
                         break;
                 }
             }
@@ -176,6 +188,7 @@ namespace RotMG_Lib
         private void handleUpdatePacket(UpdatePacket pkt)
         {
             SendPacket(new UpdateAckPacket());
+            UpdateAckPacketsSend++;
             foreach (int i in pkt.Drops)
             {
                 ObjectDef obj;
@@ -354,6 +367,7 @@ namespace RotMG_Lib
 
         private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)
         {
+            NewTickResponseMovePacketsSend++;
             SendPacket(new MovePacket
             {
                 TickId = tickID,

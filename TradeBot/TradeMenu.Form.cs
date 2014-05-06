@@ -23,6 +23,8 @@ namespace TradeBot
     {
         private RotMGClient client;
         private bool trading;
+        private string tradeText;
+        private bool botStarted;
         private Dictionary<int, bool> SelectedItems { get; set; }
 
         public TradeMenu(RotMGClient client)
@@ -34,7 +36,7 @@ namespace TradeBot
             for (int i = 0; i < 12; i++)
                 SelectedItems.Add(i, false);
             this.Text = String.Format("Logged in as {0}", client.Player.Name);
-            timer1.Start();
+            invUpdater.Start();
             AutoCompleteStringCollection col = new AutoCompleteStringCollection();
             for (int i = 0; i < RotMGData.Items.Keys.Count; i++)
             {
@@ -53,6 +55,7 @@ namespace TradeBot
             buyBox.AutoCompleteCustomSource = sellBox.AutoCompleteCustomSource = col;
             buyBox.Sorted = sellBox.Sorted = true;
             buyBox.SelectedItem = sellBox.SelectedItem = buyBox.Items[1];
+            tradeText = "%%%%Buying {buyAmount} {buyItem} for {sellAmount} {sellItem} @{playerName}%%%%";
         }
 
         private bool isNumber(string value, int index)
@@ -71,6 +74,7 @@ namespace TradeBot
             if (itemname.StartsWith("_"))
                 itemname = itemname.Remove(0, 1);
             buyPic.Image = (Bitmap)Resources.ResourceManager.GetObject(itemname);
+            buyWarning.Visible = isItemSoulbound(itemId);
         }
 
         private void sellBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +87,7 @@ namespace TradeBot
             if (itemname.StartsWith("_"))
                 itemname = itemname.Remove(0, 1);
             sellPic.Image = (Bitmap)Resources.ResourceManager.GetObject(itemname);
+            sellWarning.Visible = isItemSoulbound(itemId);
         }
 
         private void buyAmount_ValueChanged(object sender, EventArgs e)
@@ -93,6 +98,50 @@ namespace TradeBot
         private void sellAmount_ValueChanged(object sender, EventArgs e)
         {
             sellAmountTextBox.Text = sellAmount.Value.ToString() + "x";
+        }
+
+        private bool isItemSoulbound(short itemId)
+        {
+            return RotMGData.Soulbound[itemId];
+        }
+
+        private void soulboundWarning_mouseHover(object sender, EventArgs e)
+        {
+            Point p = this.PointToClient(Cursor.Position);
+            ToolTip t = new ToolTip();
+            t.Show("This item is soulbound, you know I can't trade it, \nbut I will not force you to select an other item c:\nOr my ItemXml is outdated c:", this, p, 3500);
+        }
+
+        private void pictureBox12_MouseHover(object sender, EventArgs e)
+        {
+            if(sender is PictureBox)
+            {
+                if ((sender as PictureBox).BackColor == Color.DarkRed)
+                {
+                    Point p = this.PointToClient(Cursor.Position);
+                    ToolTip t = new ToolTip();
+                    t.Show("Maybe not tradeable.", this, p, 3500);
+                }
+            }
+        }
+
+        private void startTrade_Click(object sender, EventArgs e)
+        {
+            if (sender is Button)
+            {
+                if ((sender as Button).Text == "Start")
+                {
+                    botStarted = true;
+                    (sender as Button).Text = "Stop";
+                    tradeBotTick.Start();
+                }
+                else
+                {
+                    botStarted = false;
+                    (sender as Button).Text = "Start";
+                    tradeBotTick.Stop();
+                }
+            }
         }
     }
 }

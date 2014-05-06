@@ -158,7 +158,7 @@ namespace RotMG_Lib
                     pendingPackets.TryDequeue(out packet);
                     byte[] data = packet.Write(this);
 
-                    connection.Client.Send(data);
+                    connection.Client.Send(data, SocketFlags.DontRoute);
                 }
             }
             catch (Exception ex)
