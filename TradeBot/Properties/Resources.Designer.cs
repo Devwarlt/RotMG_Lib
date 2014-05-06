@@ -233,6 +233,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Coral_Juice {
+            get {
+                object obj = ResourceManager.GetObject("Coral_Juice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Coral_Ring {
             get {
                 object obj = ResourceManager.GetObject("Coral_Ring", resourceCulture);
@@ -353,6 +363,146 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_1 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_2 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_3 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_4 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_5 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_6 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Health_7 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Health_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_1 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_2 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_3 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_4 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_5 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_6 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Elixir_of_Magic_7 {
+            get {
+                object obj = ResourceManager.GetObject("Elixir_of_Magic_7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Experimental_Ring {
             get {
                 object obj = ResourceManager.GetObject("Experimental_Ring", resourceCulture);
@@ -383,9 +533,29 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Healing_Ichor {
+            get {
+                object obj = ResourceManager.GetObject("Healing_Ichor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Helm_of_the_Juggernaut {
             get {
                 object obj = ResourceManager.GetObject("Helm_of_the_Juggernaut", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Holy_Water {
+            get {
+                object obj = ResourceManager.GetObject("Holy_Water", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +593,49 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mad_God_Ale {
+            get {
+                object obj = ResourceManager.GetObject("Mad_God_Ale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minor_Health_Potion {
+            get {
+                object obj = ResourceManager.GetObject("Minor_Health_Potion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minor_Magic_Potion {
+            get {
+                object obj = ResourceManager.GetObject("Minor_Magic_Potion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Orb_of_Conflict {
             get {
                 object obj = ResourceManager.GetObject("Orb_of_Conflict", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Oryx_Stout {
+            get {
+                object obj = ResourceManager.GetObject("Oryx_Stout", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,6 +673,36 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pollen_Powder {
+            get {
+                object obj = ResourceManager.GetObject("Pollen_Powder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Potion_of_Life {
+            get {
+                object obj = ResourceManager.GetObject("Potion_of_Life", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Potion_of_Mana {
+            get {
+                object obj = ResourceManager.GetObject("Potion_of_Mana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Quiver_of_Thunder {
             get {
                 object obj = ResourceManager.GetObject("Quiver_of_Thunder", resourceCulture);
@@ -476,6 +716,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap Ray_Katana {
             get {
                 object obj = ResourceManager.GetObject("Ray_Katana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Realm_wheat_Hefeweizen {
+            get {
+                object obj = ResourceManager.GetObject("Realm_wheat_Hefeweizen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,6 +823,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Saint_Patty_s_Brew {
+            get {
+                object obj = ResourceManager.GetObject("Saint_Patty_s_Brew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Scepter_of_Fulmination {
             get {
                 object obj = ResourceManager.GetObject("Scepter_of_Fulmination", resourceCulture);
@@ -636,6 +896,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap Snake_Eye_Ring {
             get {
                 object obj = ResourceManager.GetObject("Snake_Eye_Ring", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snake_Oil {
+            get {
+                object obj = ResourceManager.GetObject("Snake_Oil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1133,6 +1403,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T1_Health_Potion {
+            get {
+                object obj = ResourceManager.GetObject("T1_Health_Potion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T1_Iron_Mail {
             get {
                 object obj = ResourceManager.GetObject("T1_Iron_Mail", resourceCulture);
@@ -1156,6 +1436,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap T1_Kendo_Stick {
             get {
                 object obj = ResourceManager.GetObject("T1_Kendo_Stick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T1_Magic_Potion {
+            get {
+                object obj = ResourceManager.GetObject("T1_Magic_Potion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1843,6 +2133,66 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Attack {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Attack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Defense {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Defense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Dexterity {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Dexterity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Speed {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Speed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Vitality {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Vitality", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T2_Potion_of_Wisdom {
+            get {
+                object obj = ResourceManager.GetObject("T2_Potion_of_Wisdom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T2_Power_Wand {
             get {
                 object obj = ResourceManager.GetObject("T2_Power_Wand", resourceCulture);
@@ -2033,9 +2383,39 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T3_Cabernet {
+            get {
+                object obj = ResourceManager.GetObject("T3_Cabernet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Chardonnay {
+            get {
+                object obj = ResourceManager.GetObject("T3_Chardonnay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T3_Cloak_of_the_Night_Thief {
             get {
                 object obj = ResourceManager.GetObject("T3_Cloak_of_the_Night_Thief", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Cream_Spirit {
+            get {
+                object obj = ResourceManager.GetObject("T3_Cream_Spirit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2056,6 +2436,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap T3_Elvencraft_Quiver {
             get {
                 object obj = ResourceManager.GetObject("T3_Elvencraft_Quiver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Fire_Water {
+            get {
+                object obj = ResourceManager.GetObject("T3_Fire_Water", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2093,9 +2483,29 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T3_Melon_Liqueur {
+            get {
+                object obj = ResourceManager.GetObject("T3_Melon_Liqueur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T3_Missile_Wand {
             get {
                 object obj = ResourceManager.GetObject("T3_Missile_Wand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Muscat {
+            get {
+                object obj = ResourceManager.GetObject("T3_Muscat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2126,6 +2536,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap T3_Reinforced_Shield {
             get {
                 object obj = ResourceManager.GetObject("T3_Reinforced_Shield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Rice_Wine {
+            get {
+                object obj = ResourceManager.GetObject("T3_Rice_Wine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2223,6 +2643,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T3_Sauvignon_Blanc {
+            get {
+                object obj = ResourceManager.GetObject("T3_Sauvignon_Blanc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T3_Savage_Trap {
             get {
                 object obj = ResourceManager.GetObject("T3_Savage_Trap", resourceCulture);
@@ -2273,6 +2703,16 @@ namespace TradeBot.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap T3_Shiraz {
+            get {
+                object obj = ResourceManager.GetObject("T3_Shiraz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap T3_Silver_Star {
             get {
                 object obj = ResourceManager.GetObject("T3_Silver_Star", resourceCulture);
@@ -2316,6 +2756,16 @@ namespace TradeBot.Properties {
         internal static System.Drawing.Bitmap T3_Tome_of_Rejuvenation {
             get {
                 object obj = ResourceManager.GetObject("T3_Tome_of_Rejuvenation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap T3_Vintage_Port {
+            get {
+                object obj = ResourceManager.GetObject("T3_Vintage_Port", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

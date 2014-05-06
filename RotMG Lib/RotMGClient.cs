@@ -175,6 +175,7 @@ namespace RotMG_Lib
 
         private void handleUpdatePacket(UpdatePacket pkt)
         {
+            SendPacket(new UpdateAckPacket());
             foreach (int i in pkt.Drops)
             {
                 ObjectDef obj;
@@ -225,11 +226,11 @@ namespace RotMG_Lib
                     }
                 }
             }
-            SendPacket(new UpdateAckPacket());
         }
 
         private void handleNewTick(New_TickPacket pkt)
         {
+            sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, Player.Position, null);
             prevTickId = currentTickId;
             prevTickTime = currentTickTime;
 
@@ -349,7 +350,6 @@ namespace RotMG_Lib
                     //}
                 //}
             //}
-            sendMove(pkt.TickId, (int)tick.ElapsedMilliseconds, Player.Position, null);
         }
 
         private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)

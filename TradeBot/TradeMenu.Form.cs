@@ -40,7 +40,7 @@ namespace TradeBot
             {
                 string item = RotMGData.Items.Values.ToArray()[i];
                 short itemId = RotMGData.Items.Keys.ToArray()[i];
-                if (item.StartsWith("T"))
+                if (item.StartsWith("T") && isNumber(item, 2))
                 {
                     item = item.Remove(0, 3);
                 }
@@ -53,6 +53,12 @@ namespace TradeBot
             buyBox.AutoCompleteCustomSource = sellBox.AutoCompleteCustomSource = col;
             buyBox.Sorted = sellBox.Sorted = true;
             buyBox.SelectedItem = sellBox.SelectedItem = buyBox.Items[1];
+        }
+
+        private bool isNumber(string value, int index)
+        {
+            int num;
+            return int.TryParse(value.Substring(index, 1), out num);
         }
 
         private void buyBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -1276,6 +1276,198 @@
   <ItemGroup>
     <None Include="Images\Armor\Heavy Armor\T13 Acropolis Armor%27Kopie.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Life.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Mana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\Potion of Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Shiraz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Snake Oil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Vintage Port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Cabernet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Chardonnay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Coral Juice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Cream Spirit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Magic 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Fire Water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Healing Ichor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Health Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Holy Water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Mad God Ale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Magic Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Melon Liqueur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Minor Health Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Minor Magic Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Muscat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Oryx Stout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Pollen Powder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Realm-wheat Hefeweizen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Rice Wine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Saint Patty%27s Brew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Sauvignon Blanc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Wisdom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Attack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Stat Potions\T2 Potion of Speed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Sauvignon Blanc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Shiraz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Vintage Port.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T1 Health Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T1 Magic Potion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Cabernet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Chardonnay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Cream Spirit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Fire Water.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Melon Liqueur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Muscat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\T3 Rice Wine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\Consumables\Restoratives\Elixir of Health 5.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
