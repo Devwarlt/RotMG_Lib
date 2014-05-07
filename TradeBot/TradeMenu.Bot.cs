@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TradeBot
 {
@@ -72,6 +73,9 @@ namespace TradeBot
 
         private void tradeBot_Tick(object sender, EventArgs e)
         {
+            //notifyIcon1.BalloonTipText = convertToTradeText(tradeText);
+            //notifyIcon1.BalloonTipTitle = "TradeBot";
+            //notifyIcon1.ShowBalloonTip(4000);
             client.SendPacket(new PlayerTextPacket
             {
                 Text = convertToTradeText(tradeText)

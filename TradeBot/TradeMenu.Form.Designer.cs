@@ -60,8 +60,6 @@
             this.def = new System.Windows.Forms.Label();
             this.spd = new System.Windows.Forms.Label();
             this.att = new System.Windows.Forms.Label();
-            this.mp = new TradeBot.StatusBar();
-            this.hp = new TradeBot.StatusBar();
             this.invUpdater = new System.Windows.Forms.Timer(this.components);
             this.playerOwner = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -89,6 +87,9 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tradeBotTick = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.mp = new TradeBot.StatusBar();
+            this.hp = new TradeBot.StatusBar();
             this.inventory_groupbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -517,34 +518,6 @@
             this.att.TabIndex = 2;
             this.att.Text = "Att: 75";
             // 
-            // mp
-            // 
-            this.mp.BackColor = System.Drawing.Color.Transparent;
-            this.mp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.mp.Location = new System.Drawing.Point(6, 35);
-            this.mp.MaxColor = System.Drawing.Color.RoyalBlue;
-            this.mp.MaxValue = 100F;
-            this.mp.MinColor = System.Drawing.Color.RoyalBlue;
-            this.mp.Name = "mp";
-            this.mp.Size = new System.Drawing.Size(244, 23);
-            this.mp.TabIndex = 1;
-            this.mp.Value = 100F;
-            // 
-            // hp
-            // 
-            this.hp.BackColor = System.Drawing.Color.Transparent;
-            this.hp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.hp.Location = new System.Drawing.Point(6, 6);
-            this.hp.MaxColor = System.Drawing.Color.Firebrick;
-            this.hp.MaxValue = 100F;
-            this.hp.MinColor = System.Drawing.Color.Firebrick;
-            this.hp.Name = "hp";
-            this.hp.Size = new System.Drawing.Size(244, 23);
-            this.hp.TabIndex = 0;
-            this.hp.Value = 100F;
-            // 
             // invUpdater
             // 
             this.invUpdater.Tick += new System.EventHandler(this.timer1_Tick_1);
@@ -848,6 +821,41 @@
             this.tradeBotTick.Interval = 5000;
             this.tradeBotTick.Tick += new System.EventHandler(this.tradeBot_Tick);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Trade Bot";
+            this.notifyIcon1.Visible = true;
+            // 
+            // mp
+            // 
+            this.mp.BackColor = System.Drawing.Color.Transparent;
+            this.mp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.mp.Location = new System.Drawing.Point(6, 35);
+            this.mp.MaxColor = System.Drawing.Color.RoyalBlue;
+            this.mp.MaxValue = 100F;
+            this.mp.MinColor = System.Drawing.Color.RoyalBlue;
+            this.mp.Name = "mp";
+            this.mp.Size = new System.Drawing.Size(244, 23);
+            this.mp.TabIndex = 1;
+            this.mp.Value = 100F;
+            // 
+            // hp
+            // 
+            this.hp.BackColor = System.Drawing.Color.Transparent;
+            this.hp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.hp.Location = new System.Drawing.Point(6, 6);
+            this.hp.MaxColor = System.Drawing.Color.Firebrick;
+            this.hp.MaxValue = 100F;
+            this.hp.MinColor = System.Drawing.Color.Firebrick;
+            this.hp.Name = "hp";
+            this.hp.Size = new System.Drawing.Size(244, 23);
+            this.hp.TabIndex = 0;
+            this.hp.Value = 100F;
+            // 
             // TradeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -952,5 +960,6 @@
         private System.Windows.Forms.PictureBox buyWarning;
         private System.Windows.Forms.PictureBox sellWarning;
         private System.Windows.Forms.Timer tradeBotTick;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
