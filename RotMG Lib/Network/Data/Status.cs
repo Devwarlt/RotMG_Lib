@@ -12,6 +12,17 @@ namespace RotMG_Lib.Network.Data
         public Position Position { get; set; }
         public StatData[] StatData { get; set; }
 
+        public void SetStat(StatData stat)
+        {
+            for (int i = 0; i < StatData.Length; i++)
+            {
+                if (StatData[i].StatsType == stat.StatsType)
+                {
+                    StatData[i] = stat;
+                }
+            }
+        }
+
         public static Status Read(DReader rdr)
         {
             Status ret = new Status();

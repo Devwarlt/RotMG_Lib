@@ -23,7 +23,6 @@ namespace TradeBot
     {
         private RotMGClient client;
         private bool trading;
-        private string tradeText;
         private bool botStarted;
         private Dictionary<int, bool> SelectedItems { get; set; }
 
@@ -55,7 +54,7 @@ namespace TradeBot
             buyBox.AutoCompleteCustomSource = sellBox.AutoCompleteCustomSource = col;
             buyBox.Sorted = sellBox.Sorted = true;
             buyBox.SelectedItem = sellBox.SelectedItem = buyBox.Items[1];
-            tradeText = "%%%%Buying {buyAmount} {buyItem} for {sellAmount} {sellItem} @{playerName}%%%%";
+            tradeSpamTextBox.Text = "%%%%Buying {buyAmount} {buyItem} for {sellAmount} {sellItem} @{playerName}%%%%";
         }
 
         private bool isNumber(string value, int index)

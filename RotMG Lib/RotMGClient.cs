@@ -41,7 +41,8 @@ namespace RotMG_Lib
 
         private bool ok;
 
-        public Dictionary<int, ObjectDef> CurrentObjects = new Dictionary<int, ObjectDef>();
+        public Dictionary<int, ObjectDef> CurrentObjects { get; set; }
+        public Dictionary<string, int> NameToId { get; set; }
 
         public int currentTickId;
         public int currentTickTime;
@@ -59,6 +60,8 @@ namespace RotMG_Lib
             : base(host)
         {
             new RotMGData();
+            CurrentObjects = new Dictionary<int, ObjectDef>();
+            NameToId = new Dictionary<string, int>();
             this.host = host;
             this.email = email;
             this.password = password;
@@ -189,29 +192,39 @@ namespace RotMG_Lib
         {
             SendPacket(new UpdateAckPacket());
             UpdateAckPacketsSend++;
+
             foreach (int i in pkt.Drops)
             {
-                ObjectDef obj;
-                if (this.CurrentObjects.TryGetValue(i, out obj))
+                if (CurrentObjects.ContainsKey(i))
                 {
-                    this.CurrentObjects.Remove(i);
+                    CurrentObjects.Remove(i);
                 }
             }
-            foreach (ObjectDef obj in pkt.NewObjects)
+
+            foreach (ObjectDef def in pkt.NewObjects)
             {
-                if (this.CurrentObjects.ContainsKey(obj.ObjectType))
+                foreach (StatData data in def.Stats.StatData)
                 {
-                    this.CurrentObjects[obj.ObjectType] = obj;
+                    if (data.StatsType == StatsType.NAME)
+                    {
+                        if(!NameToId.ContainsKey(data.obf2))
+                            NameToId.Add(data.obf2, def.Stats.ObjectId);
+                    }
+                }
+
+                if (CurrentObjects.ContainsKey(def.Stats.ObjectId))
+                {
+                    CurrentObjects[def.Stats.ObjectId] = def;
                 }
                 else
                 {
-                    this.CurrentObjects.Add(obj.ObjectType, obj);
+                    CurrentObjects.Add(def.Stats.ObjectId, def);
                 }
 
-                if (obj.Stats.ObjectId == Player.ObjectID)
+                if (def.Stats.ObjectId == Player.ObjectID)
                 {
-                    Player.ObjectDefinition = obj;
-                    foreach (StatData data in obj.Stats.StatData)
+                    Player.ObjectDefinition = def;
+                    foreach (StatData data in def.Stats.StatData)
                     {
                         if (data.StatsType == StatsType.NAME)
                         {
@@ -252,6 +265,17 @@ namespace RotMG_Lib
 
             foreach (Status i in pkt.UpdateStatuses)
             {
+                foreach (StatData data in i.StatData)
+                {
+                    if (data.StatsType == StatsType.NAME)
+                    {
+                        if (!NameToId.ContainsKey(data.obf2))
+                            NameToId[data.obf2] = i.ObjectId;
+                        else
+                            NameToId.Add(data.obf2, i.ObjectId);
+                    }
+                }
+
                 if (i.ObjectId == Player.ObjectID)
                 {
                     foreach (StatData data in i.StatData)
@@ -272,6 +296,17 @@ namespace RotMG_Lib
                                 Player.StatData.Add(data.StatsType, data.obf2);
                             else
                                 Player.StatData.Add(data.StatsType, data.obf1);
+                        }
+                    }
+                }
+                if (CurrentObjects.ContainsKey(i.ObjectId))
+                {
+                    ObjectDef def;
+                    if(CurrentObjects.TryGetValue(i.ObjectId, out def))
+                    {
+                        foreach (StatData s in i.StatData)
+                        {
+                            CurrentObjects[i.ObjectId].Stats.SetStat(s);
                         }
                     }
                 }

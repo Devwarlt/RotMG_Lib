@@ -1,6 +1,8 @@
 ﻿using RotMG_Lib;
+using RotMG_Lib.Network;
 using RotMG_Lib.Network.ClientPackets;
 using RotMG_Lib.Network.Data;
+using RotMG_Lib.Network.ServerPackets;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +14,10 @@ namespace TradeBot
 {
     public partial class TradeMenu
     {
-        private readonly char[] chars = "()=\\%#@!*?;:^&/".ToCharArray();
+        private readonly char[] chars = @"()=\%#@!*?;:^&/".ToCharArray();
         private Random rand;
+        private int currentTradePlayer;
+        private int[] targetInventory = new int[8];
 
         private string convertToTradeText(string value)
         {
@@ -76,10 +80,115 @@ namespace TradeBot
             //notifyIcon1.BalloonTipText = convertToTradeText(tradeText);
             //notifyIcon1.BalloonTipTitle = "TradeBot";
             //notifyIcon1.ShowBalloonTip(4000);
-            client.SendPacket(new PlayerTextPacket
+            //client.SendPacket(new PlayerTextPacket
+            //{
+            //    Text = convertToTradeText(tradeText)
+            //});
+        }
+
+        public void OnPacketReceived(RotMGClient client, ServerPacket pkt)
+        {
+            if (!botStarted)
             {
-                Text = convertToTradeText(tradeText)
-            });
+                switch (pkt.ID)
+                {
+                    case PacketID.TRADEREQUESTED:
+                        if ((pkt as TradeRequestedPacket).Name == playerOwner.Text)
+                        {
+                            client.SendPacket(new RequestTradePacket { Name = playerOwner.Text });
+                            trading = true;
+                        }
+                        break;
+                    case PacketID.TRADESTART:
+                        if ((pkt as TradeStartPacket).YourName != playerOwner.Text)
+                        {
+                            client.SendPacket(new CancelTradePacket());
+                            trading = false;
+                        }
+                        else
+                            trading = true;
+                        break;
+                    case PacketID.TRADEACCEPTED:
+                        client.SendPacket(new AcceptTradePacket { MyOffers = SelectedItems.Values.ToArray(), YourOffers = (pkt as TradeAcceptedPacket).YourOffers });
+                        break;
+                    case PacketID.TRADEDONE:
+                        for (int i = 0; i < 12; i++)
+                            SelectedItems[i] = false;
+                        trading = false;
+                        break;
+                }
+            }
+            else
+            {
+                switch (pkt.ID)
+                {
+                    case PacketID.TRADEREQUESTED:
+                        if (requestedItemsInInventory((pkt as TradeRequestedPacket).Name, buyBox.Text.Split(',')[0], (int)buyAmount.Value))
+                            client.SendPacket(new RequestTradePacket { Name = (pkt as TradeRequestedPacket).Name });
+                        else
+                            currentTradePlayer = -1;
+                        break;
+                    case PacketID.TRADECHANGED:
+                        if (IsSelectValid())
+                        {
+
+                        }
+                        break;
+                }
+            }
+        }
+
+        private bool IsSelectValid()
+        {
+            for (int i = 4; i < 12; i++)
+            {
+
+            }
+            return false;
+        }
+
+        private bool requestedItemsInInventory(string playername, string itemname, int amount)
+        {
+            targetInventory = new int[8];
+            int reqItemId = RotMGData.NameToId[itemname];
+            int numItems = 0;
+            currentTradePlayer = client.NameToId[playername];
+            ObjectDef definition = client.CurrentObjects[currentTradePlayer];
+            foreach (StatData data in definition.Stats.StatData)
+            {
+                switch (data.StatsType)
+                {
+                    case StatsType.INVENTORY_4:
+                        targetInventory[0] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_5:
+                        targetInventory[1] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_6:
+                        targetInventory[2] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_7:
+                        targetInventory[3] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_8:
+                        targetInventory[4] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_9:
+                        targetInventory[5] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_10:
+                        targetInventory[6] = data.obf1;
+                        break;
+                    case StatsType.INVENTORY_11:
+                        targetInventory[7] = data.obf1;
+                        break;
+                }
+            }
+
+            foreach (int i in targetInventory)
+                if (reqItemId == i) numItems++;
+
+            return numItems >= amount;
         }
     }
 }

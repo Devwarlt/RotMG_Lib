@@ -60,6 +60,8 @@
             this.def = new System.Windows.Forms.Label();
             this.spd = new System.Windows.Forms.Label();
             this.att = new System.Windows.Forms.Label();
+            this.mp = new TradeBot.StatusBar();
+            this.hp = new TradeBot.StatusBar();
             this.invUpdater = new System.Windows.Forms.Timer(this.components);
             this.playerOwner = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -86,10 +88,10 @@
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tradeSpamTextBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tradeBotTick = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.mp = new TradeBot.StatusBar();
-            this.hp = new TradeBot.StatusBar();
             this.inventory_groupbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -116,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.buyAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // inventory_groupbox
@@ -442,13 +445,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.mp);
             this.tabPage2.Controls.Add(this.wis);
             this.tabPage2.Controls.Add(this.dex);
             this.tabPage2.Controls.Add(this.vit);
             this.tabPage2.Controls.Add(this.def);
             this.tabPage2.Controls.Add(this.spd);
             this.tabPage2.Controls.Add(this.att);
-            this.tabPage2.Controls.Add(this.mp);
             this.tabPage2.Controls.Add(this.hp);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -517,6 +520,34 @@
             this.att.Size = new System.Drawing.Size(68, 24);
             this.att.TabIndex = 2;
             this.att.Text = "Att: 75";
+            // 
+            // mp
+            // 
+            this.mp.BackColor = System.Drawing.Color.Transparent;
+            this.mp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.mp.Location = new System.Drawing.Point(6, 35);
+            this.mp.MaxColor = System.Drawing.Color.RoyalBlue;
+            this.mp.MaxValue = 100F;
+            this.mp.MinColor = System.Drawing.Color.RoyalBlue;
+            this.mp.Name = "mp";
+            this.mp.Size = new System.Drawing.Size(244, 23);
+            this.mp.TabIndex = 1;
+            this.mp.Value = 100F;
+            // 
+            // hp
+            // 
+            this.hp.BackColor = System.Drawing.Color.Transparent;
+            this.hp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
+            this.hp.Location = new System.Drawing.Point(6, 6);
+            this.hp.MaxColor = System.Drawing.Color.Firebrick;
+            this.hp.MaxValue = 100F;
+            this.hp.MinColor = System.Drawing.Color.Firebrick;
+            this.hp.Name = "hp";
+            this.hp.Size = new System.Drawing.Size(244, 23);
+            this.hp.TabIndex = 0;
+            this.hp.Value = 100F;
             // 
             // invUpdater
             // 
@@ -809,12 +840,31 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.tradeSpamTextBox);
+            this.tabPage5.Controls.Add(this.label16);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(274, 236);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Settings";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tradeSpamTextBox
+            // 
+            this.tradeSpamTextBox.Location = new System.Drawing.Point(74, 170);
+            this.tradeSpamTextBox.Multiline = true;
+            this.tradeSpamTextBox.Name = "tradeSpamTextBox";
+            this.tradeSpamTextBox.Size = new System.Drawing.Size(197, 57);
+            this.tradeSpamTextBox.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 173);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 26);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Tradespam\r\nText:";
             // 
             // tradeBotTick
             // 
@@ -828,34 +878,6 @@
             this.notifyIcon1.Text = "Trade Bot";
             this.notifyIcon1.Visible = true;
             // 
-            // mp
-            // 
-            this.mp.BackColor = System.Drawing.Color.Transparent;
-            this.mp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.mp.Location = new System.Drawing.Point(6, 35);
-            this.mp.MaxColor = System.Drawing.Color.RoyalBlue;
-            this.mp.MaxValue = 100F;
-            this.mp.MinColor = System.Drawing.Color.RoyalBlue;
-            this.mp.Name = "mp";
-            this.mp.Size = new System.Drawing.Size(244, 23);
-            this.mp.TabIndex = 1;
-            this.mp.Value = 100F;
-            // 
-            // hp
-            // 
-            this.hp.BackColor = System.Drawing.Color.Transparent;
-            this.hp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hp.LinearGradientMode = System.Drawing.Drawing2D.LinearGradientMode.Horizontal;
-            this.hp.Location = new System.Drawing.Point(6, 6);
-            this.hp.MaxColor = System.Drawing.Color.Firebrick;
-            this.hp.MaxValue = 100F;
-            this.hp.MinColor = System.Drawing.Color.Firebrick;
-            this.hp.Name = "hp";
-            this.hp.Size = new System.Drawing.Size(244, 23);
-            this.hp.TabIndex = 0;
-            this.hp.Value = 100F;
-            // 
             // TradeMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,7 +887,6 @@
             this.Name = "TradeMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logged in as {PlayerName}";
-            this.Click += new System.EventHandler(this.inventorySlot_clicked);
             this.inventory_groupbox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -895,6 +916,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -961,5 +984,7 @@
         private System.Windows.Forms.PictureBox sellWarning;
         private System.Windows.Forms.Timer tradeBotTick;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.TextBox tradeSpamTextBox;
+        private System.Windows.Forms.Label label16;
     }
 }

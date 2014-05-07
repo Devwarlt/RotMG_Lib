@@ -34,7 +34,7 @@ namespace TradeBot
                         {
                             equipmentSlot.Visible = true;
                             equipmentSlot.Image = (Bitmap)Resources.ResourceManager.GetObject(RotMGData.Items[(short)itemID].Replace(' ', '_').Replace('-', '_').Replace('\'', '_'));
-                            equipmentSlot.BackColor = isItemSoulbound((short)itemID) ? Color.DarkRed : Color.DimGray;
+                            equipmentSlot.BackColor = equipmentSlot.BackColor == Color.DimGray ? isItemSoulbound((short)itemID) ? Color.DarkRed : Color.DimGray : equipmentSlot.BackColor;
                         }
                         else
                         {
@@ -62,7 +62,7 @@ namespace TradeBot
                         {
                             inventorySlot.Visible = true;
                             inventorySlot.Image = (Bitmap)Resources.ResourceManager.GetObject(RotMGData.Items[(short)itemID].Replace(' ', '_'));
-                            inventorySlot.BackColor = isItemSoulbound((short)itemID) ? Color.DarkRed : Color.DimGray;
+                            inventorySlot.BackColor = inventorySlot.BackColor == Color.DimGray ? isItemSoulbound((short)itemID) ? Color.DarkRed : Color.DimGray : inventorySlot.BackColor;
                         }
                         else
                         {
@@ -116,45 +116,6 @@ namespace TradeBot
                     Offers = SelectedItems.Values.ToArray()
                 });
             }
-        }
-
-        public void OnPacketReceived(RotMGClient client, ServerPacket pkt)
-        {
-            if (!botStarted)
-            {
-                switch (pkt.ID)
-                {
-                    case PacketID.TRADEREQUESTED:
-                        if ((pkt as TradeRequestedPacket).Name == playerOwner.Text)
-                        {
-                            client.SendPacket(new RequestTradePacket { Name = playerOwner.Text });
-                            trading = true;
-                        }
-                        break;
-                    case PacketID.TRADESTART:
-                        if ((pkt as TradeStartPacket).YourName != playerOwner.Text)
-                        {
-                            client.SendPacket(new CancelTradePacket());
-                            trading = false;
-                        }
-                        else
-                            trading = true;
-                        break;
-                    case PacketID.TRADEACCEPTED:
-                        client.SendPacket(new AcceptTradePacket { MyOffers = SelectedItems.Values.ToArray(), YourOffers = (pkt as TradeAcceptedPacket).YourOffers });
-                        break;
-                    case PacketID.TRADEDONE:
-                        for (int i = 0; i < 12; i++)
-                            SelectedItems[i] = false;
-                        trading = false;
-                        break;
-                }
-            }
-
-
-            //
-            // Trading logic here
-            //
         }
 
         private void reqOwnerTrade_Click(object sender, EventArgs e)
