@@ -50,7 +50,7 @@ namespace TradeBot
             Console.Clear();
             client = new RotMGClient(Servers.EUNorth, email.Text, password.Text);
             client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
-            client.Init("21.0.2", null, false);
+            client.Init("21.0.3", null, false);
             if (rememberAcc.Checked)
             {
                 using (StreamWriter wtr = new StreamWriter("lastlogin"))
