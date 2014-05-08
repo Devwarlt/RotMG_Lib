@@ -14,6 +14,8 @@ namespace RotMG_Lib
         public static Dictionary<string, short> NameToId { get; set; }
         public static Dictionary<short, bool> Soulbound { get; set; }
 
+        public static bool LoadingComplete { get; private set; }
+
         public RotMGData()
         {
             if (Items == null)
@@ -39,6 +41,8 @@ namespace RotMG_Lib
                 if (!NameToId.ContainsKey(name))
                     NameToId.Add(name, itemId);
             }
+
+            LoadingComplete = true;
         }
     }
 }

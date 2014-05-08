@@ -74,6 +74,7 @@ namespace TradeBot
                 itemname = itemname.Remove(0, 1);
             buyPic.Image = (Bitmap)Resources.ResourceManager.GetObject(itemname);
             buyWarning.Visible = isItemSoulbound(itemId);
+            reqItemName = buyBox.Text.Split(',')[0];
         }
 
         private void sellBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,6 +88,7 @@ namespace TradeBot
                 itemname = itemname.Remove(0, 1);
             sellPic.Image = (Bitmap)Resources.ResourceManager.GetObject(itemname);
             sellWarning.Visible = isItemSoulbound(itemId);
+            sellItemName = sellBox.Text.Split(',')[0];
         }
 
         private void buyAmount_ValueChanged(object sender, EventArgs e)
@@ -130,6 +132,7 @@ namespace TradeBot
             {
                 if ((sender as Button).Text == "Start")
                 {
+                    reqItemName = buyBox.Text.Split(',')[0];
                     botStarted = true;
                     (sender as Button).Text = "Stop";
                     tradeBotTick.Start();

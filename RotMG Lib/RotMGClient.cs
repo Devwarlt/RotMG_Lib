@@ -60,6 +60,7 @@ namespace RotMG_Lib
             : base(host)
         {
             new RotMGData();
+            while (!RotMGData.LoadingComplete) ;
             CurrentObjects = new Dictionary<int, ObjectDef>();
             NameToId = new Dictionary<string, int>();
             this.host = host;

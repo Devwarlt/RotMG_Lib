@@ -18,6 +18,8 @@ namespace TradeBot
         private Random rand;
         private int currentTradePlayer;
         private int[] targetInventory = new int[8];
+        private string reqItemName = String.Empty;
+        private string sellItemName = String.Empty;
 
         private string convertToTradeText(string value)
         {
@@ -77,13 +79,11 @@ namespace TradeBot
 
         private void tradeBot_Tick(object sender, EventArgs e)
         {
-            //notifyIcon1.BalloonTipText = convertToTradeText(tradeText);
-            //notifyIcon1.BalloonTipTitle = "TradeBot";
-            //notifyIcon1.ShowBalloonTip(4000);
-            //client.SendPacket(new PlayerTextPacket
-            //{
-            //    Text = convertToTradeText(tradeText)
-            //});
+            
+            client.SendPacket(new PlayerTextPacket
+            {
+                Text = convertToTradeText(tradeSpamTextBox.Text)
+            });
         }
 
         public void OnPacketReceived(RotMGClient client, ServerPacket pkt)
@@ -123,28 +123,67 @@ namespace TradeBot
                 switch (pkt.ID)
                 {
                     case PacketID.TRADEREQUESTED:
-                        if (requestedItemsInInventory((pkt as TradeRequestedPacket).Name, buyBox.Text.Split(',')[0], (int)buyAmount.Value))
+                        if (requestedItemsInInventory((pkt as TradeRequestedPacket).Name, reqItemName, (int)buyAmount.Value))
+                        {
                             client.SendPacket(new RequestTradePacket { Name = (pkt as TradeRequestedPacket).Name });
+                        }
                         else
                             currentTradePlayer = -1;
                         break;
+                    case PacketID.TRADESTART:
+                        client.SendPacket(new PlayerTextPacket { Text = String.Format("/tell {0} Please select {1} {2}.", (pkt as TradeStartPacket).YourName, buyAmount.Value, reqItemName) });
+                        break;
                     case PacketID.TRADECHANGED:
-                        if (IsSelectValid())
+                        if (IsSelectValid(currentTradePlayer, reqItemName, (int)buyAmount.Value, (pkt as TradeChangedPacket)))
                         {
-
+                            client.SendPacket(new ChangeTradePacket
+                            {
+                                Offers = myoffers()
+                            });
+                            client.SendPacket(new AcceptTradePacket
+                            {
+                                MyOffers = myoffers(),
+                                YourOffers = (pkt as TradeChangedPacket).Offers
+                            });
+                        }
+                        break;
+                    case PacketID.TRADEDONE:
+                        if ((pkt as TradeDonePacket).Result == 0)
+                        {
+                            notifyIcon1.BalloonTipText = String.Format("Successfuly sold {0} {1} for {2} {3}", sellAmount.Value, sellItemName, buyAmount.Value, reqItemName);
+                            notifyIcon1.BalloonTipTitle = "TradeBot";
+                            notifyIcon1.ShowBalloonTip(4000);
                         }
                         break;
                 }
             }
         }
 
-        private bool IsSelectValid()
+        private bool[] myoffers()
         {
+            bool[] ret = new bool[12];
+            int itemId = RotMGData.NameToId[sellItemName];
+
+            for (int i = 0; i < 12; i++)
+            {
+                if (i < 4) continue;
+                ret[i] = itemId == (int)client.Player.StatData[Utils.GetEnumByName<StatsType>("INVENTORY_" + i)];
+            }
+
+            return ret;
+        }
+
+        private bool IsSelectValid(int playerId, string itemname, int amount, TradeChangedPacket pkt)
+        {
+            bool[] yourSelectedItems = pkt.Offers;
+            int ret = 0;
+
             for (int i = 4; i < 12; i++)
             {
-
+                if (yourSelectedItems[i] && targetInventory[i - 4] == RotMGData.NameToId[itemname])
+                    ret++;
             }
-            return false;
+            return ret >= amount;
         }
 
         private bool requestedItemsInInventory(string playername, string itemname, int amount)

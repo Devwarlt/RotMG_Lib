@@ -35,15 +35,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.rememberAcc = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buildversion = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(12, 64);
+            this.Login.Location = new System.Drawing.Point(156, 62);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(257, 23);
+            this.Login.Size = new System.Drawing.Size(114, 43);
             this.Login.TabIndex = 0;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
@@ -51,17 +52,17 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(80, 12);
+            this.email.Location = new System.Drawing.Point(86, 12);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(192, 20);
+            this.email.Size = new System.Drawing.Size(186, 20);
             this.email.TabIndex = 1;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(80, 38);
+            this.password.Location = new System.Drawing.Point(86, 38);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(190, 20);
+            this.password.Size = new System.Drawing.Size(184, 20);
             this.password.TabIndex = 2;
             // 
             // label1
@@ -85,33 +86,41 @@
             // rememberAcc
             // 
             this.rememberAcc.AutoSize = true;
-            this.rememberAcc.Location = new System.Drawing.Point(15, 93);
+            this.rememberAcc.Location = new System.Drawing.Point(12, 88);
             this.rememberAcc.Name = "rememberAcc";
             this.rememberAcc.Size = new System.Drawing.Size(138, 17);
             this.rememberAcc.TabIndex = 5;
             this.rememberAcc.Text = "Remember this account";
             this.rememberAcc.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(159, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // buildversion
+            // 
+            this.buildversion.Location = new System.Drawing.Point(86, 64);
+            this.buildversion.Name = "buildversion";
+            this.buildversion.Size = new System.Drawing.Size(58, 20);
+            this.buildversion.TabIndex = 6;
+            this.buildversion.Text = "21.0.3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 67);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "BuildVersion: ";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 118);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(284, 108);
+            this.Controls.Add(this.buildversion);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.rememberAcc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -133,7 +142,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox rememberAcc;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox buildversion;
+        private System.Windows.Forms.Label label3;
     }
 }

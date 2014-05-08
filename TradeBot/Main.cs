@@ -48,9 +48,9 @@ namespace TradeBot
         private void Login_Click(object sender, EventArgs e)
         {
             Console.Clear();
-            client = new RotMGClient(Servers.EUNorth, email.Text, password.Text);
+            client = new RotMGClient(Servers.EUSouth, email.Text, password.Text);
             client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
-            client.Init("21.0.3", null, false);
+            client.Init(buildversion.Text, null, false);
             if (rememberAcc.Checked)
             {
                 using (StreamWriter wtr = new StreamWriter("lastlogin"))
