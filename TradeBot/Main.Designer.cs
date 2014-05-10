@@ -38,11 +38,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.buildversion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Server = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(156, 62);
+            this.Login.Location = new System.Drawing.Point(156, 89);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(114, 43);
             this.Login.TabIndex = 0;
@@ -86,7 +88,7 @@
             // rememberAcc
             // 
             this.rememberAcc.AutoSize = true;
-            this.rememberAcc.Location = new System.Drawing.Point(12, 88);
+            this.rememberAcc.Location = new System.Drawing.Point(12, 115);
             this.rememberAcc.Name = "rememberAcc";
             this.rememberAcc.Size = new System.Drawing.Size(138, 17);
             this.rememberAcc.TabIndex = 5;
@@ -99,7 +101,7 @@
             // 
             // buildversion
             // 
-            this.buildversion.Location = new System.Drawing.Point(86, 64);
+            this.buildversion.Location = new System.Drawing.Point(86, 91);
             this.buildversion.Name = "buildversion";
             this.buildversion.Size = new System.Drawing.Size(58, 20);
             this.buildversion.TabIndex = 6;
@@ -108,17 +110,60 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 67);
+            this.label3.Location = new System.Drawing.Point(9, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "BuildVersion: ";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 65);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Server:";
+            // 
+            // Server
+            // 
+            this.Server.FormattingEnabled = true;
+            this.Server.Items.AddRange(new object[] {
+            "USWest",
+            "USMidWest",
+            "EUWest",
+            "USEast",
+            "AsiaSouthEast",
+            "USSouth",
+            "USSouthWest",
+            "EUEast",
+            "EUNorth",
+            "EUSouthWest",
+            "USEast3",
+            "USWest2",
+            "USMidWest2",
+            "USEast2",
+            "USNorthWest",
+            "AsiaEast",
+            "USSouth3",
+            "EUNorth2",
+            "EUWest2",
+            "EUSouth",
+            "USSouth2",
+            "USWest3"});
+            this.Server.Location = new System.Drawing.Point(86, 62);
+            this.Server.Name = "Server";
+            this.Server.Size = new System.Drawing.Size(121, 21);
+            this.Server.TabIndex = 11;
+            this.Server.SelectedIndexChanged += new System.EventHandler(this.Server_SelectedIndexChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 108);
+            this.ClientSize = new System.Drawing.Size(284, 144);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.Server);
             this.Controls.Add(this.buildversion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rememberAcc);
@@ -145,5 +190,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox buildversion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox Server;
     }
 }

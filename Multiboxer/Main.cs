@@ -1,5 +1,4 @@
 ﻿using RotMG_Lib;
-using RotMG_Lib.Network.ClientPackets;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,97 +7,52 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TradeBot
+namespace Multiboxer
 {
     public partial class Main : Form
     {
-        private RotMGClient client;
-        private Server server;
+        Server server;
+        RotMGClient client;
+        private List<RotMGClient> bots = new List<RotMGClient>();
 
         public Main()
         {
             InitializeComponent();
-            if(File.Exists("lastlogin"))
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Console.Clear();
+            for (int i = 1; i < NumberOfBots.Value; i++)
             {
-                using (StreamReader rdr = File.OpenText("lastlogin"))
+                client = new RotMGClient(server, EmailPrefix.Text + i + EmailDomain.Text, Password.Text);
+                client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
+                client.Init(buildversion.Text, null, false);
+                if (client.Player.IsLoggedIn)
                 {
-                    string[] tokens = rdr.ReadLine().Split(':');
-                    try
-                    {
-                        email.Text = ASCIIEncoding.ASCII.GetString(Convert.FromBase64String(tokens[0]));
-                        password.Text = ASCIIEncoding.ASCII.GetString(Convert.FromBase64String(tokens[1]));
-                        rememberAcc.Checked = true;
-                        rdr.Close();
-                    }
-                    catch
-                    {
-                        rdr.Close();
-                        MessageBox.Show("Warning: Your Password file is not encoded, please login to generate it again.");
-                        if(File.Exists("lastlogin"))
-                            File.Delete("lastlogin");
-                    }
+                    client.Connect();
+                    bots.Add(client);
                 }
             }
             timer1.Start();
-        }
-
-        private void Login_Click(object sender, EventArgs e)
-        {
-            Console.Clear();
-            client = new RotMGClient(server, email.Text, password.Text);
-            client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
-            client.Init(buildversion.Text, null, false);
-            if (rememberAcc.Checked)
-            {
-                using (StreamWriter wtr = new StreamWriter("lastlogin"))
-                {
-                    wtr.Write(Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(email.Text)) + ":" + Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(password.Text)));
-                    wtr.Close();
-                }
-            }
-            if (client.Player.IsLoggedIn)
-                client.Connect();
         }
 
         private void client_OnLoginError(string message)
         {
             MessageBox.Show(message);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            var result = new string(Enumerable.Repeat(chars, 8).Select(s => s[random.Next(s.Length)]).ToArray());
-
-            client.Player.Move(1, 1);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (client != null)
-            {
-                if (client.Player != null)
-                {
-                    if (client.Player.IsConnected)
-                    {
-                        Thread t = new Thread(() => Application.Run(new TradeMenu(client)));
-                        t.SetApartmentState(ApartmentState.STA);
-                        t.Start();
-                        this.Close();
-                        timer1.Stop();
-                    }
-                }
-            }
-        }
-
-        private void Server_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (Server.SelectedItem.ToString())
+            switch(Server.SelectedItem.ToString())
             {
                 default:
                     server = Servers.USEast3;
