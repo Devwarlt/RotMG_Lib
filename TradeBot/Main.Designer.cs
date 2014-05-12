@@ -39,7 +39,7 @@
             this.buildversion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Server = new System.Windows.Forms.ComboBox();
+            this.selectedServer = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // Login
@@ -125,10 +125,12 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Server:";
             // 
-            // Server
+            // selectedServer
             // 
-            this.Server.FormattingEnabled = true;
-            this.Server.Items.AddRange(new object[] {
+            this.selectedServer.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.selectedServer.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.selectedServer.FormattingEnabled = true;
+            this.selectedServer.Items.AddRange(new object[] {
             "USWest",
             "USMidWest",
             "EUWest",
@@ -151,11 +153,10 @@
             "EUSouth",
             "USSouth2",
             "USWest3"});
-            this.Server.Location = new System.Drawing.Point(86, 62);
-            this.Server.Name = "Server";
-            this.Server.Size = new System.Drawing.Size(121, 21);
-            this.Server.TabIndex = 11;
-            this.Server.SelectedIndexChanged += new System.EventHandler(this.Server_SelectedIndexChanged);
+            this.selectedServer.Location = new System.Drawing.Point(86, 62);
+            this.selectedServer.Name = "selectedServer";
+            this.selectedServer.Size = new System.Drawing.Size(184, 21);
+            this.selectedServer.TabIndex = 11;
             // 
             // Main
             // 
@@ -163,7 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 144);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Server);
+            this.Controls.Add(this.selectedServer);
             this.Controls.Add(this.buildversion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rememberAcc);
@@ -191,6 +192,6 @@
         private System.Windows.Forms.TextBox buildversion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox Server;
+        private System.Windows.Forms.ComboBox selectedServer;
     }
 }

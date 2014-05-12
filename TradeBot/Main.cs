@@ -22,6 +22,12 @@ namespace TradeBot
         public Main()
         {
             InitializeComponent();
+            AutoCompleteStringCollection col = new AutoCompleteStringCollection();
+            foreach (var s in typeof(Servers).GetProperties())
+            {
+                col.Add(s.Name);
+            }
+            selectedServer.AutoCompleteCustomSource = col;
             if(File.Exists("lastlogin"))
             {
                 using (StreamReader rdr = File.OpenText("lastlogin"))
@@ -43,12 +49,15 @@ namespace TradeBot
                     }
                 }
             }
+
             timer1.Start();
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
             Console.Clear();
+            if (Server.GetServerByName.ContainsKey(selectedServer.SelectedItem.ToString()))
+                server = Server.GetServerByName[selectedServer.SelectedItem.ToString()];
             client = new RotMGClient(server, email.Text, password.Text);
             client.OnLoginError += new OnLoginErrorHandler(client_OnLoginError);
             client.Init(buildversion.Text, null, false);
@@ -93,82 +102,6 @@ namespace TradeBot
                         timer1.Stop();
                     }
                 }
-            }
-        }
-
-        private void Server_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (Server.SelectedItem.ToString())
-            {
-                default:
-                    server = Servers.USEast3;
-                    break;
-                case "USWest":
-                    server = Servers.USWest;
-                    break;
-                case "USMidWest":
-                    server = Servers.USMidWest;
-                    break;
-                case "EUWest":
-                    server = Servers.EUWest;
-                    break;
-                case "USEast":
-                    server = Servers.USEast;
-                    break;
-                case "AsiaSouthEast":
-                    server = Servers.AsiaSouthEast;
-                    break;
-                case "USSouth":
-                    server = Servers.USSouth;
-                    break;
-                case "USSouthWest":
-                    server = Servers.USSouthWest;
-                    break;
-                case "EUEast":
-                    server = Servers.EUEast;
-                    break;
-                case "EUNorth":
-                    server = Servers.EUNorth;
-                    break;
-                case "EUSouthWest":
-                    server = Servers.EUSouthWest;
-                    break;
-                case "USEast3":
-                    server = Servers.USEast3;
-                    break;
-                case "USWest2":
-                    server = Servers.USWest2;
-                    break;
-                case "USMidWest2":
-                    server = Servers.USMidWest2;
-                    break;
-                case "USEast2":
-                    server = Servers.USEast2;
-                    break;
-                case "USNorthWest":
-                    server = Servers.USNorthWest;
-                    break;
-                case "AsiaEast":
-                    server = Servers.AsiaEast;
-                    break;
-                case "USSouth3":
-                    server = Servers.USSouth3;
-                    break;
-                case "EUNorth2":
-                    server = Servers.EUNorth2;
-                    break;
-                case "EUWest2":
-                    server = Servers.EUWest2;
-                    break;
-                case "EUSouth":
-                    server = Servers.EUSouth;
-                    break;
-                case "USSouth2":
-                    server = Servers.USSouth2;
-                    break;
-                case "USWest3":
-                    server = Servers.USWest3;
-                    break;
             }
         }
     }

@@ -41,12 +41,13 @@ namespace TradeBot
             {
                 string item = RotMGData.Items.Values.ToArray()[i];
                 short itemId = RotMGData.Items.Keys.ToArray()[i];
-                if (item.StartsWith("T") && isNumber(item, 2))
+                if (item.StartsWith("T") && isNumber(item, 1))
                 {
                     item = item.Remove(0, 3);
                 }
                 if (item.StartsWith(" "))
                     item = item.Remove(0, 1);
+
                 buyBox.Items.Add(item + ", " + itemId);
                 sellBox.Items.Add(item + ", " + itemId);
                 col.Add(item + ", " + itemId);
