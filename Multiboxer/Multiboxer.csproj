@@ -79,7 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PacketIDs\PacketIDs.csproj">
-      <Project>{6a3c2e9d-7da2-43b9-a53f-692e84683da5}</Project>
+      <Project>{2a68f139-ec4d-4dfb-8cd6-9a3b4fc0a11f}</Project>
       <Name>PacketIDs</Name>
     </ProjectReference>
     <ProjectReference Include="..\RotMG Lib\RotMG Lib.csproj">

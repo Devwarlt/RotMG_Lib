@@ -1,4 +1,9 @@
-﻿public enum PacketID
+﻿public class PacketId
+{
+    public static byte FAILURE { get { return PacketIdHandler.GetID("FAILURE"); } }
+}
+
+public enum PacketID : byte //version 21.0.3
 {
     FAILURE = 0,
     CREATE_SUCCESS = 3,
@@ -71,19 +76,5 @@
     PLAYSOUND = 60,
     GLOBAL_NOTIFICATION = 40,
     RESKIN = 41,
-    __1hU = 33,
-    __1p5 = 17,
-    __1XS = 49,
-    __0me = 83,
-    __1y = 85,
-    __0Pj = 5,
-    __05q = 23,
-    __0s7 = 51,
     ENTER_ARENA = 55,
-    __0vB = 6,
-    __05J = 7,
-    __HK = 68,
-    __0o2 = 69,
-    __1QH = 84,
-    __hO = 57
 }

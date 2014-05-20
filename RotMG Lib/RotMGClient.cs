@@ -83,6 +83,11 @@ namespace RotMG_Lib
             }
         }
 
+        public new void Disconnect()
+        {
+            base.Disconnect();
+        }
+
         public new void Connect()
         {
             if (ok)
@@ -300,105 +305,24 @@ namespace RotMG_Lib
                         }
                     }
                 }
+
                 if (CurrentObjects.ContainsKey(i.ObjectId))
                 {
-                    ObjectDef def;
-                    if(CurrentObjects.TryGetValue(i.ObjectId, out def))
+                    foreach (StatData s in i.StatData)
                     {
-                        foreach (StatData s in i.StatData)
+                        foreach(var y in CurrentObjects[i.ObjectId].Stats.StatData)
                         {
-                            CurrentObjects[i.ObjectId].Stats.SetStat(s);
+                            if(s.StatsType == y.StatsType)
+                            {
+                                if (s.IsUTFData())
+                                    s.obf2 = y.obf2;
+                                else
+                                    s.obf1 = y.obf1;
+                            }
                         }
                     }
                 }
-                //ObjectDef obj;
-                //if (this.CurrentObjects.TryGetValue(i.ObjectId, out obj))
-                //{
-                //    this.CurrentObjects[i.ObjectId].Stats.StatData = i.StatData;
-                //    this.CurrentObjects[i.ObjectId].Stats.Position = i.Position;
-                //    this.CurrentObjects[i.ObjectId].Stats.ObjectId = i.ObjectId;
-
-                //    if (obj.Stats.ObjectId == Player.ObjectID && i.ObjectId == Player.ObjectID)
-                //    {
-                //        Player.ObjectDefinition = obj;
-                //    }
-                //}
             }
-            //foreach (Status stat in pkt.UpdateStatuses)
-            //{
-            //    if (stat.ObjectId == Player.ObjectID)
-            //    {
-            //        foreach (StatData data in stat.StatData)
-            //        {
-            //            if (Player.StatData == null)
-            //                Player.StatData = new Dictionary<StatsType, object>();
-            //            if (Player.StatData.ContainsKey(data.StatsType))
-            //            {
-            //                if (data.IsUTFData())
-            //                    Player.StatData[data.StatsType] = data.obf2;
-            //                else
-            //                    Player.StatData[data.StatsType] = data.obf1;
-            //            }
-            //            else
-            //            {
-            //                if (data.IsUTFData())
-            //                    Player.StatData.Add(data.StatsType, data.obf2);
-            //                else
-            //                    Player.StatData.Add(data.StatsType, data.obf1);
-            //            }
-            //        }
-            //    }
-            //}
-            //foreach (ObjectDef def in CurrentObjects.Values)
-            //{
-                //foreach (StatData data in Player.ObjectDefinition.Stats.StatData)
-                //{
-                //    //if(def.Stats.ObjectId == Player.ObjectID)
-                //    //{
-                //        if (Player.StatData == null)
-                //            Player.StatData = new ConcurrentDictionary<StatsType, object>();
-                //        if (Player.StatData.ContainsKey(data.StatsType))
-                //        {
-                //            if (data.IsUTFData())
-                //                Player.StatData[data.StatsType] = data.obf2;
-                //            else
-                //                Player.StatData[data.StatsType] = data.obf1;
-                //        }
-                //        else
-                //        {
-                //            if (data.IsUTFData())
-                //                Player.StatData.TryAdd(data.StatsType, data.obf2);
-                //            else
-                //                Player.StatData.TryAdd(data.StatsType, data.obf1);
-                //        }
-                    //}
-                    //if (data.StatsType == StatsType.NAME)
-                    //{
-                    //    if (data.obf2.Contains(Player.OwnerName))
-                    //    {
-                    //        //if (Player.StatData == null)
-                    //        //    Player.StatData = new Dictionary<StatsType, object>();
-                    //        //if (Player.StatData.ContainsKey(data.StatsType))
-                    //        //{
-                    //        //    if (data.IsUTFData())
-                    //        //        Player.StatData[data.StatsType] = data.obf2;
-                    //        //    else
-                    //        //        Player.StatData[data.StatsType] = data.obf1;
-                    //        //}
-                    //        //else
-                    //        //{
-                    //        //    if (data.IsUTFData())
-                    //        //        Player.StatData.Add(data.StatsType, data.obf2);
-                    //        //    else
-                    //        //        Player.StatData.Add(data.StatsType, data.obf1);
-                    //        //}
-
-                    //        //Player.Move(def.Stats.Position);
-                    //        //Player.ObjectDefinition.Stats.Position = def.Stats.Position;
-                    //    }
-                    //}
-                //}
-            //}
         }
 
         private void sendMove(int tickID, int tickTime, Position position, TimedPosition[] records)

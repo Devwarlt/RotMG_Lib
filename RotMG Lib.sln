@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotMG Lib", "RotMG Lib\RotMG Lib.csproj", "{DA953B48-C940-4291-BBC8-32F4E863B8C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeBot", "TradeBot\TradeBot.csproj", "{C829F5B3-3E94-4014-A2B0-C5168DC34B30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacketIDs", "PacketIDs\PacketIDs.csproj", "{6A3C2E9D-7DA2-43B9-A53F-692E84683DA5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multiboxer", "Multiboxer\Multiboxer.csproj", "{E53076B9-C263-49B9-9525-CBFC90936262}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PacketIDs", "PacketIDs\PacketIDs.csproj", "{2A68F139-EC4D-4DFB-8CD6-9A3B4FC0A11F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spambot", "Spambot\Spambot.csproj", "{725000E3-29CD-49C8-989B-5A203F7CBB3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +27,18 @@ Global
 		{C829F5B3-3E94-4014-A2B0-C5168DC34B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C829F5B3-3E94-4014-A2B0-C5168DC34B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C829F5B3-3E94-4014-A2B0-C5168DC34B30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A3C2E9D-7DA2-43B9-A53F-692E84683DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A3C2E9D-7DA2-43B9-A53F-692E84683DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A3C2E9D-7DA2-43B9-A53F-692E84683DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A3C2E9D-7DA2-43B9-A53F-692E84683DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E53076B9-C263-49B9-9525-CBFC90936262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E53076B9-C263-49B9-9525-CBFC90936262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E53076B9-C263-49B9-9525-CBFC90936262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E53076B9-C263-49B9-9525-CBFC90936262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A68F139-EC4D-4DFB-8CD6-9A3B4FC0A11F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A68F139-EC4D-4DFB-8CD6-9A3B4FC0A11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A68F139-EC4D-4DFB-8CD6-9A3B4FC0A11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A68F139-EC4D-4DFB-8CD6-9A3B4FC0A11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{725000E3-29CD-49C8-989B-5A203F7CBB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{725000E3-29CD-49C8-989B-5A203F7CBB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{725000E3-29CD-49C8-989B-5A203F7CBB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{725000E3-29CD-49C8-989B-5A203F7CBB3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

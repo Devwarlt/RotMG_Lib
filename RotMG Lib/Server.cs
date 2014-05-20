@@ -9,7 +9,7 @@ namespace RotMG_Lib
 {
     public class Server
     {
-        private static Dictionary<string, Server> _getServerByName;
+        private static Dictionary<string, Server> _getServerByName = new Dictionary<string, Server>();
         public static Dictionary<string, Server> GetServerByName
         {
             get

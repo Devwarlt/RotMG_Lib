@@ -29,6 +29,7 @@ namespace RotMG_Lib
         private RC4 recvCrypto;
         private static ConcurrentQueue<Packet> pendingPackets = new ConcurrentQueue<Packet>();
         private object sendLock = new object();
+        private bool isClosing;
 
         internal event PacketReceivedHandler OnPacketReceived;
         internal event DisconnectHandler OnDisconnect;
@@ -48,6 +49,7 @@ namespace RotMG_Lib
         {
             try
             {
+                isClosing = false;
                 this.connection = new TcpClient();
                 this.recvCrypto = new RC4(new byte[] { 0x72, 0xc5, 0x58, 0x3c, 0xaf, 0xb6, 0x81, 0x89, 0x95, 0xcb, 0xd7, 0x4b, 0x80 });
                 this.sendCrypto = new RC4(new byte[] { 0x31, 0x1f, 0x80, 0x69, 0x14, 0x51, 0xc7, 0x1b, 0x09, 0xa1, 0x3a, 0x2a, 0x6e });
@@ -80,68 +82,71 @@ namespace RotMG_Lib
 
             while (true)
             {
-                try
+                if (!isClosing)
                 {
                     try
                     {
-                        int bytes = connection.Client.Receive(buffer, offset, length - offset, SocketFlags.None);
+                        try
+                        {
+                            int bytes = connection.Client.Receive(buffer, offset, length - offset, SocketFlags.None);
 
-                        if (bytes == 0 && (length - offset) != 0) // second clause should really be there BUT given there's 
-                        {                                         // 0 size packets and I don't care enough to check for them so it happens
-                            Console.WriteLine("The Server closed the connection D:");
-                            connection.Close();
-                            if (OnDisconnect != null)
-                                OnDisconnect();
+                            if (bytes == 0 && (length - offset) != 0) // second clause should really be there BUT given there's 
+                            {                                         // 0 size packets and I don't care enough to check for them so it happens
+                                Console.WriteLine("The Server closed the connection D:");
+                                Disconnect();
+                                if (OnDisconnect != null)
+                                    OnDisconnect();
+                                return;
+                            }
+
+                            offset += bytes;
+                        }
+                        catch (Exception e)
+                        {
+                            Disconnect();
+                            Console.WriteLine(e);
                             return;
                         }
 
-                        offset += bytes;
+                        if (offset == length) // continue receiving
+                        {
+                            if (header == 0xFF) // header
+                            {
+                                if (BitConverter.IsLittleEndian)
+                                    length = BitConverter.ToInt32(new byte[] { buffer[3], buffer[2], buffer[1], buffer[0] }, 0);
+                                else
+                                    length = BitConverter.ToInt32(new byte[] { buffer[0], buffer[1], buffer[2], buffer[3] }, 0);
+
+                                length -= 5;
+                                header = buffer[4];
+                                offset = 0;
+                            }
+                            else
+                            {
+                                byte[] crypt_buffer = new byte[length];
+                                Array.Copy(buffer, crypt_buffer, length);
+
+                                Packet pkt = Packet.ServerPackets[(PacketID)header];
+                                pkt.Read(this, crypt_buffer, length);
+
+                                if (OnPacketReceived != null)
+                                    OnPacketReceived(pkt);
+
+                                length = 5;
+                                header = 0xFF;
+                                offset = 0;
+                                GC.Collect();
+                            }
+                        }
                     }
-                    catch (Exception e)
+                    catch (Exception ex)
                     {
-                        this.connection.Close();
-                        Console.WriteLine(e);
+                        Console.WriteLine("The server closed the connection\n{0}", ex);
+                        Disconnect();
+                        if (OnDisconnect != null)
+                            OnDisconnect();
                         return;
                     }
-
-                    if (offset == length) // continue receiving
-                    {
-                        if (header == 0xFF) // header
-                        {
-                            if (BitConverter.IsLittleEndian)
-                                length = BitConverter.ToInt32(new byte[] { buffer[3], buffer[2], buffer[1], buffer[0] }, 0);
-                            else
-                                length = BitConverter.ToInt32(new byte[] { buffer[0], buffer[1], buffer[2], buffer[3] }, 0);
-
-                            length -= 5;
-                            header = buffer[4];
-                            offset = 0;
-                        }
-                        else
-                        {
-                            byte[] crypt_buffer = new byte[length];
-                            Array.Copy(buffer, crypt_buffer, length);
-
-                            Packet pkt = Packet.ServerPackets[(PacketID)header];
-                            pkt.Read(this, crypt_buffer, length);
-
-                            if (OnPacketReceived != null)
-                                OnPacketReceived(pkt);
-
-                            length = 5;
-                            header = 0xFF;
-                            offset = 0;
-                            GC.Collect();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("The server closed the connection\n{0}", ex);
-                    connection.Close();
-                    if (OnDisconnect != null)
-                        OnDisconnect();
-                    return;
                 }
             }
         }
@@ -154,17 +159,31 @@ namespace RotMG_Lib
 
                 while (pendingPackets.Count > 0)
                 {
-                    Packet packet;
-                    pendingPackets.TryDequeue(out packet);
-                    byte[] data = packet.Write(this);
+                    if (isClosing)
+                    {
+                        Packet packet;
+                        pendingPackets.TryDequeue(out packet);
+                        byte[] data = packet.Write(this);
 
-                    connection.Client.Send(data, SocketFlags.DontRoute);
+                        connection.Client.Send(data, SocketFlags.DontRoute);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error while sending packet :(\n\n" + ex);
             }
+        }
+
+        protected void Disconnect()
+        {
+            isClosing = true;
+            Console.WriteLine("Disconnecting...");
+            Thread.Sleep(1000);
+            connection.Client.Close();
+            connection.Close();
+            RotMGClient.tick.Stop();
+            Console.WriteLine("Disconnected.");
         }
     }
 }
